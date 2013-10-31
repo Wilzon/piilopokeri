@@ -1,0 +1,21 @@
+
+Aihe: Piilopokeri
+Pokeripeli hieman muokatuin säännöin. Alussa kortit eivät ole näkyvillä. Käyttäjä pelaa pokeripeliä tietokonetta vastaan. Voittaja saa mainetta ja kunniaa tässä tekstipohjaisessa pokeripelissä. 
+
+Mahdolliset lisäykset:
+	•	monta ihmis- ja/tai tietokonepelaajaa 
+	•	eri vaikeustasot
+	•	graafinen toteutus
+
+Käyttäjät: Pelaaja (kuka tahansa pokerista pitävä)
+
+Kaikkien käyttäjien toiminnot:
+
+Pelaaja:
+
+	•	pelin käynnistys
+	•	nimen asettaminen
+	•	pelin luovuttaminen
+	•	uuden pelin aloitus
+	•	pelitietojen listaus (voitetut / hävityt / tasapelit)
+

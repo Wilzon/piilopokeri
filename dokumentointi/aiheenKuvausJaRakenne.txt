@@ -2,6 +2,8 @@
 Aihe: Piilopokeri
 Pokeripeli hieman muokatuin säännöin. Alussa kortit eivät ole näkyvillä. Käyttäjä pelaa pokeripeliä tietokonetta vastaan. Voittaja saa mainetta ja kunniaa tässä tekstipohjaisessa pokeripelissä. 
 
+Esimerkki pelikierros: Peli käynnistetään. Peli jakaa valitun määrän kortteja pelaajille väärinpäin. Ensimmäinen pelaaja valitsee avopakasta tai suljetusta pakasta kortin, ja vaihtaa sen sokkona yhteen omista korteistaan, tai heittää valitsemansa kortin avopakkaan ja kääntää yhden omista korteistaan oikeinpäin. Jokainen vuorollaan kääntää yhden kortin oikeinpäin samoin kuin ensimmäinen pelaaja vuorollaan. Kun kaikkien kortit on käännetty, peli loppuu. Voittaja määräytyy peruspokerikäsien perusteella.
+
 Mahdolliset lisäykset:
 	•	monta ihmis- ja/tai tietokonepelaajaa 
 	•	eri vaikeustasot

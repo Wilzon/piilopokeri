@@ -9,6 +9,7 @@ import org.junit.Test;
 import piilopokeri.domain.Kortti;
 import piilopokeri.domain.Korttipakka;
 
+/** @author Wilzon */
 
 public class KorttipakkaTest {
     private Korttipakka pakka;

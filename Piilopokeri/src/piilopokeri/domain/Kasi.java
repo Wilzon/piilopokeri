@@ -3,20 +3,32 @@ package piilopokeri.domain;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/** @author Wilzon */
 
 public class Kasi extends Korttijoukko{
+    /**
+     * Lista kädessä olevista korteista
+     */
     private final ArrayList<Kortti> kortit;
     
     public Kasi() {
         kortit = super.getKortit();
     }
     
+    /**
+     * Metodi lisää kortin käteen
+     * 
+     * @param kortti Lisättävä kortti
+     */
     public void lisaaKortti(Kortti kortti) {
         if(kortti.getArvo() > 1) {
             kortit.add(kortti);
         }    
     }
         
+    /**
+     * Metodi kääntää kädessä olevien korttien järjestyksen
+     */
     public void kaannaJarjestys() {
         jarjestaKortit();
         Collections.reverse(kortit);

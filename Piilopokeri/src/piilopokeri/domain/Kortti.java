@@ -1,18 +1,41 @@
 package piilopokeri.domain;
 
+/** @author Wilzon */
+
 public class Kortti implements Comparable<Kortti>{
+    /**
+     * Kortin arvo
+     */
     private final int arvo;
+    
+    /**
+     * Kortin maa
+     */
     private final int maa;
+    
+    /**
+     * Onko kortti käännetty
+     */
     private boolean kaannetty;
     
-    public static final int JOKERI = 4;
-    public static final int HERTTA = 3;
-    public static final int RUUTU = 2;
-    public static final int RISTI = 1;
+    /**
+     * Maan JOKERI/HERTTA/RUUTU/RISTI/PATA arvo
+     */
     public static final int PATA = 0;
+    public static final int RISTI = 1;
+    public static final int RUUTU = 2;
+    public static final int HERTTA = 3;
+    public static final int JOKERI = 4;
     
+    /**
+     * Merkkijonoja sisältävä lista mahdollisista maista
+     */
     public static final String[] MAAT = {"Pata", "Risti", "Ruutu", "Hertta", ""};
-    public static final String[] ARVOT = {"-", "-", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "Jokeri"};
+    
+    /**
+     * Merkkijonoja sisältävä lista mahdollisista arvoista
+     */
+    public static final String[] ARVOT = {"-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "Jokeri"};
    
     
     public Kortti(int arvo, int maa) {
@@ -25,6 +48,11 @@ public class Kortti implements Comparable<Kortti>{
         return maa;
     }
     
+    /**
+     * Metodi palauttaa maan merkkijonona
+     * 
+     * @return maa
+     */
     public String getMaaMerkkijonona() {
         return MAAT[maa];
     }
@@ -34,10 +62,18 @@ public class Kortti implements Comparable<Kortti>{
 
     }
     
+    /**
+     * Metodi kääntää kortin oikeinpäin
+     */
     public void kaannaKortti() {
         kaannetty = true;
     }
     
+    /**
+     * Metodi kertoo onko kortti käännetty
+     * 
+     * @return true, jos kortti on käännetty, muuten false
+     */
     public boolean onkoKaannetty() {
         return kaannetty;
     }
@@ -52,9 +88,29 @@ public class Kortti implements Comparable<Kortti>{
 
     @Override
     public int compareTo(Kortti verrattava) {
-        if (arvo == verrattava.getArvo()) {
-            return maa - verrattava.getMaa();
+        if(kaannetty) {
+            if (arvo == verrattava.getArvo()) {
+                return maa - verrattava.getMaa();
+            }
+            return arvo - verrattava.getArvo(); 
         }
-        return arvo - verrattava.getArvo();
+        return 1;
     }
- }
+
+    @Override
+    public boolean equals(Object olio) {
+        if (olio == null) {
+            return false;
+        }
+        if (getClass() != olio.getClass()) {
+            return false;
+        }
+        final Kortti verrattava = (Kortti) olio;
+        if (this.arvo != verrattava.arvo) {
+            return false;
+        }
+        return this.maa == verrattava.maa;
+    }
+    
+    
+}

@@ -2,10 +2,13 @@ package piilopokeri.domain;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import piilopokeri.domain.Kortti;
 
+/** @author Wilzon */
 
 public class Korttijoukko {
+    /**
+     * Lista korteista
+     */
     private final ArrayList<Kortti> kortit;
 
     public Korttijoukko() {
@@ -16,12 +19,22 @@ public class Korttijoukko {
         return kortit;
     }
     
+    /**
+     * Metodi sekoittaa kortit joukossa
+     */
     public void sekoitaKortit() {
         if(kortit.size() > 1) {
             Collections.shuffle(kortit);
         }
     }
     
+    /**
+     * Metodi poistaa kortin korttijoukosta
+     * 
+     * @param korttiMerkkijonona Poistettavan kortin merkkijono
+     * 
+     * @return true/false
+     */
     public boolean poistaKortti(String korttiMerkkijonona) {
         korttiMerkkijonona = korttiMerkkijonona.trim();
         
@@ -37,12 +50,20 @@ public class Korttijoukko {
         return false;
     }
     
+    /**
+     * Metodi järjestää kortit joukossa
+     */
     public void jarjestaKortit() {
         if(kortit.size() > 1) {
             Collections.sort(kortit);
         }
     }
     
+    /**
+     * Metodi palauttaa listan korttijoukon arvoista
+     * 
+     * @return Lista arvoista
+     */
     public ArrayList<Integer> getArvot() {
         ArrayList<Integer> arvot = new ArrayList();
         
@@ -52,11 +73,16 @@ public class Korttijoukko {
         return arvot;
     }
     
-    public ArrayList<String> getMaat() {
-        ArrayList<String> maat = new ArrayList();
+    /**
+     * Metodi palauttaa listan korttijoukon maista
+     * 
+     * @return Lista maista
+     */
+    public ArrayList<Integer> getMaat() {
+        ArrayList<Integer> maat = new ArrayList();
         
         for(Kortti kortti : kortit) {
-            maat.add(kortti.getMaaMerkkijonona());
+            maat.add(kortti.getMaa());
         
         }
         return maat;

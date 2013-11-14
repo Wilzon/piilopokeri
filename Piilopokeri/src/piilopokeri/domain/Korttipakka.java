@@ -2,6 +2,7 @@ package piilopokeri.domain;
 
 import java.util.ArrayList;
 
+/** @author Wilzon */
 
 public class Korttipakka extends Korttijoukko{
     private final ArrayList<Kortti> kortit;
@@ -19,10 +20,18 @@ public class Korttipakka extends Korttijoukko{
         kortit.add(new Kortti(15, Kortti.JOKERI));
     }
     
+    /**
+     * Metodi palauttaa pakan päällimmäisen kortin
+     * 
+     * @return päällimmäinen kortti
+     */
     public Kortti getPaallimmainen() {
         return kortit.remove(0);
     }
     
+    /**
+     * Metodi poistaa jokerit pakasta
+     */
     public void poistaJokerit() {
         if(kortit.size() == 54) {
             kortit.remove(53);

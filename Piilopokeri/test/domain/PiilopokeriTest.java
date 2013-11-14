@@ -95,8 +95,13 @@ public class PiilopokeriTest {
     }
     
     @Test
-    public void voikoSuljetunPakanKanssaVaihtaaKortin() {
-        assertTrue
+    public void suljetunPakanKanssaVoiVaihtaaKortin() {
+   
+    }
+    
+    @Test
+    public void avopakanKanssaVoiVaihtaaKortin() {
+        
     }
 
 }

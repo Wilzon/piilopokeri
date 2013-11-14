@@ -194,7 +194,7 @@ public class Main {
         
         kasi3.jarjestaKortit();
         
-        pokeri.tulostaPelikentta(kadet);
+//        pokeri.tulostaPelikentta(kadet);
 //        System.out.println("------");
 //        
 //        System.out.println(pokeri.onkoSuora(kasi));

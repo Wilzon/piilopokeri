@@ -217,12 +217,12 @@ public class Main {
     }
     public static void printtaaTulos(int arvo) {
         if(arvo == 1) {
-                System.out.println("Hand one won!");
+                System.out.println("Käsi yksi voitti!");
             }
             else if(arvo == -1) {
-                System.out.println("Hand two won!");
+                System.out.println("Käsi kaksi voitti!");
             }else{
-                System.out.println("TIE!");
+                System.out.println("Tasapeli!");
             }
     }
 }

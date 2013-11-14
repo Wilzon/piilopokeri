@@ -94,6 +94,9 @@ public class PiilopokeriTest {
         assertTrue(MaatJaArvot.vaaratMaatViesti(arvottuKasi5), MaatJaArvot.onkoOikeatMaat(arvottuKasi5));
     }
     
-
+    @Test
+    public void voikoSuljetunPakanKanssaVaihtaaKortin() {
+        assertTrue
+    }
 
 }

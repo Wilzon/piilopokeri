@@ -1,8 +1,10 @@
 package piilopokeri.domain;
 
+import java.util.Random;
+
 /** @author Wilzon */
 
-public class Kortti implements Comparable<Kortti>{
+public class Kortti {
     /**
      * Kortin arvo
      */
@@ -44,6 +46,10 @@ public class Kortti implements Comparable<Kortti>{
         kaannetty = false;
     }
 
+    public Kortti(int arvo, int maa, boolean kaannetty) {
+        this(arvo, maa);
+        this.kaannetty = kaannetty;
+    }
     public int getMaa() {
         return maa;
     }
@@ -87,17 +93,6 @@ public class Kortti implements Comparable<Kortti>{
     }
 
     @Override
-    public int compareTo(Kortti verrattava) {
-        if(kaannetty) {
-            if (arvo == verrattava.getArvo()) {
-                return maa - verrattava.getMaa();
-            }
-            return arvo - verrattava.getArvo(); 
-        }
-        return 1;
-    }
-
-    @Override
     public boolean equals(Object olio) {
         if (olio == null) {
             return false;
@@ -110,6 +105,17 @@ public class Kortti implements Comparable<Kortti>{
             return false;
         }
         return this.maa == verrattava.maa;
+    }
+    
+    /**
+     * Metodi kopioi kortin
+     * 
+     * @param kortti Kopioitava kortti
+     * 
+     * @return kopioitu kortti
+     */
+    public Kortti kopioiKortti() {
+        return new Kortti(arvo, maa);
     }
     
     

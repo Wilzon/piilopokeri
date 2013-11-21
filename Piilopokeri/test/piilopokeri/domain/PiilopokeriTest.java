@@ -1,25 +1,30 @@
-package domain;
+package piilopokeri.domain;
 
+import piilopokeri.apu.MaatJaArvot;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import piilopokeri.domain.Kasi;
-import piilopokeri.Piilopokeri;
+import piilopokeri.domain.Piilopokeri;
+import piilopokeri.domain.Kortti;
 
 
 public class PiilopokeriTest {
     private Piilopokeri pokeri;
+    
     private Kasi arvottuKasi;
     private Kasi arvottuKasi2;
     private Kasi arvottuKasi3;
     private Kasi arvottuKasi4;
     private Kasi arvottuKasi5;
+    
     private Kasi negatiivinenKasi;
+    
     
 
     @Before
-    public void setuUp() {
+    public void setUp() {
         pokeri = new Piilopokeri();
 
         arvottuKasi = pokeri.getUudetKortit(5);
@@ -27,8 +32,9 @@ public class PiilopokeriTest {
         arvottuKasi3 = pokeri.getUudetKortit(5);
         arvottuKasi4 = pokeri.getUudetKortit(5);
         arvottuKasi5 = pokeri.getUudetKortit(5);
-
+        
         negatiivinenKasi = pokeri.getUudetKortit(-1);
+        
     }
 
     @Test
@@ -96,12 +102,23 @@ public class PiilopokeriTest {
     
     @Test
     public void suljetunPakanKanssaVoiVaihtaaKortin() {
-   
+        Kortti pakanPaallimmainen = pokeri.getPakanPaallimmainen();
+        
+        pokeri.vaihdaPakanKanssa(arvottuKasi, 0);
+        
+        Kortti ensimmainenKadessa = arvottuKasi.getKortit().get(0);
+        
+        assertEquals(pakanPaallimmainen, ensimmainenKadessa);
     }
     
     @Test
     public void avopakanKanssaVoiVaihtaaKortin() {
+        Kortti avopakanPaallimmainen = pokeri.getAvopakanPaallimmainen();
         
+        pokeri.vaihdaAvoPakanKanssa(arvottuKasi2, 0);
+        
+        Kortti ensimmainenKadessa = arvottuKasi2.getKortit().get(0);
+        
+        assertEquals(avopakanPaallimmainen, ensimmainenKadessa);
     }
-
 }

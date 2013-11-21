@@ -1,5 +1,6 @@
 package piilopokeri.domain;
 
+import piilopokeri.jarjestajat.KorttienJarjestaja;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -55,7 +56,7 @@ public class Korttijoukko {
      */
     public void jarjestaKortit() {
         if(kortit.size() > 1) {
-            Collections.sort(kortit);
+            Collections.sort(kortit, new KorttienJarjestaja());
         }
     }
     

@@ -1,10 +1,8 @@
-package domain;
+package piilopokeri.domain;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
-import piilopokeri.domain.Kasi;
-import piilopokeri.domain.Kortti;
 
 
 public class KasiTest {
@@ -16,22 +14,18 @@ public class KasiTest {
         testikasi = new Kasi();
         testikasi2 = new Kasi();
 
-        testikasi.lisaaKortti(new Kortti(8, Kortti.HERTTA));
-        testikasi.lisaaKortti(new Kortti(12, Kortti.RISTI));
-        testikasi.lisaaKortti(new Kortti(3, Kortti.RUUTU));
-        testikasi.lisaaKortti(new Kortti(2, Kortti.RISTI));
-        testikasi.lisaaKortti(new Kortti(4, Kortti.PATA));
+        testikasi.lisaaKortti(new Kortti(8, Kortti.HERTTA, true));
+        testikasi.lisaaKortti(new Kortti(12, Kortti.RISTI, true));
+        testikasi.lisaaKortti(new Kortti(3, Kortti.RUUTU, true));
+        testikasi.lisaaKortti(new Kortti(2, Kortti.RISTI, true));
+        testikasi.lisaaKortti(new Kortti(4, Kortti.PATA, true));
 
-        testikasi2.lisaaKortti(new Kortti(7, Kortti.PATA));
-        testikasi2.lisaaKortti(new Kortti(4, Kortti.PATA));
-        testikasi2.lisaaKortti(new Kortti(4, Kortti.HERTTA));
-        testikasi2.lisaaKortti(new Kortti(12, Kortti.RUUTU));
-        testikasi2.lisaaKortti(new Kortti(10, Kortti.RUUTU));
+        testikasi2.lisaaKortti(new Kortti(7, Kortti.PATA, true));
+        testikasi2.lisaaKortti(new Kortti(4, Kortti.PATA, true));
+        testikasi2.lisaaKortti(new Kortti(4, Kortti.HERTTA, true));
+        testikasi2.lisaaKortti(new Kortti(12, Kortti.RUUTU, true));
+        testikasi2.lisaaKortti(new Kortti(10, Kortti.RUUTU, true));
         
-        for(int i = 0; i < 5; i++) {
-            testikasi.getKortit().get(i).kaannaKortti();
-            testikasi2.getKortit().get(i).kaannaKortti();
-        }
     }
     
     @Test
@@ -60,6 +54,11 @@ public class KasiTest {
         testikasi2.kaannaJarjestys();
         
         assertEquals("Ruutu Q, Ruutu 10, Pata 7, Hertta 4, Pata 4", testikasi2.toString());
+    }
+    
+    @Test
+    public void kadenJarjestysKaantyyOikeinMyosJosKorttejaOnVaarinpain() {
+        
     }
     
     @Test

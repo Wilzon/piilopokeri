@@ -1,7 +1,9 @@
-package domain;
+package piilopokeri.apu;
 
 import piilopokeri.domain.Korttijoukko;
 import piilopokeri.domain.Kortti;
+import piilopokeri.domain.Kortti;
+import piilopokeri.domain.Korttijoukko;
 
 
 public class MaatJaArvot {

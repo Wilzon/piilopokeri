@@ -400,6 +400,7 @@ public class Kasi extends Korttijoukko{
             maara = 2;
         }
 
+        // Entry<Integer, Integer> entry : map.entrySet()
         for(Integer avain : kadenKartta.keySet()) {
             int avaimenArvo = kadenKartta.get(avain);
             

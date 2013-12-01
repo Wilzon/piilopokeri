@@ -1,16 +1,14 @@
 
 package piilopokeri.domain;
 
+import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
-import piilopokeri.domain.Piilopokeri;
-import piilopokeri.domain.Kasi;
-import piilopokeri.domain.Kortti;
-
 
 public class Piilopokeri2Test {
     Piilopokeri pokeri;
+    ArrayList<Kasi> kadet;
     
     Kasi huonoViitosKasi;
     Kasi hyvaViitosKasi;
@@ -76,6 +74,27 @@ public class Piilopokeri2Test {
         
         huonoEiMitaanKasi = new Kasi();
         hyvaEiMitaanKasi = new Kasi();
+        
+        kadet.add(huonoViitosKasi);
+        kadet.add(hyvaViitosKasi);
+        kadet.add(huonoNelosKasi);
+        kadet.add(hyvaNelosKasi);
+        kadet.add(huonoKolmosKasi);
+        kadet.add(hyvaKolmosKasi);
+        kadet.add(huonoKaksiPariaKasi);
+        kadet.add(hyvaKaksiPariaKasi);
+        kadet.add(huonoPariKasi);
+        kadet.add(hyvaPariKasi);
+        kadet.add(huonoSuoraKasi);
+        kadet.add(hyvaSuoraKasi);
+        kadet.add(huonoVariKasi);
+        kadet.add(hyvaVariKasi);
+        kadet.add(huonoVarisuoraKasi);
+        kadet.add(hyvaVarisuoraKasi);
+        kadet.add(huonoTayskasiKasi);
+        kadet.add(hyvaTayskasiKasi);
+        kadet.add(huonoEiMitaanKasi);
+        kadet.add(hyvaEiMitaanKasi);
         
         Kortti pata5 = new Kortti(5, Kortti.PATA, true);
         Kortti pata6 = new Kortti(6, Kortti.PATA, true);
@@ -316,5 +335,10 @@ public class Piilopokeri2Test {
     @Test
     public void parempiVarisuoraVoittaaHuonommanVarisuoran() {
         assertEquals(1, pokeri.parempiSuoraTaiVari(hyvaVarisuoraKasi, huonoVarisuoraKasi));
+    }
+    
+    @Test
+    public void parasKasiVoittaa() {
+        assertEquals(hyvaVarisuoraKasi, pokeri.parasKasi(kadet));
     }
 }

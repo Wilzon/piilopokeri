@@ -1,12 +1,9 @@
 package piilopokeri;
 
-import java.util.ArrayList;
-import java.util.Random;
 import piilopokeri.domain.Kasi;
 import piilopokeri.domain.Kortti;
-import piilopokeri.domain.Pelaaja;
 import piilopokeri.domain.Piilopokeri;
-import piilopokeri.ui.Kayttoliittyma;
+import piilopokeri.gui.ikkunat.GraafinenKL;
 
 /** @author Wilzon */
 
@@ -321,6 +318,10 @@ public class Main {
         
         System.out.println(suoraKasi.onkoSuora());
         System.out.println(kolmosKasi.onkoKolmoset());
+        
+        GraafinenKL g = new GraafinenKL();
+        
+        g.run();
         
         
         

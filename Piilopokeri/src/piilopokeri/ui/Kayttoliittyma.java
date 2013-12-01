@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import piilopokeri.domain.Piilopokeri;
 import piilopokeri.domain.Kasi;
+import piilopokeri.domain.KasienVertailija;
 import piilopokeri.domain.Kone;
 import piilopokeri.domain.Kortti;
 import piilopokeri.domain.Pelaaja;
@@ -11,15 +12,15 @@ import piilopokeri.domain.Pelaaja;
 /** @author Wilzon */
 
 public class Kayttoliittyma {
-    Scanner lukija;
-    Piilopokeri pokeri;
-    ArrayList<Kasi> kadet;
-    ArrayList<Pelaaja> pelaajat;
-    int monesPelaaja;
-    int korttiMaara;
-    boolean lopettaaKesken;
-    Kortti pakanPaallimmainen;
-    Pelaaja pelaajaVuorossa;
+    private Scanner lukija;
+    private Piilopokeri pokeri;
+    private ArrayList<Kasi> kadet;
+    private ArrayList<Pelaaja> pelaajat;
+    private int monesPelaaja;
+    private int korttiMaara;
+    private boolean lopettaaKesken;
+    private Kortti pakanPaallimmainen;
+    private Pelaaja pelaajaVuorossa;
 
     public Kayttoliittyma() {
         
@@ -409,7 +410,7 @@ public class Kayttoliittyma {
      * kaikkien käsien arvot
      */
     public void pelinLoppuTulostus() {
-        Kasi voittajaKasi = pokeri.parasKasi(kadet);
+        Kasi voittajaKasi = KasienVertailija.parasKasi(kadet);
         Pelaaja voittaja = new Pelaaja();
         Pelaaja voittaja2 = new Pelaaja();
         
@@ -423,7 +424,7 @@ public class Kayttoliittyma {
                 
                 for(int j = i + 1; j < pelaajat.size(); j++) {
                     Pelaaja verrattavaPelaaja = pelaajat.get(j);
-                    if(pokeri.parempiKasi(voittajaKasi, verrattavaPelaaja.getKasi()) == 0) {
+                    if(KasienVertailija.parempiKasi(voittajaKasi, verrattavaPelaaja.getKasi()) == 0) {
                         voittaja2 = verrattavaPelaaja;
                         tasapeli = true;
                     }

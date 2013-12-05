@@ -2,14 +2,15 @@
 package piilopokeri.gui.kuuntelijat;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import piilopokeri.domain.Piilopokeri;
-import piilopokeri.gui.ikkunat.AsetusIkkuna;
+import piilopokeri.gui.ikkunat.IhmisPelaajienAsetusIkkuna;
+import piilopokeri.gui.ikkunat.JokerienAsetusIkkuna;
 
-public class AloitusKuuntelija implements ActionListener {
+public class AloitusKuuntelija extends Kuuntelija {
     private Piilopokeri pokeri;
-    JFrame frame;
+    private JFrame frame;
     
     public AloitusKuuntelija(Piilopokeri pokeri, JFrame frame) {
         this.pokeri = pokeri;
@@ -18,11 +19,9 @@ public class AloitusKuuntelija implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        AsetusIkkuna ai = new AsetusIkkuna(pokeri);
-        ai.run();
-        
         frame.dispose();
         
+        SwingUtilities.invokeLater(new JokerienAsetusIkkuna(pokeri));
         
     }
     

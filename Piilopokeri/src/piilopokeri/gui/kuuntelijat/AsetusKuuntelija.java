@@ -2,29 +2,28 @@
 package piilopokeri.gui.kuuntelijat;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import piilopokeri.domain.Kone;
 import piilopokeri.domain.Pelaaja;
 import piilopokeri.domain.Piilopokeri;
-import piilopokeri.gui.ikkunat.NimenAsetusIkkuna;
+import piilopokeri.gui.ikkunat.NimienAsetusIkkuna;
 import piilopokeri.gui.ikkunat.PeliIkkuna;
 
-public class AsetusKuuntelija implements ActionListener {
+public class AsetusKuuntelija extends Kuuntelija {
     private Piilopokeri pokeri;
     private JComboBox jokerit;
     private JComboBox ihmisPelaajat;
     private JComboBox konePelaajat;
     private JComboBox kortit;
     private JFrame frame;
-    private NimenAsetusIkkuna nimiIkkuna;
+    private NimienAsetusIkkuna nimiIkkuna;
 
     public AsetusKuuntelija(Piilopokeri pokeri, JFrame frame, ArrayList<JComboBox> laatikot) {
         this.pokeri = pokeri;
         this.frame = frame;
-        this.nimiIkkuna = new NimenAsetusIkkuna(pokeri);
+        this.nimiIkkuna = new NimienAsetusIkkuna(pokeri);
         
         this.jokerit = laatikot.get(0);
         this.ihmisPelaajat = laatikot.get(1);

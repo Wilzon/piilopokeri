@@ -3,17 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/otwi/NetbeansProjects/piilopokeri%20LAPTOP/Piilopokeri/src/piilopokeri/ui/LopetusKuuntelija.java</file>
-            <file>file:/home/otwi/NetbeansProjects/piilopokeri%20LAPTOP/Piilopokeri/src/piilopokeri/ui/Ikkuna.java</file>
-            <file>file:/home/otwi/NetbeansProjects/piilopokeri%20LAPTOP/Piilopokeri/src/piilopokeri/ui/NimenAsetusIkkuna.java</file>
-            <file>file:/home/otwi/NetbeansProjects/piilopokeri%20LAPTOP/Piilopokeri/src/piilopokeri/ui/AsetusKuuntelija.java</file>
-            <file>file:/home/otwi/NetbeansProjects/piilopokeri%20LAPTOP/Piilopokeri/src/piilopokeri/ui/AsetusIkkuna.java</file>
-            <file>file:/home/otwi/NetbeansProjects/piilopokeri%20LAPTOP/Piilopokeri/src/piilopokeri/ui/Kayttoliittyma.java</file>
-            <file>file:/home/otwi/NetbeansProjects/piilopokeri%20LAPTOP/Piilopokeri/src/piilopokeri/ui/GraafinenKL.java</file>
-            <file>file:/home/otwi/NetbeansProjects/piilopokeri%20LAPTOP/Piilopokeri/src/piilopokeri/ui/NimiKuuntelija.java</file>
-            <file>file:/home/otwi/NetbeansProjects/piilopokeri%20LAPTOP/Piilopokeri/src/piilopokeri/ui/ValikkoIkkuna.java</file>
-            <file>file:/home/otwi/NetbeansProjects/piilopokeri%20LAPTOP/Piilopokeri/src/piilopokeri/ui/AloitusKuuntelija.java</file>
-            <file>file:/home/otwi/NetbeansProjects/piilopokeri%20LAPTOP/Piilopokeri/src/piilopokeri/Main.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/Piilopokeri.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/Main.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/Kasi.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/ui/Kayttoliittyma.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/test/piilopokeri/domain/KasiTest.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/Kortti.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/Kone.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/Pelaaja.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/Korttijoukko.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/test/piilopokeri/domain/PelaajaTest.java</file>
         </group>
     </open-files>
 </project-private>

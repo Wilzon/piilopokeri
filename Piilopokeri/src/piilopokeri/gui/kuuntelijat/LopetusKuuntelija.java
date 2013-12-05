@@ -2,9 +2,8 @@
 package piilopokeri.gui.kuuntelijat;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class LopetusKuuntelija implements ActionListener{
+public class LopetusKuuntelija extends Kuuntelija {
 
     @Override
     public void actionPerformed(ActionEvent ae) {

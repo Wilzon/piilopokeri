@@ -23,7 +23,6 @@ public class AsetusIkkuna extends Ikkuna {
         JPanel p = new JPanel();
         
         p.setLayout(new GridLayout(0, 2));
-//        Integer[] numerot = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         String[] kumpi = {"kyllä", "ei"};
         ArrayList<JComboBox> laatikot = new ArrayList();
         
@@ -64,13 +63,6 @@ public class AsetusIkkuna extends Ikkuna {
         
     }
     
-    public Object[] numeroLista(int pienin, int suurin) {
-        ArrayList<Integer> numerot = new ArrayList();
-        
-        for(int i = pienin; i <= suurin; i++) {
-            numerot.add(i);
-        }
-        return numerot.toArray();
-    }
+    
     
 }

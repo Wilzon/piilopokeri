@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-public class Piilopokeri2Test {
+public class KasienVertailijaTest {
     Piilopokeri pokeri;
     ArrayList<Kasi> kadet;
     
@@ -244,101 +244,101 @@ public class Piilopokeri2Test {
 
     @Test
     public void viitosetVoittaaVarisuoran() {
-        assertEquals(1, pokeri.parempiKasi(huonoViitosKasi, huonoVarisuoraKasi));
+        assertEquals(1, KasienVertailija.parempiKasi(huonoViitosKasi, huonoVarisuoraKasi));
     }
     
     @Test
     public void varisuoraVoittaaNeloset() {
-        assertEquals(1, pokeri.parempiKasi(huonoVarisuoraKasi, huonoNelosKasi));
+        assertEquals(1, KasienVertailija.parempiKasi(huonoVarisuoraKasi, huonoNelosKasi));
     }
     
     @Test
     public void nelosetVoittavatTayskaden() {
-        assertEquals(1, pokeri.parempiKasi(huonoNelosKasi, huonoTayskasiKasi));
+        assertEquals(1, KasienVertailija.parempiKasi(huonoNelosKasi, huonoTayskasiKasi));
     }
     
     @Test
     public void tayskasiVoittaaVarin() {
-        assertEquals(1, pokeri.parempiKasi(huonoTayskasiKasi, huonoVariKasi));
+        assertEquals(1, KasienVertailija.parempiKasi(huonoTayskasiKasi, huonoVariKasi));
     }
     
     @Test
     public void variVoittaaSuoran() {
-        assertEquals(1, pokeri.parempiKasi(huonoVariKasi, huonoSuoraKasi));
+        assertEquals(1, KasienVertailija.parempiKasi(huonoVariKasi, huonoSuoraKasi));
     }
     
     @Test
     public void suoraVoittaaKolmoset() {
-        assertEquals(1, pokeri.parempiKasi(huonoSuoraKasi, huonoKolmosKasi));
+        assertEquals(1, KasienVertailija.parempiKasi(huonoSuoraKasi, huonoKolmosKasi));
     }
     
     @Test
     public void kolmosetVoittaaKaksiParia() {
-        assertEquals(1, pokeri.parempiKasi(huonoKolmosKasi, huonoKaksiPariaKasi));
+        assertEquals(1, KasienVertailija.parempiKasi(huonoKolmosKasi, huonoKaksiPariaKasi));
     }
     
     @Test
     public void kaksiPariaVoittaaParin() {
-        assertEquals(1, pokeri.parempiKasi(huonoKaksiPariaKasi, huonoPariKasi));
+        assertEquals(1, KasienVertailija.parempiKasi(huonoKaksiPariaKasi, huonoPariKasi));
     }
     
     @Test
     public void pariVoittaaEiMitaanKaden() {
-        assertEquals(1, pokeri.parempiKasi(huonoPariKasi, hyvaEiMitaanKasi));
+        assertEquals(1, KasienVertailija.parempiKasi(huonoPariKasi, hyvaEiMitaanKasi));
     }
     
     @Test
     public void suurempiKorttiVoittaa() {
-        assertEquals(1, pokeri.parempiKasi(hyvaEiMitaanKasi, huonoEiMitaanKasi));
+        assertEquals(1, KasienVertailija.parempiKasi(hyvaEiMitaanKasi, huonoEiMitaanKasi));
     }
     
     @Test
     public void pienempiKorttiHaviaa() {
-        assertEquals(-1, pokeri.parempiKasi(huonoEiMitaanKasi, hyvaEiMitaanKasi));
+        assertEquals(-1, KasienVertailija.parempiKasi(huonoEiMitaanKasi, hyvaEiMitaanKasi));
     }
     
     @Test
     public void parempiPariVoittaaHuonommanParin() {
-        assertEquals(1, pokeri.parempiKasi(hyvaPariKasi, huonoPariKasi));
+        assertEquals(1, KasienVertailija.parempiKasi(hyvaPariKasi, huonoPariKasi));
     }
     
     @Test
     public void paremmatKolmosetVoittaaHuonommatKolmoset() {
-        assertEquals(1, pokeri.parempiMontaSamaa(hyvaKolmosKasi, huonoKolmosKasi, 3));
+        assertEquals(1, KasienVertailija.parempiMontaSamaa(hyvaKolmosKasi, huonoKolmosKasi, 3));
     }
     
     @Test
     public void paremmatNelosetVoittaaHuonommatNeloset() {
-        assertEquals(1, pokeri.parempiMontaSamaa(hyvaNelosKasi, huonoNelosKasi, 4));
+        assertEquals(1, KasienVertailija.parempiMontaSamaa(hyvaNelosKasi, huonoNelosKasi, 4));
     }
     
     @Test
     public void paremmatVitosetVoittaaHuonommatVitoset() {
-        assertEquals(1, pokeri.parempiMontaSamaa(hyvaViitosKasi, huonoViitosKasi, 5));
+        assertEquals(1, KasienVertailija.parempiMontaSamaa(hyvaViitosKasi, huonoViitosKasi, 5));
     }
     
     @Test
     public void parempiSuoraVoittaaHuonommanSuoran() {
-        assertEquals(1, pokeri.parempiSuoraTaiVari(hyvaSuoraKasi, huonoSuoraKasi));
+        assertEquals(1, KasienVertailija.parempiSuoraTaiVari(hyvaSuoraKasi, huonoSuoraKasi));
     }
     
     @Test
     public void parempiVariVoittaaHuonommanVarin() {
-        assertEquals(1, pokeri.parempiSuoraTaiVari(hyvaVariKasi, huonoVariKasi));
+        assertEquals(1, KasienVertailija.parempiSuoraTaiVari(hyvaVariKasi, huonoVariKasi));
     }
     
     @Test
     public void parempiTayskasiVoittaaHuonommanTayskaden() {
-        assertEquals(1, pokeri.parempiTayskasi(hyvaTayskasiKasi, huonoTayskasiKasi));
+        assertEquals(1, KasienVertailija.parempiTayskasi(hyvaTayskasiKasi, huonoTayskasiKasi));
     }
     
     @Test
     public void parempiVarisuoraVoittaaHuonommanVarisuoran() {
-        assertEquals(1, pokeri.parempiSuoraTaiVari(hyvaVarisuoraKasi, huonoVarisuoraKasi));
+        assertEquals(1, KasienVertailija.parempiSuoraTaiVari(hyvaVarisuoraKasi, huonoVarisuoraKasi));
     }
     
     @Test
     public void parasKasiVoittaa() {
-        assertEquals(hyvaVarisuoraKasi, pokeri.parasKasi(kadet));
+        assertEquals(hyvaVarisuoraKasi, KasienVertailija.parasKasi(kadet));
     }
 }

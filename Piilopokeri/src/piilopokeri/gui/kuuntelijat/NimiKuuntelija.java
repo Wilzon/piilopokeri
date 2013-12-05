@@ -2,15 +2,14 @@
 package piilopokeri.gui.kuuntelijat;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import piilopokeri.domain.Pelaaja;
 import piilopokeri.domain.Piilopokeri;
-import piilopokeri.gui.ikkunat.PeliIkkuna;
+import piilopokeri.gui.ikkunat.KonePelaajienAsetusIkkuna;
 
-public class NimiKuuntelija implements ActionListener{
+public class NimiKuuntelija extends Kuuntelija {
     private Piilopokeri pokeri;
     private ArrayList<JTextField> nimet;
     private JFrame frame;
@@ -31,12 +30,11 @@ public class NimiKuuntelija implements ActionListener{
             JTextField nimi = nimet.get(i);
             
             pelaajat.get(i).setNimi(nimi.getText());
-            nimi.setText("");
         }
         frame.dispose();
         
-        PeliIkkuna pi = new PeliIkkuna(pokeri);
-        pi.run();
+        KonePelaajienAsetusIkkuna koneIkkuna = new KonePelaajienAsetusIkkuna(pokeri);
+        koneIkkuna.run();
     }
     
 }

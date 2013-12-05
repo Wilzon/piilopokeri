@@ -24,18 +24,22 @@ public class Piilopokeri {
     /**
      * Pakan päällimmäinen kortti
      */
-    private Kortti pakanPaallimmainen;
+    public Kortti pakanPaallimmainen;
     
     /**
      * Lista pelaajista
      */
-    ArrayList<Pelaaja> pelaajat;
+    private ArrayList<Pelaaja> pelaajat;
     
     /**
      * Lista pelaajien käsistä
      */
-    ArrayList<Kasi> kadet;
+    private ArrayList<Kasi> kadet;
     
+    /**
+     * Totuusarvo, onko peli loppunut
+     */
+    private boolean onkoLoppu;
     /**
      * Metodi nostaa pakasta kortteja käteen
      * 
@@ -43,11 +47,12 @@ public class Piilopokeri {
      * 
      * @return uusi kasi
      */
-    
     public Piilopokeri() {
         pakka = new Korttipakka();
         pelaajat = new ArrayList();
         kadet = new ArrayList();
+        
+        onkoLoppu = false;
         
         pakka.sekoitaKortit();
         avoPakanKortti = pakka.getPaallimmainen();
@@ -282,11 +287,13 @@ public class Piilopokeri {
         return pakanPaallimmainen;
     }
     
-    public void vaihdaKoneenKortti(Kasi kasi, Kortti kortti) {
+    public String vaihdaKoneenKortti(Kasi kasi, Kortti kortti) {
         ArrayList<Kortti> kortit = kasi.getKortit();
+        String vanhaKorttiString = "";
         
         for(int i = 0; i < kortit.size(); i++) {
             if(!kortit.get(i).onkoKaannetty()) {
+                vanhaKorttiString = kortit.get(i).toString();
                 
                 avoPakanKortti = kortit.get(i);
                 
@@ -298,15 +305,18 @@ public class Piilopokeri {
                 break;
             }
         }
+        return vanhaKorttiString;
     }
     
     public void koneVaihtaaAvopakanKanssa(Kasi kasi) {
         vaihdaKoneenKortti(kasi, avoPakanKortti);
     }
     
-    public void koneVaihtaaSuljetunPakanKanssa(Kasi kasi) {
-        vaihdaKoneenKortti(kasi, pakanPaallimmainen);
+    public String koneVaihtaaSuljetunPakanKanssa(Kasi kasi) {
+        String vanhaKorttiString = vaihdaKoneenKortti(kasi, pakanPaallimmainen);
         getPakanPaallimmainen();
+        
+        return vanhaKorttiString;
     }
     
     public boolean koneVaihtaaAvopakanKanssaJosKannattavaa(Kasi kasi) {
@@ -331,10 +341,13 @@ public class Piilopokeri {
         }
     }
     
-    public void kaannaKoneenKortti(Kasi kasi) {
+    public String kaannaKoneenKortti(Kasi kasi) {
+        String korttiString = "";
         for(Kortti kortti : kasi.getKortit()) {
             if(!kortti.onkoKaannetty()) {
                 kortti.kaannaKortti();
+                
+                korttiString = kortti.toString();
                 
                 avoPakanKortti = pakanPaallimmainen;
                 getPakanPaallimmainen();
@@ -342,6 +355,7 @@ public class Piilopokeri {
                 break;
             }
         }
+        return korttiString;
     }
     
     public void koneKayttaaVuoron(Kasi kasi) {
@@ -353,7 +367,20 @@ public class Piilopokeri {
     
     public void lisaaKonepelaaja(Kone kone) {
         Pelaaja konePelaaja = kone;
+        
+        arvoUusiNimiKoneelle(kone);
+        
         pelaajat.add(konePelaaja);
+    }
+    
+    public void arvoUusiNimiKoneelle(Kone kone) {
+        for(Pelaaja pelaaja : pelaajat) {
+            if(pelaaja.getNimi().equals(kone.getNimi()) && pelaaja != kone) {
+                kone.setUusiNimi();
+                
+                arvoUusiNimiKoneelle(kone);
+            }
+        }
     }
     
     public boolean kaannaKortti(Kasi kasi, int mones) {
@@ -371,5 +398,14 @@ public class Piilopokeri {
             }
         }
         return false;
-    }    
+    }   
+    
+    public boolean onkoPeliLoppunut() {
+        for(Kortti kortti : pelaajat.get(pelaajat.size() - 1).getKasi().getKortit()) {
+            if(!kortti.onkoKaannetty()) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import piilopokeri.domain.Kortti;
 import piilopokeri.domain.Piilopokeri;
 import piilopokeri.domain.Vuoro;
+import piilopokeri.gui.KorttienMaalaaja;
 import piilopokeri.gui.NappienPiilottaja;
 
 public class KortinKaantoKuuntelija extends Kuuntelija {
@@ -31,16 +32,18 @@ public class KortinKaantoKuuntelija extends Kuuntelija {
     @Override
     public void actionPerformed(ActionEvent ae) {
     ArrayList<JButton> pelaajanNapit = korttiNapit.get(vuoro.getPelaajanNimi());
-    ArrayList<Kortti> kortit = vuoro.getKortit();
-    String korttiString;
 
         for(JButton nappi : pelaajanNapit) {
             if(nappi.getName() == null) {
                 avoPakkaNappi.setText(pokeri.pakanPaallimmainen.toString());
                 
-                korttiString = pokeri.kaannaKoneenKortti(vuoro.getKasi());
+                pokeri.getPakanPaallimmainen();
                 
-                nappi.setText(korttiString);
+                Kortti kortti = pokeri.kaannaKoneenKortti(vuoro.getKasi());
+                
+                nappi.setText(kortti.toString());
+                
+                KorttienMaalaaja.maalaaNappi(pokeri, kortti, nappi);
                 
                 nappi.setName("painettu");
                 nappi.doClick();
@@ -52,9 +55,9 @@ public class KortinKaantoKuuntelija extends Kuuntelija {
         
         NappienPiilottaja.piilotaMuidenPelaajienNapit(pokeri, vuoro, korttiNapit);
         
-        luoJaPainaaKoneNappia(pokeri, frame, vuoro, avoPakkaNappi, korttiNapit);
-        
         lopetaPeliLopussa(pokeri, frame);
+        
+        luoJaPainaaKoneNappia(pokeri, frame, vuoro, avoPakkaNappi, korttiNapit);
         
         if(!frame.getTitle().equals("Piilopokeri")) {
             frame.dispose();

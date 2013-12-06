@@ -18,6 +18,8 @@ public class KorttipakkaTest {
     @Before
     public void setUp() {
         pakka = new Korttipakka();
+        
+        pakka.kaannaKaikkiKortit();
     }
     
     @Test

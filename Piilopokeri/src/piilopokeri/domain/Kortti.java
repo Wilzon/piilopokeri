@@ -1,7 +1,5 @@
 package piilopokeri.domain;
 
-import java.util.Random;
-
 /** @author Wilzon */
 
 public class Kortti {
@@ -32,7 +30,7 @@ public class Kortti {
     /**
      * Merkkijonoja sisältävä lista mahdollisista maista
      */
-    public static final String[] MAAT = {"Pata", "Risti", "Ruutu", "Hertta", ""};
+    public static final String[] MAAT = {"♠", "♣", "♦", "♥", ""};
     
     /**
      * Merkkijonoja sisältävä lista mahdollisista arvoista
@@ -86,10 +84,13 @@ public class Kortti {
 
     @Override
     public String toString() {
-        if(arvo == 15) {
-            return ARVOT[arvo];
+        if(onkoKaannetty()) {
+            if(arvo == 15) {
+                return ARVOT[arvo];
+            }
+            return ARVOT[arvo] + " " + MAAT[maa] ;
         }
-        return MAAT[maa] + " " + ARVOT[arvo];
+        return "[X]";
     }
 
     @Override

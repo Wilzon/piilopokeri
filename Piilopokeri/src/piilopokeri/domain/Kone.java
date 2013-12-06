@@ -28,87 +28,87 @@ public class Kone extends Pelaaja{
         arvoNimi();
     }
     
-    public void arvoNimi() {
+    public final void arvoNimi() {
         int luku = random.nextInt(20);
         
         if(luku == 0) {
-            super.nimi = "PeteBOT";
+            setNimi("PeteBOT");
             
         }
         if(luku == 1) {
-            super.nimi = "TapaniBOT";
+            setNimi("TapaniBOT");
             
         }
         if(luku == 2) {
-            super.nimi = "SeppoBOT";
+            setNimi("SeppoBOT");
             
         }
         if(luku == 3) {
-            super.nimi = "MattiBOT";
+            setNimi("MattiBOT");
             
         }
         if(luku == 4) {
-            super.nimi = "AhtiBOT";
+            setNimi("AhtiBOT");
             
         }
         if(luku == 5) {
-            super.nimi = "LauraBOT";
+            setNimi("LauraBOT");
             
         }
         if(luku == 6) {
-            super.nimi = "SaraBOT";
+            setNimi("SaraBOT");
             
         }
         if(luku == 7) {
-            super.nimi = "EmmaBOT";
+            setNimi("EmmaBOT");
             
         }
         if(luku == 8) {
-            super.nimi = "IdaBOT";
+            setNimi("IdaBOT");
             
         }
         if(luku == 9) {
-            super.nimi = "MariaBOT";
+            setNimi("MariaBOT");
             
         }
         if(luku == 10) {
-            super.nimi = "HeikkiBOT";
+            setNimi("HeikkiBOT");
             
         }
         if(luku == 11) {
-            super.nimi = "HarriBOT";
+            setNimi("HarriBOT");
             
         }
         if(luku == 12) {
-            super.nimi = "EskoBOT";
+            setNimi("EskoBOT");
             
         }
         if(luku == 13) {
-            super.nimi = "OskariBOT";
+            setNimi("OskariBOT");
             
         }
         if(luku == 14) {
-            super.nimi = "SakariBOT";
+            setNimi("SakariBOT");
             
         }
         if(luku == 15) {
-            super.nimi = "VenlaBOT";
+            setNimi("VenlaBOT");
             
         }
         if(luku == 16) {
-            super.nimi = "EllaBOT";
+            setNimi("EllaBOT");
             
         }
         if(luku == 17) {
-            super.nimi = "SofiaBOT";
+            setNimi("SofiaBOT");
             
         }
         if(luku == 18) {
-            super.nimi = "AnniBOT";
+            setNimi("AnniBOT");
             
         }
         if(luku == 19) {
-            super.nimi = "HelmiBOT";
+            setNimi("HelmiBOT");
             
         }
         

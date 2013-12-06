@@ -28,6 +28,12 @@ public class Korttijoukko {
             Collections.shuffle(kortit);
         }
     }
+
+    public void kaannaKaikkiKortit() {
+        for(Kortti kortti : kortit) {
+            kortti.kaannaKortti();
+        }
+    }
     
     /**
      * Metodi poistaa kortin korttijoukosta
@@ -89,6 +95,16 @@ public class Korttijoukko {
         return maat;
     } 
     
+    public ArrayList<String> getMaatMerkkijonona() {
+        ArrayList<String> maat = new ArrayList();
+        
+        for(Kortti kortti : kortit) {
+            maat.add(kortti.getMaaMerkkijonona());
+        
+        }
+        return maat;
+    } 
+    
     @Override
     public String toString() {
         String merkkijono = "";
@@ -102,4 +118,5 @@ public class Korttijoukko {
         
         return merkkijono;
     }
+    
 }

@@ -1,7 +1,5 @@
 package piilopokeri.apu;
 
-import piilopokeri.domain.Korttijoukko;
-import piilopokeri.domain.Kortti;
 import piilopokeri.domain.Kortti;
 import piilopokeri.domain.Korttijoukko;
 
@@ -12,9 +10,9 @@ public class MaatJaArvot {
         for(Kortti testiKortti : testiJoukko.getKortit()) {
 
             String merkkijono = testiKortti.toString();
-
-            if (!merkkijono.contains("Hertta") && !merkkijono.contains("Ruutu") && 
-                    !merkkijono.contains("Risti") && !merkkijono.contains("Pata") &&
+            
+            if (!merkkijono.contains("♠") && !merkkijono.contains("♣") && 
+                    !merkkijono.contains("♦") && !merkkijono.contains("♥") &&
                     !merkkijono.contains("Jokeri")) {
                 
                 return false;
@@ -24,7 +22,7 @@ public class MaatJaArvot {
     }
     
     public static String vaaratMaatViesti(Korttijoukko testiJoukko) {
-        return "expected only values \"Hertta/Ruutu/Risti/Pata/Jokeri\" but found <" + testiJoukko.getMaat() + ">";
+        return "expected only values \"♥/♦/♣/♠/Jokeri\" but found <" + testiJoukko.getMaatMerkkijonona() + ">";
     }
     
     public static boolean onkoOikeatArvot(Korttijoukko testiJoukko) {

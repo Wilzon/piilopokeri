@@ -5,9 +5,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
-import piilopokeri.domain.Kasi;
-import piilopokeri.domain.Piilopokeri;
-import piilopokeri.domain.Kortti;
 
 
 public class PiilopokeriTest {
@@ -18,11 +15,8 @@ public class PiilopokeriTest {
     private Kasi arvottuKasi3;
     private Kasi arvottuKasi4;
     private Kasi arvottuKasi5;
-    
     private Kasi negatiivinenKasi;
     
-    
-
     @Before
     public void setUp() {
         pokeri = new Piilopokeri();
@@ -32,8 +26,14 @@ public class PiilopokeriTest {
         arvottuKasi3 = pokeri.getUudetKortit(5);
         arvottuKasi4 = pokeri.getUudetKortit(5);
         arvottuKasi5 = pokeri.getUudetKortit(5);
-        
         negatiivinenKasi = pokeri.getUudetKortit(-1);
+        
+        arvottuKasi.kaannaKaikkiKortit();
+        arvottuKasi2.kaannaKaikkiKortit();
+        arvottuKasi3.kaannaKaikkiKortit();
+        arvottuKasi4.kaannaKaikkiKortit();
+        arvottuKasi5.kaannaKaikkiKortit();
+        negatiivinenKasi.kaannaKaikkiKortit();
         
     }
 

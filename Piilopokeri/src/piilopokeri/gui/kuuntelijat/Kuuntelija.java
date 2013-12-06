@@ -45,6 +45,7 @@ public abstract class Kuuntelija implements ActionListener {
         
         if(avoPakanArvo > 9 || kasi.getArvot().contains(avoPakanArvo)) {
             avoPakkaNappi.doClick();
+            System.out.println("AVOPAKKA");
             
             return true;
             
@@ -61,9 +62,10 @@ public abstract class Kuuntelija implements ActionListener {
         
         if(pakanPaallimmaisenArvo > 9 || kasi.getArvot().contains(pakanPaallimmaisenArvo)) {
             koneNappi.addActionListener(new KortinVaihtoKuuntelija(pokeri, frame, vuoro, avoPakkaNappi, korttiNappiHajautustaulu));
-            
+            System.out.println("PAKKA");
         }else{
             koneNappi.addActionListener(new KortinKaantoKuuntelija(pokeri, frame, vuoro, avoPakkaNappi, korttiNappiHajautustaulu));
+            System.out.println("KÄÄNTÖ");
         }
         
         koneNappi.doClick();

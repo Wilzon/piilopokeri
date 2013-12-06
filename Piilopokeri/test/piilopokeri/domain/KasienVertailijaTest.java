@@ -43,6 +43,7 @@ public class KasienVertailijaTest {
     @Before
     public void setUp() {
         pokeri = new Piilopokeri();
+        kadet = new ArrayList();
         
         huonoViitosKasi = new Kasi();
         hyvaViitosKasi = new Kasi();
@@ -339,6 +340,6 @@ public class KasienVertailijaTest {
     
     @Test
     public void parasKasiVoittaa() {
-        assertEquals(hyvaVarisuoraKasi, KasienVertailija.parasKasi(kadet));
+        assertEquals(hyvaViitosKasi, KasienVertailija.parasKasi(kadet));
     }
 }

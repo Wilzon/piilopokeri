@@ -19,41 +19,64 @@ public class KasienVertailija {
     public static int parempiKasi(Kasi kasi, Kasi kasi2) {
         int kadenArvo = kasi.kadenArvo();
         int kaden2Arvo = kasi2.kadenArvo();
+        
         if (kadenArvo > kaden2Arvo) {
             return 1;
+            
         } else if (kadenArvo < kaden2Arvo) {
             return -1;
+            
         } else {
             if (kadenArvo == 9) {
                 int arvo = parempiMontaSamaa(kasi, kasi2, 5);
+                
                 return arvo;
+                
             } else if (kadenArvo == 8) {
                 int arvo = parempiSuoraTaiVari(kasi, kasi2);
+                
                 return arvo;
+                
             } else if (kadenArvo == 7) {
                 int arvo = parempiMontaSamaa(kasi, kasi2, 4);
+                
                 return arvo;
+                
             } else if (kadenArvo == 6) {
                 int arvo = parempiTayskasi(kasi, kasi2);
+                
                 return arvo;
+                
             } else if (kadenArvo == 5) {
                 int arvo = parempiSuoraTaiVari(kasi, kasi2);
+                
                 return arvo;
+                
             } else if (kadenArvo == 4) {
                 int arvo = parempiSuoraTaiVari(kasi, kasi2);
+                
                 return arvo;
+                
             } else if (kadenArvo == 3) {
                 int arvo = parempiMontaSamaa(kasi, kasi2, 3);
+                
                 return arvo;
+                
             } else if (kadenArvo == 2) {
                 int arvo = parempiKaksiParia(kasi, kasi2);
+                
                 return arvo;
+                
             } else if (kadenArvo == 1) {
                 int arvo = parempiMontaSamaa(kasi, kasi2, 2);
+                
                 return arvo;
+                
             } else {
                 int arvo = parempiSuuriKortti(kasi, kasi2);
+                
                 return arvo;
+                
             }
         }
     }
@@ -71,27 +94,36 @@ public class KasienVertailija {
     public static int parempiKaksiParia(Kasi kasi, Kasi kasi2) {
         ArrayList<Integer> ensimmaisenKadenArvot = kasi.monenSamanArvot(2);
         ArrayList<Integer> toisenKadenArvot = kasi2.monenSamanArvot(2);
+        
         int ensimmaisenSuurinArvo = Collections.max(ensimmaisenKadenArvot);
         int toisenSuurinArvo = Collections.max(toisenKadenArvot);
         int ensimmaisenPieninArvo = Collections.min(ensimmaisenKadenArvot);
         int toisenPieninArvo = Collections.min(toisenKadenArvot);
+        
         if (ensimmaisenSuurinArvo > toisenSuurinArvo) {
             return 1;
+            
         } else if (ensimmaisenSuurinArvo < toisenSuurinArvo) {
             return -1;
+            
         } else {
             if (ensimmaisenPieninArvo > toisenPieninArvo) {
                 return 1;
+                
             } else if (ensimmaisenPieninArvo < toisenPieninArvo) {
                 return -1;
+                
             } else {
                 int kadenExtraArvo = kasi.getExtraKortinArvo();
                 int kaden2ExtraArvo = kasi2.getExtraKortinArvo();
+                
                 if (kadenExtraArvo > kaden2ExtraArvo) {
                     return 1;
+                    
                 }
                 if (kadenExtraArvo < kaden2ExtraArvo) {
                     return -1;
+                    
                 }
                 return 0;
             }
@@ -111,14 +143,19 @@ public class KasienVertailija {
     public static int parempiTayskasi(Kasi kasi, Kasi kasi2) {
         ArrayList<Integer> ensimmaisenKadenArvot = kasi.monenSamanArvot(3);
         ArrayList<Integer> toisenKadenArvot = kasi2.monenSamanArvot(3);
+        
         int ensimmaisenArvo = ensimmaisenKadenArvot.get(0);
         int toisenArvo = toisenKadenArvot.get(0);
+        
         if (ensimmaisenArvo > toisenArvo) {
             return 1;
+            
         } else if (ensimmaisenArvo < toisenArvo) {
             return -1;
+            
         } else {
             return parempiKaksiParia(kasi, kasi2);
+            
         }
     }
 
@@ -133,12 +170,16 @@ public class KasienVertailija {
         for (int i = 0; i < kadet.size() - 1; i += 2) {
             Kasi kasi = kadet.get(i);
             Kasi kasi2 = kadet.get(i + 1);
+            
             int arvo = parempiKasi(kasi, kasi2);
+            
             if (arvo == 1) {
                 kadet.remove(kasi2);
+                
             }
             if (arvo == -1) {
                 kadet.remove(kasi);
+                
             }
             parasKasi(kadet);
         }
@@ -158,13 +199,17 @@ public class KasienVertailija {
     public static int parempiSuuriKortti(Kasi kasi, Kasi kasi2) {
         kasi.kaannaJarjestys();
         kasi2.kaannaJarjestys();
+        
         ArrayList<Kortti> kortit = kasi.getKortit();
         ArrayList<Kortti> kortit2 = kasi2.getKortit();
+        
         for (int i = 0; i < kortit.size(); i++) {
             if (kortit.get(i).getArvo() > kortit2.get(i).getArvo()) {
                 return 1;
+                
             } else if (kortit.get(i).getArvo() < kortit2.get(i).getArvo()) {
                 return -1;
+                
             }
         }
         return 0;
@@ -183,22 +228,20 @@ public class KasienVertailija {
     public static int parempiSuoraTaiVari(Kasi kasi, Kasi kasi2) {
         kasi.jarjestaKortit();
         kasi2.jarjestaKortit();
+        
         ArrayList<Kortti> kortit = kasi.getKortit();
         ArrayList<Kortti> kortit2 = kasi2.getKortit();
         ArrayList<Integer> maat = kasi.getMaat();
         ArrayList<Integer> maat2 = kasi2.getMaat();
+        
         if (kortit.get(0).getArvo() > kortit2.get(0).getArvo()) {
             return 1;
+            
         } else if (kortit.get(0).getArvo() < kortit2.get(0).getArvo()) {
             return -1;
+            
         } else {
-            if (maat.contains(Kortti.JOKERI) && !maat2.contains(Kortti.JOKERI)) {
-                return -1;
-            }
-            if (!maat.contains(Kortti.JOKERI) && maat2.contains(Kortti.JOKERI)) {
-                return 1;
-            }
-            return 0;
+            return parempiSuuriKortti(kasi, kasi2);
         }
     }
 
@@ -216,11 +259,14 @@ public class KasienVertailija {
     public static int parempiMontaSamaa(Kasi kasi, Kasi kasi2, int maara) {
         ArrayList<Integer> ensimmaisenKadenArvot = kasi.monenSamanArvot(maara);
         ArrayList<Integer> toisenKadenArvot = kasi2.monenSamanArvot(maara);
+        
         if (ensimmaisenKadenArvot.get(0) > toisenKadenArvot.get(0)) {
             return 1;
+            
         }
         if (toisenKadenArvot.get(0) > ensimmaisenKadenArvot.get(0)) {
             return -1;
+            
         }
         return 0;
     }

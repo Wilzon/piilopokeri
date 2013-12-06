@@ -8,11 +8,12 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import piilopokeri.domain.Piilopokeri;
 
-public class ValikkoIkkuna extends Ikkuna{
-    private Piilopokeri pokeri;
+public class ValikkoIkkuna extends PikkuIkkuna{
+    protected Piilopokeri pokeri;
     
     public ValikkoIkkuna(Piilopokeri pokeri) {
         this.pokeri = pokeri;
+        
         frame.setTitle("Valikko");
     }
     
@@ -25,13 +26,17 @@ public class ValikkoIkkuna extends Ikkuna{
         JButton uusiPeli = new JButton("Uusi peli");
         JButton lopeta = new JButton("Lopeta");
         
-        lopeta.addActionListener(new LopetusKuuntelija());
-        uusiPeli.addActionListener(new AloitusKuuntelija(pokeri, frame));
+        lisaaKuuntelijat(lopeta, uusiPeli);
         
         p.add(lopeta);
         p.add(uusiPeli);
         
         return p;
+    }
+    
+    public void lisaaKuuntelijat(JButton lopeta, JButton uusiPeli) {
+        lopeta.addActionListener(new LopetusKuuntelija());
+        uusiPeli.addActionListener(new AloitusKuuntelija(pokeri, frame));
     }
     
 }

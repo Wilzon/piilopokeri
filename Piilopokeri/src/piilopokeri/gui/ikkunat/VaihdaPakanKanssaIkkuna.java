@@ -56,7 +56,7 @@ public class VaihdaPakanKanssaIkkuna extends Ikkuna{
         JLabel pakkaTeksti = new JLabel("Pakan kortti:");
         JLabel pakanKortti = new JLabel(pokeri.pakanPaallimmainen.toString(), JLabel.CENTER);
         
-        pakanKortti = (JLabel) KorttienMaalaaja.setVari(pokeri, pokeri.pakanPaallimmainen, pakanKortti);
+        KorttienMaalaaja.maalaaNappi(pokeri, pokeri.pakanPaallimmainen, pakanKortti);
         
         p.add(pakkaTeksti);
         p.add(pakanKortti);

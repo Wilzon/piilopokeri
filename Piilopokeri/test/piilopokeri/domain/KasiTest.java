@@ -32,28 +32,28 @@ public class KasiTest {
     public void kasiJarjestyyOikeinTestikasi1() {
         testikasi.jarjestaKortit();
         
-        assertEquals("Risti 2, Ruutu 3, Pata 4, Hertta 8, Risti Q", testikasi.toString());
+        assertEquals("2 ♣, 3 ♦, 4 ♠, 8 ♥, Q ♣", testikasi.toString());
     }
 
     @Test
     public void kasiJarjestyyOikeinTestikasi2() {
         testikasi2.jarjestaKortit();
         
-        assertEquals("Pata 4, Hertta 4, Pata 7, Ruutu 10, Ruutu Q", testikasi2.toString());
+        assertEquals("4 ♠, 4 ♥, 7 ♠, 10 ♦, Q ♦", testikasi2.toString());
     }
 
     @Test
     public void kadenJarjestysKaantyyOikeinTestikasi1() {
         testikasi.kaannaJarjestys();
         
-        assertEquals("Risti Q, Hertta 8, Pata 4, Ruutu 3, Risti 2", testikasi.toString());
+        assertEquals("Q ♣, 8 ♥, 4 ♠, 3 ♦, 2 ♣", testikasi.toString());
     }
 
     @Test
     public void kadenJarjestysKaantyyOikeinTestikasi2() {
         testikasi2.kaannaJarjestys();
         
-        assertEquals("Ruutu Q, Ruutu 10, Pata 7, Hertta 4, Pata 4", testikasi2.toString());
+        assertEquals("Q ♦, 10 ♦, 7 ♠, 4 ♥, 4 ♠", testikasi2.toString());
     }
     
     @Test

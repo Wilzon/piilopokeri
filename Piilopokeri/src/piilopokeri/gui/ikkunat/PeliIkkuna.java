@@ -27,10 +27,12 @@ public class PeliIkkuna extends Ikkuna{
     private JButton pakkaNappi;
     private JButton avoPakkaNappi;
     private JButton koneNappi;
+    private JPanel panel;
 
     public PeliIkkuna(Piilopokeri pokeri) {
         this.pokeri = pokeri;
         this.vuoro = new Vuoro(pokeri, 0);
+        panel = new JPanel();
         korttiNappiHajautustaulu = new HashMap();
 
         frame.setTitle("Piilopokeri");
@@ -38,7 +40,9 @@ public class PeliIkkuna extends Ikkuna{
     
     @Override
     public void run() {
-        frame.setPreferredSize(new Dimension(1000, 1000));
+        int korkeus = pokeri.getPelaajat().size() * 200;
+        
+        frame.setPreferredSize(new Dimension(1000, korkeus));
         
         frame.setLocation(200, 0);
         
@@ -55,12 +59,26 @@ public class PeliIkkuna extends Ikkuna{
     
     @Override
     public JPanel lisaaPaneli() {
-        JPanel p = new JPanel();
-        
         JPanel nappiPaneli = lisaaNappiPaneli();
         
-        p.setLayout(new GridLayout(0, 1));
+        panel.setLayout(new GridLayout(0, 1));
         
+        panel = lisaaPelaajienNapit(panel);
+        
+        NappienPiilottaja.piilotaMuidenPelaajienNapit(pokeri, vuoro, korttiNappiHajautustaulu);
+        
+        panel.add(new JLabel());
+
+        panel.add(nappiPaneli);
+        
+        return panel;
+    }
+    
+    public void poistaPaneli(JPanel p) {
+        frame.remove(p);
+    }
+    
+    public JPanel lisaaPelaajienNapit(JPanel p) {
         for(Pelaaja pelaaja : pokeri.getPelaajat()) {
             String nimi = pelaaja.getNimi();
             JLabel pelaajanNimi = new JLabel(nimi);
@@ -71,14 +89,7 @@ public class PeliIkkuna extends Ikkuna{
             
             p.add(lisaaKorttiPaneli(pelaaja));
             
-            
         }
-        NappienPiilottaja.piilotaMuidenPelaajienNapit(pokeri, vuoro, korttiNappiHajautustaulu);
-        
-        p.add(new JLabel());
-
-        p.add(nappiPaneli);
-        
         return p;
     }
     
@@ -96,7 +107,7 @@ public class PeliIkkuna extends Ikkuna{
         pakkaNappi.setSize(100, 50);
         avoPakkaNappi.setSize(100, 50);
         
-        avoPakkaNappi = (JButton) KorttienMaalaaja.setVari(pokeri, pokeri.getAvopakanPaallimmainen(), avoPakkaNappi);
+        KorttienMaalaaja.maalaaNappi(pokeri, pokeri.getAvopakanPaallimmainen(), avoPakkaNappi);
 
         avoPakkaNappi.addActionListener(new AvoPakkaNapinKuuntelija(pokeri, frame, vuoro, avoPakkaNappi, korttiNappiHajautustaulu));
         pakkaNappi.addActionListener(new PakkaNapinKuuntelija(pokeri, vuoro, avoPakkaNappi, korttiNappiHajautustaulu));
@@ -114,8 +125,10 @@ public class PeliIkkuna extends Ikkuna{
         
         p.setLayout(new GridLayout(1, 0));
         
+        pelaaja.jarjestaOmatKortit();
+        
         for(Kortti kortti: pelaaja.getKasi().getKortit()) {
-            JButton korttiNappi = new JButton("[X]");
+            JButton korttiNappi = new JButton(kortti.toString());
         
             korttiNappiHajautustaulu.get(pelaaja.getNimi()).add(korttiNappi);
 
@@ -135,4 +148,5 @@ public class PeliIkkuna extends Ikkuna{
         koneNappi.addActionListener(new KoneNapinKuuntelija(pokeri, frame, vuoro, avoPakkaNappi, korttiNappiHajautustaulu));
         koneNappi.doClick();
     }
+    
 }

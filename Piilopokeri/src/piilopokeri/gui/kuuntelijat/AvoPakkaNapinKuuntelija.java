@@ -34,8 +34,13 @@ public class AvoPakkaNapinKuuntelija extends Kuuntelija{
 
         for(JButton nappi : pelaajanNapit) {
             if(nappi.getName() == null) {
-                nappi.setText(pokeri.getAvopakanPaallimmainen().toString());
+                Kortti avoPakanKortti = pokeri.getAvopakanPaallimmainen();
+                
+                nappi.setText(avoPakanKortti.toString());
+                
                 pokeri.koneVaihtaaAvopakanKanssa(vuoro.getKasi());
+                
+                KorttienMaalaaja.maalaaNappi(pokeri, avoPakanKortti, nappi);
                 
                 nappi.setName("painettu");
                 nappi.doClick();
@@ -47,13 +52,14 @@ public class AvoPakkaNapinKuuntelija extends Kuuntelija{
         
         avoPakkaNappi.setText(pokeri.getAvopakanPaallimmainen().toString());
         
-        avoPakkaNappi = (JButton) KorttienMaalaaja.setVari(pokeri, pokeri.getAvopakanPaallimmainen(), avoPakkaNappi);
+        KorttienMaalaaja.maalaaNappi(pokeri, pokeri.getAvopakanPaallimmainen(), avoPakkaNappi);
         
         NappienPiilottaja.piilotaMuidenPelaajienNapit(pokeri, vuoro, korttiNapit);
+
+        lopetaPeliLopussa(pokeri, frame);
         
         luoJaPainaaKoneNappia(pokeri, frame, vuoro, avoPakkaNappi, korttiNapit);
         
-        lopetaPeliLopussa(pokeri, frame);
     }
     
     public JButton setVari(JButton korttiNappi) {

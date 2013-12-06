@@ -39,22 +39,26 @@ public class KorttiNapinKuuntelija extends Kuuntelija {
 
             korttiNappi.setText(kortti.toString());
 
-            korttiNappi = (JButton) KorttienMaalaaja.setVari(pokeri, kortti, korttiNappi);
+            KorttienMaalaaja.maalaaNappi(pokeri, kortti, korttiNappi);
             
             korttiNappi.setName("painettu");
             
-            if(!vuoro.getPelaaja().onkoKone()) {
-                vuoro.seuraava();
+//            if(!vuoro.getPelaaja().onkoKone()) {
+//                vuoro.seuraava();
+//            
+//                NappienPiilottaja.piilotaMuidenPelaajienNapit(pokeri, vuoro, korttiNapit);
+//                
+//            }
+            vuoro.seuraava();
             
-                NappienPiilottaja.piilotaMuidenPelaajienNapit(pokeri, vuoro, korttiNapit);
-                
-            }
+            NappienPiilottaja.piilotaMuidenPelaajienNapit(pokeri, vuoro, korttiNapit);
+            lopetaPeliLopussa(pokeri, frame);
+            
             luoJaPainaaKoneNappia(pokeri, frame, vuoro, avoPakkaNappi, korttiNapit);
         }
         
         korttiNappi.removeActionListener(this);
 
-        lopetaPeliLopussa(pokeri, frame);
         
     }
 }

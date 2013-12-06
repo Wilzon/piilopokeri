@@ -26,7 +26,7 @@ public class NimienAsetusIkkuna extends PikkuIkkuna{
         int korkeus = pokeri.getIhmisPelaajat().size() * 200;
         frame.setPreferredSize(new Dimension(400, korkeus));
         
-        frame.setLocationRelativeTo(null);
+        frame.setLocation(400, 400);
         
         frame.getContentPane().add(lisaaPaneli());
         

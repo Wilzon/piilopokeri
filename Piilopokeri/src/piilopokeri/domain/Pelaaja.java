@@ -2,19 +2,18 @@
 package piilopokeri.domain;
 
 public class Pelaaja {
-    String nimi;
-    boolean ensimmainenVuoro;
-    int jarjestys;
-    Kasi kasi;
+    private String nimi;
+    private boolean ensimmainenVuoro;
+    private int jarjestys;
+    private Kasi kasi;
     
     public Pelaaja(String nimi) {
-        this();
         this.nimi = nimi;
+        ensimmainenVuoro = true;
     }
     
     public Pelaaja() {
-        this.nimi = "Pelaaja";
-        ensimmainenVuoro = true;
+        this("Pelaaja");
     }
     
     public String getNimi() {
@@ -39,6 +38,19 @@ public class Pelaaja {
     
     public int haluttuJarjestys() {
         return jarjestys;
+    }
+    
+    public void jarjestaOmatKortit() {
+        if(haluttuJarjestys() == 1) {
+            kasi.jarjestaKortit();
+            
+        }
+        else if(haluttuJarjestys() == 2) {
+            kasi.kaannaJarjestys();
+            
+        }else{
+            kasi.sekoitaKortit();
+        }
     }
     
     public void setVuoro() {

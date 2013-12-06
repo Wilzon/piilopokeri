@@ -27,7 +27,7 @@ public class Kasi extends Korttijoukko{
             kortit.add(kortti);
         }    
     }
-        
+    
     /**
      * Metodi kääntää kädessä olevien korttien järjestyksen
      */
@@ -42,15 +42,11 @@ public class Kasi extends Korttijoukko{
         String merkkijono = "";
         
         for(int i = 0; i < kortit.size(); i++) {
-            Kortti kortti = kortit.get(i);
+            merkkijono += kortit.get(i);
             
-            if(kortti.onkoKaannetty()) {
-               merkkijono += kortti; 
-            }else{
-                merkkijono += "[X]";
-            }
             if(i < kortit.size() - 1) {
                 merkkijono += ", ";
+                
             }
         }
         return merkkijono;
@@ -66,17 +62,21 @@ public class Kasi extends Korttijoukko{
         HashMap<Integer, Integer> montaSamaaMap = new HashMap();
         
         Kasi apuKasi = kadenKopio();
-        apuKasi.kaannaJarjestys();
+        apuKasi.kaannaKaikkiKortit();
+        apuKasi.jarjestaKortit();
         
         ArrayList<Integer> arvot = apuKasi.getArvot();
         
         while(!arvot.isEmpty()) {
             ArrayList<Integer> poistettavat = new ArrayList();
+            
             int montaSamaa = 0;
             int i = 0;
             int pituus = arvot.size();
             
             for(int j = 0; j < pituus; j++) {
+                int arvo = arvot.get(i);
+                int arvo2 = arvot.get(j);
                 if(arvot.get(i) != 
                         arvot.get(j)) {
                     break;
@@ -209,7 +209,9 @@ public class Kasi extends Korttijoukko{
      */
     public Kasi muutaAssaYkkoseksi() {
         Kasi apuKasi = kadenKopio();
+        apuKasi.kaannaKaikkiKortit();
         apuKasi.kaannaJarjestys();
+        
         ArrayList<Kortti> apuKadenKortit = apuKasi.getKortit();
         
         int maa = apuKadenKortit.get(0).getMaa();
@@ -232,6 +234,7 @@ public class Kasi extends Korttijoukko{
     public boolean onkoSuora() {
         Kasi apuKasi = kadenKopio();
         Kasi ykkosKasi = muutaAssaYkkoseksi();
+        apuKasi.kaannaKaikkiKortit();
         apuKasi.jarjestaKortit();
         
         ArrayList<Integer> arvot = apuKasi.getArvot();
@@ -251,7 +254,7 @@ public class Kasi extends Korttijoukko{
                     verrattavaArvo2 + 1 != ykkosKasi.getArvot().get(i)) {
                 
                 if(apuKasi.getArvot().contains(15) || 
-                        apuKasi.getArvot().contains(15)) {
+                        ykkosKasi.getArvot().contains(15)) {
                     
                     apuKasi.poistaJokeri();
                     ykkosKasi.poistaJokeri();

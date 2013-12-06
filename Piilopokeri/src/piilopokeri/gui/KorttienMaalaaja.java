@@ -8,7 +8,7 @@ import piilopokeri.domain.Piilopokeri;
 
 public class KorttienMaalaaja {
     
-    public static JComponent setVari(Piilopokeri pokeri, Kortti kortti, JComponent korttiNappi) {
+    public static void maalaaNappi(Piilopokeri pokeri, Kortti kortti, JComponent korttiNappi) {
         int maa = kortti.getMaa();
         
         if(maa == Kortti.HERTTA || maa == Kortti.RUUTU) {
@@ -16,13 +16,13 @@ public class KorttienMaalaaja {
             
         }
         else if(maa == Kortti.JOKERI) {
-            korttiNappi.setForeground(Color.green);
+            korttiNappi.setForeground(Color.cyan);
+            korttiNappi.setBackground(Color.black);
             
         }else{
             korttiNappi.setForeground(Color.black);
             
         }
         
-        return korttiNappi;
     }
 }

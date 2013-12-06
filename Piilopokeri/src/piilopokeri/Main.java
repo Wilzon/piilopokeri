@@ -1,6 +1,7 @@
 package piilopokeri;
 
 import piilopokeri.domain.Kasi;
+import piilopokeri.domain.KasienVertailija;
 import piilopokeri.domain.Kortti;
 import piilopokeri.domain.Piilopokeri;
 import piilopokeri.gui.ikkunat.GraafinenKL;
@@ -12,12 +13,77 @@ public class Main {
     public static void main(String[] args) {
         
 //        
-//        Kortti kortti = new Kortti(2, Kortti.HERTTA, true);
-//        Kortti kortti2 = new Kortti(2, Kortti.HERTTA, true);
-//        Kortti kortti3 = new Kortti(4, Kortti.JOKERI, true);
-//        Kortti kortti4 = new Kortti(5, Kortti.RUUTU, true);
-//        Kortti kortti5 = new Kortti(7, Kortti.RUUTU, true);
-////        
+        Kasi huonoVariKasi = new Kasi();
+        Kasi hyvaVariKasi = new Kasi();
+        
+        Kortti pata5 = new Kortti(5, Kortti.PATA, true);
+        Kortti pata6 = new Kortti(6, Kortti.PATA, true);
+        Kortti pata7 = new Kortti(7, Kortti.PATA, true);
+        Kortti pata8 = new Kortti(8, Kortti.PATA, true);
+        Kortti pata9 = new Kortti(9, Kortti.PATA, true);
+        
+        Kortti pata3 = new Kortti(3, Kortti.PATA, true);
+        Kortti ruutu8 = new Kortti(8, Kortti.RUUTU, true);
+        
+        Kortti herttaK = new Kortti(13, Kortti.HERTTA, true);
+        Kortti pataK = new Kortti(13, Kortti.PATA, true);
+        Kortti ruutuK = new Kortti(13, Kortti.RUUTU, true);
+        Kortti ristiK = new Kortti(13, Kortti.RISTI, true);
+        
+        Kortti pata10 = new Kortti(10, Kortti.PATA, true);
+        Kortti pataJ = new Kortti(10, Kortti.PATA, true);
+        Kortti pataQ = new Kortti(10, Kortti.PATA, true);
+        
+        Kortti risti9 = new Kortti(9, Kortti.RISTI, true);
+        Kortti ruutu9 = new Kortti(9, Kortti.RUUTU, true);
+        Kortti hertta9 = new Kortti(9, Kortti.HERTTA, true);
+        
+        Kortti jokeri = new Kortti(15, Kortti.JOKERI, true);
+        
+        huonoVariKasi.lisaaKortti(pata9);
+        huonoVariKasi.lisaaKortti(pata8);
+        huonoVariKasi.lisaaKortti(pata7);
+        huonoVariKasi.lisaaKortti(pata6);
+        huonoVariKasi.lisaaKortti(pata3);
+        
+        hyvaVariKasi.lisaaKortti(pata9);
+        hyvaVariKasi.lisaaKortti(pata8);
+        hyvaVariKasi.lisaaKortti(pata7);
+        hyvaVariKasi.lisaaKortti(pata3);
+        hyvaVariKasi.lisaaKortti(pataK);
+        
+        Kortti kortti = new Kortti(4, Kortti.HERTTA, true);
+        Kortti kortti2 = new Kortti(3, Kortti.PATA, true);
+        Kortti kortti3 = new Kortti(14, Kortti.JOKERI, true);
+        Kortti kortti4 = new Kortti(2, Kortti.RUUTU, true);
+        Kortti kortti5 = new Kortti(5, Kortti.RUUTU, true);
+        
+        Kasi kasi = new Kasi();
+        
+        kasi.lisaaKortti(kortti);
+        kasi.lisaaKortti(kortti2);
+        kasi.lisaaKortti(kortti3);
+        kasi.lisaaKortti(kortti4);
+        kasi.lisaaKortti(kortti5);
+        System.out.println("---");
+        System.out.println(hyvaVariKasi.onkoVari());
+        System.out.println(huonoVariKasi.onkoVari());
+        System.out.println(KasienVertailija.parempiKasi(hyvaVariKasi, huonoVariKasi));
+        System.out.println("---");
+        
+        
+        System.out.println(kasi);
+        kasi.jarjestaKortit();
+        System.out.println("jarjestetty");
+        System.out.println(kasi);
+        kasi.kaannaJarjestys();
+        System.out.println("kaanetty");
+        System.out.println(kasi);
+        System.out.println("--------");
+        System.out.println("--------");
+        System.out.println("--------");
+        
+        
 //        Kortti kortti6 = new Kortti(3, Kortti.HERTTA, true);
 //        Kortti kortti7 = new Kortti(4, Kortti.RUUTU, true);
 //        Kortti kortti8 = new Kortti(4, Kortti.PATA, true);
@@ -200,21 +266,21 @@ public class Main {
     Kasi huonoEiMitaanKasi;
     Kasi hyvaEiMitaanKasi;
     
-    Kortti pata5;
-    Kortti pata6;
-    Kortti pata7;
-    Kortti pata8;
-    Kortti pata9;
-    
-    Kortti pata3;
-    Kortti ruutu8;
-    Kortti herttaKuningas;
-    
-    Kortti ruutu9;
-    Kortti risti9;
-    Kortti hertta9;
-    
-    Kortti jokeri;
+//    Kortti pata5;
+//    Kortti pata6;
+//    Kortti pata7;
+//    Kortti pata8;
+//    Kortti pata9;
+//    
+//    Kortti pata3;
+//    Kortti ruutu8;
+//    Kortti herttaKuningas;
+//    
+//    Kortti ruutu9;
+//    Kortti risti9;
+//    Kortti hertta9;
+//    
+//    Kortti jokeri;
         
         pokeri = new Piilopokeri();
         
@@ -238,7 +304,7 @@ public class Main {
         
         pata3 = new Kortti(3, Kortti.PATA, true);
         ruutu8 = new Kortti(8, Kortti.RUUTU, true);
-        herttaKuningas = new Kortti(13, Kortti.HERTTA, true);
+//        herttaKuningas = new Kortti(13, Kortti.HERTTA, true);
         
         risti9 = new Kortti(9, Kortti.RISTI, true);
         ruutu9 = new Kortti(9, Kortti.RUUTU, true);
@@ -310,7 +376,7 @@ public class Main {
         hyvaEiMitaanKasi.lisaaKortti(pata6);
         hyvaEiMitaanKasi.lisaaKortti(pata7);
         hyvaEiMitaanKasi.lisaaKortti(pata8);
-        hyvaEiMitaanKasi.lisaaKortti(herttaKuningas);
+//        hyvaEiMitaanKasi.lisaaKortti(herttaKuningas);
         
         
         System.out.println(suoraKasi);

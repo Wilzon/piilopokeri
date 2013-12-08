@@ -26,18 +26,10 @@ public class Korttipakka extends Korttijoukko{
      * @return päällimmäinen kortti
      */
     public Kortti getPaallimmainen() {
-        return kortit.remove(0);
-    }
-    
-    /**
-     * Metodi poistaa jokerit pakasta
-     */
-    public void poistaJokerit() {
-        if(kortit.size() == 54) {
-            kortit.remove(53);
-            kortit.remove(52);
+        if(!kortit.isEmpty()) {
+            return kortit.remove(0);
+            
         }
+        return null;
     }
-    
-
 }

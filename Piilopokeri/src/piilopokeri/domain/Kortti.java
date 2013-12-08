@@ -35,8 +35,7 @@ public class Kortti {
     /**
      * Merkkijonoja sisältävä lista mahdollisista arvoista
      */
-    public static final String[] ARVOT = {"-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "Jokeri"};
-   
+    public static final String[] ARVOT = {"-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "JOKERI"};
     
     public Kortti(int arvo, int maa) {
         this.arvo = arvo;
@@ -48,6 +47,7 @@ public class Kortti {
         this(arvo, maa);
         this.kaannetty = kaannetty;
     }
+    
     public int getMaa() {
         return maa;
     }
@@ -85,10 +85,8 @@ public class Kortti {
     @Override
     public String toString() {
         if(onkoKaannetty()) {
-            if(arvo == 15) {
-                return ARVOT[arvo];
-            }
             return ARVOT[arvo] + " " + MAAT[maa] ;
+            
         }
         return "[X]";
     }
@@ -110,8 +108,6 @@ public class Kortti {
     
     /**
      * Metodi kopioi kortin
-     * 
-     * @param kortti Kopioitava kortti
      * 
      * @return kopioitu kortti
      */

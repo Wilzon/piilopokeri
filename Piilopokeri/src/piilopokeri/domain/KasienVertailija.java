@@ -20,59 +20,110 @@ public class KasienVertailija {
         int kadenArvo = kasi.kadenArvo();
         int kaden2Arvo = kasi2.kadenArvo();
         
-        if (kadenArvo > kaden2Arvo) {
+        
+        if(kasi.getKortit().size() == 1) {
+            kadenArvo = 99;
+            kaden2Arvo = 99;
+            
+        }
+        if(kasi.getKortit().size() > 6 && kadenArvo != kaden2Arvo) {
+            kadenArvo = kasi.kadenArvoSuurellaKadella();
+            kaden2Arvo = kasi2.kadenArvoSuurellaKadella();
+            
+        }
+        if(kadenArvo > kaden2Arvo) {
             return 1;
             
-        } else if (kadenArvo < kaden2Arvo) {
+        }
+        else if(kadenArvo < kaden2Arvo) {
             return -1;
             
-        } else {
-            if (kadenArvo == 9) {
+        }else{
+            if(kadenArvo == 16) {
                 int arvo = parempiMontaSamaa(kasi, kasi2, 5);
                 
                 return arvo;
                 
-            } else if (kadenArvo == 8) {
-                int arvo = parempiSuoraTaiVari(kasi, kasi2);
-                
-                return arvo;
-                
-            } else if (kadenArvo == 7) {
-                int arvo = parempiMontaSamaa(kasi, kasi2, 4);
-                
-                return arvo;
-                
-            } else if (kadenArvo == 6) {
-                int arvo = parempiTayskasi(kasi, kasi2);
-                
-                return arvo;
-                
-            } else if (kadenArvo == 5) {
-                int arvo = parempiSuoraTaiVari(kasi, kasi2);
-                
-                return arvo;
-                
-            } else if (kadenArvo == 4) {
-                int arvo = parempiSuoraTaiVari(kasi, kasi2);
-                
-                return arvo;
-                
-            } else if (kadenArvo == 3) {
+            } 
+            else if(kadenArvo == 13) {
                 int arvo = parempiMontaSamaa(kasi, kasi2, 3);
                 
                 return arvo;
                 
-            } else if (kadenArvo == 2) {
+            }
+            else if(kadenArvo == 12) {
+                int arvo = parempiSuoraTaiVari(kasi, kasi2);
+                
+                return arvo;
+                
+            } 
+            else if(kadenArvo == 11) {
+                int arvo = parempiMontaSamaa(kasi, kasi2, 3);
+                
+                return arvo;
+                
+            }
+            else if(kadenArvo == 10) {
                 int arvo = parempiKaksiParia(kasi, kasi2);
                 
                 return arvo;
                 
-            } else if (kadenArvo == 1) {
+            }
+            else if(kadenArvo == 9) {
+                int arvo = parempiMontaSamaa(kasi, kasi2, 4);
+
+                return arvo;
+                
+            }
+            else if (kadenArvo == 8) {
+                int arvo = parempiMontaSamaa(kasi, kasi2, 4);
+                
+                return arvo;
+                
+            } 
+            else if (kadenArvo == 7) {
+                int arvo = parempiTayskasi(kasi, kasi2);
+                
+                return arvo;
+                
+            } 
+            else if (kadenArvo == 6) {
+                int arvo = parempiSuoraTaiVari(kasi, kasi2);
+                
+                return arvo;
+                
+            } 
+            else if (kadenArvo == 5) {
+                int arvo = parempiSuoraTaiVari(kasi, kasi2);
+                
+                return arvo;
+                
+            } 
+            else if(kadenArvo == 4) {
+                int arvo = parempiKaksiParia(kasi, kasi2);
+                
+                return arvo;
+                
+            }
+            else if (kadenArvo == 3) {
+                int arvo = parempiMontaSamaa(kasi, kasi2, 3);
+                
+                return arvo;
+                
+            } 
+            else if (kadenArvo == 2) {
+                int arvo = parempiKaksiParia(kasi, kasi2);
+                
+                return arvo;
+                
+            } 
+            else if (kadenArvo == 1) {
                 int arvo = parempiMontaSamaa(kasi, kasi2, 2);
                 
                 return arvo;
                 
-            } else {
+            } 
+            else {
                 int arvo = parempiSuuriKortti(kasi, kasi2);
                 
                 return arvo;
@@ -231,8 +282,6 @@ public class KasienVertailija {
         
         ArrayList<Kortti> kortit = kasi.getKortit();
         ArrayList<Kortti> kortit2 = kasi2.getKortit();
-        ArrayList<Integer> maat = kasi.getMaat();
-        ArrayList<Integer> maat2 = kasi2.getMaat();
         
         if (kortit.get(0).getArvo() > kortit2.get(0).getArvo()) {
             return 1;

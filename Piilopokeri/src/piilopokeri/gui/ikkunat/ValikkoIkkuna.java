@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import piilopokeri.domain.Piilopokeri;
+import piilopokeri.gui.kuuntelijat.OhjeNapinKuuntelija;
 
 public class ValikkoIkkuna extends PikkuIkkuna{
     protected Piilopokeri pokeri;
@@ -14,22 +15,26 @@ public class ValikkoIkkuna extends PikkuIkkuna{
     public ValikkoIkkuna(Piilopokeri pokeri) {
         this.pokeri = pokeri;
         
-        frame.setTitle("Valikko");
+        frame.setTitle("Piilopokeri");
     }
     
 
     @Override
     public JPanel lisaaPaneli() {
         JPanel p = new JPanel();
-        p.setLayout(new GridLayout(0, 2));
+        p.setLayout(new GridLayout(0, 3));
         
         JButton uusiPeli = new JButton("Uusi peli");
         JButton lopeta = new JButton("Lopeta");
+        JButton ohjeet = new JButton("Ohjeet");
         
         lisaaKuuntelijat(lopeta, uusiPeli);
         
+        ohjeet.addActionListener(new OhjeNapinKuuntelija());
+        
         p.add(lopeta);
         p.add(uusiPeli);
+        p.add(ohjeet);
         
         return p;
     }

@@ -6,11 +6,8 @@ import java.util.Random;
 /** @author Wilzon */
 
 public class Kone extends Pelaaja{
-    Random random;
     
     public Kone() {
-        random = new Random();
-        
         arvoNimi();
     }
     
@@ -20,15 +17,17 @@ public class Kone extends Pelaaja{
     }
 
     @Override
-    public int haluttuJarjestys() {
-        return 2;
+    public int getHaluttuJarjestys() {
+        return 1;
     }
     
-    public void setUusiNimi() {
+    public void arvoUusiNimi() {
         arvoNimi();
     }
     
     public final void arvoNimi() {
+        Random random = new Random();
+        
         int luku = random.nextInt(20);
         
         if(luku == 0) {
@@ -111,9 +110,5 @@ public class Kone extends Pelaaja{
             setNimi("HelmiBOT");
             
         }
-        
     }
-    
-    
-    
 }

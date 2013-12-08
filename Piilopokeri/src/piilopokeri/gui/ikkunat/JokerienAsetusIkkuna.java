@@ -2,7 +2,6 @@
 package piilopokeri.gui.ikkunat;
 
 import java.awt.GridLayout;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -10,7 +9,7 @@ import piilopokeri.domain.Piilopokeri;
 import piilopokeri.gui.kuuntelijat.JokerienAsetusKuuntelija;
 
 public class JokerienAsetusIkkuna extends PikkuIkkuna{
-    private Piilopokeri pokeri;
+    private final Piilopokeri pokeri;
 
     public JokerienAsetusIkkuna(Piilopokeri pokeri) {
         this.pokeri = pokeri;

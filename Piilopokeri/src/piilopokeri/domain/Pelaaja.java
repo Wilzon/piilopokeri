@@ -1,19 +1,25 @@
 
 package piilopokeri.domain;
 
+import java.util.ArrayList;
+import javax.swing.JButton;
+
 public class Pelaaja {
     private String nimi;
     private boolean ensimmainenVuoro;
     private int jarjestys;
     private Kasi kasi;
+    private ArrayList<JButton> korttiNapit;
     
     public Pelaaja(String nimi) {
         this.nimi = nimi;
         ensimmainenVuoro = true;
+        jarjestys = 1;
+        korttiNapit = new ArrayList();
     }
     
     public Pelaaja() {
-        this("Pelaaja");
+        this("Nimetön");
     }
     
     public String getNimi() {
@@ -36,16 +42,16 @@ public class Pelaaja {
         this.jarjestys = jarjestys;
     }
     
-    public int haluttuJarjestys() {
+    public int getHaluttuJarjestys() {
         return jarjestys;
     }
     
     public void jarjestaOmatKortit() {
-        if(haluttuJarjestys() == 1) {
+        if(getHaluttuJarjestys() == 1) {
             kasi.jarjestaKortit();
             
         }
-        else if(haluttuJarjestys() == 2) {
+        else if(getHaluttuJarjestys() == 2) {
             kasi.kaannaJarjestys();
             
         }else{
@@ -59,6 +65,18 @@ public class Pelaaja {
     
     public boolean onkoEnsimmainenVuoro() {
         return ensimmainenVuoro;
+    }
+    
+    public void setKorttiNappi(JButton nappi) {
+        korttiNapit.add(nappi);
+    }
+    
+    public ArrayList<JButton> getKorttiNapit() {
+        return korttiNapit;
+    }
+    
+    public void setKaikkiUudetKorttiNapit(ArrayList<JButton> napit) {
+        korttiNapit = napit;
     }
     
     public boolean onkoKone() {

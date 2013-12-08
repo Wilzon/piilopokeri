@@ -1,10 +1,12 @@
 package piilopokeri;
 
+import java.util.ArrayList;
+import javax.swing.JFrame;
 import piilopokeri.domain.Kasi;
-import piilopokeri.domain.KasienVertailija;
 import piilopokeri.domain.Kortti;
 import piilopokeri.domain.Piilopokeri;
 import piilopokeri.gui.ikkunat.GraafinenKL;
+import piilopokeri.gui.ikkunat.LopetusIkkuna;
 
 /** @author Wilzon */
 
@@ -13,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         
 //        
-        Kasi huonoVariKasi = new Kasi();
+        Kasi kasiX = new Kasi();
         Kasi hyvaVariKasi = new Kasi();
         
         Kortti pata5 = new Kortti(5, Kortti.PATA, true);
@@ -40,11 +42,11 @@ public class Main {
         
         Kortti jokeri = new Kortti(15, Kortti.JOKERI, true);
         
-        huonoVariKasi.lisaaKortti(pata9);
-        huonoVariKasi.lisaaKortti(pata8);
-        huonoVariKasi.lisaaKortti(pata7);
-        huonoVariKasi.lisaaKortti(pata6);
-        huonoVariKasi.lisaaKortti(pata3);
+        kasiX.lisaaKortti(pataK);
+        kasiX.lisaaKortti(herttaK);
+        kasiX.lisaaKortti(pata7);
+        kasiX.lisaaKortti(pata6);
+        kasiX.lisaaKortti(pata3);
         
         hyvaVariKasi.lisaaKortti(pata9);
         hyvaVariKasi.lisaaKortti(pata8);
@@ -54,34 +56,34 @@ public class Main {
         
         Kortti kortti = new Kortti(4, Kortti.HERTTA, true);
         Kortti kortti2 = new Kortti(3, Kortti.PATA, true);
-        Kortti kortti3 = new Kortti(14, Kortti.JOKERI, true);
+        Kortti kortti3 = new Kortti(14, Kortti.HERTTA, true);
         Kortti kortti4 = new Kortti(2, Kortti.RUUTU, true);
         Kortti kortti5 = new Kortti(5, Kortti.RUUTU, true);
         
-        Kasi kasi = new Kasi();
-        
-        kasi.lisaaKortti(kortti);
-        kasi.lisaaKortti(kortti2);
-        kasi.lisaaKortti(kortti3);
-        kasi.lisaaKortti(kortti4);
-        kasi.lisaaKortti(kortti5);
-        System.out.println("---");
-        System.out.println(hyvaVariKasi.onkoVari());
-        System.out.println(huonoVariKasi.onkoVari());
-        System.out.println(KasienVertailija.parempiKasi(hyvaVariKasi, huonoVariKasi));
-        System.out.println("---");
-        
-        
-        System.out.println(kasi);
-        kasi.jarjestaKortit();
-        System.out.println("jarjestetty");
-        System.out.println(kasi);
-        kasi.kaannaJarjestys();
-        System.out.println("kaanetty");
-        System.out.println(kasi);
-        System.out.println("--------");
-        System.out.println("--------");
-        System.out.println("--------");
+//        Kasi x = new Kasi();
+//        
+//        x.lisaaKortti(kortti);
+//        x.lisaaKortti(kortti2);
+//        x.lisaaKortti(kortti3);
+//        x.lisaaKortti(kortti4);
+//        x.lisaaKortti(kortti5);
+//        System.out.println("---");
+////        System.out.println(hyvaVariKasi.onkoVari());
+////        System.out.println(kasiX.onkoVari());
+////        System.out.println(KasienVertailija.parempiKasi(hyvaVariKasi, kasiX));
+//        System.out.println("---");
+//        
+//        
+//        System.out.println(x);
+//        x.jarjestaKortit();
+//        System.out.println("jarjestetty");
+//        System.out.println(x);
+//        x.kaannaJarjestys();
+//        System.out.println("kaanetty");
+//        System.out.println(x);
+//        System.out.println("--------");
+//        System.out.println("--------");
+//        System.out.println("--------");
         
         
 //        Kortti kortti6 = new Kortti(3, Kortti.HERTTA, true);
@@ -281,6 +283,47 @@ public class Main {
 //    Kortti hertta9;
 //    
 //    Kortti jokeri;
+    
+    Kortti hertta2;
+    Kortti hertta3;
+    Kortti hertta4;
+    Kortti hertta5;
+    Kortti hertta6;
+    Kortti hertta10;
+    
+    Kortti pataAssa;
+    
+//    Kortti pata5;
+    Kortti risti5;
+    Kortti ruutu5;
+    
+    Kortti pata4;
+    Kortti ruutu4;
+    Kortti risti4;
+    
+//    Kortti jokeri;
+    
+    Kortti ruutu6 = new Kortti(6, Kortti.RUUTU, true);
+    Kortti risti6 = new Kortti(6, Kortti.RISTI, true);
+    
+    pataAssa = new Kortti(14, Kortti.PATA, true);
+        hertta2 = new Kortti(2, Kortti.HERTTA, true);
+        hertta3 = new Kortti(3, Kortti.HERTTA, true);
+        hertta4 = new Kortti(4, Kortti.HERTTA, true);
+        hertta5 = new Kortti(5, Kortti.HERTTA, true);
+        hertta6 = new Kortti(6, Kortti.HERTTA, true);
+        hertta10 = new Kortti(10, Kortti.HERTTA, true);
+        
+        pata5 = new Kortti(5, Kortti.PATA, true);
+        risti5 = new Kortti(5, Kortti.RISTI, true);
+        ruutu5 = new Kortti(5, Kortti.RUUTU, true);
+        
+        pata4 = new Kortti(4, Kortti.PATA, true);
+        ruutu4 = new Kortti(4, Kortti.RUUTU, true);
+        risti4 = new Kortti(4, Kortti.RISTI, true);
+        
+        
+        jokeri = new Kortti(15, Kortti.JOKERI, true);
         
         pokeri = new Piilopokeri();
         
@@ -378,16 +421,178 @@ public class Main {
         hyvaEiMitaanKasi.lisaaKortti(pata8);
 //        hyvaEiMitaanKasi.lisaaKortti(herttaKuningas);
         
+        Kasi vitosJaKolmeSamaaKasi = new Kasi();
         
-        System.out.println(suoraKasi);
-        System.out.println(kolmosKasi);
+        vitosJaKolmeSamaaKasi.lisaaKortti(hertta4);
+        vitosJaKolmeSamaaKasi.lisaaKortti(ruutu4);
+        vitosJaKolmeSamaaKasi.lisaaKortti(risti4);
+        vitosJaKolmeSamaaKasi.lisaaKortti(pata4);
+        vitosJaKolmeSamaaKasi.lisaaKortti(risti5);
+        vitosJaKolmeSamaaKasi.lisaaKortti(ruutu5);
+        vitosJaKolmeSamaaKasi.lisaaKortti(pata5);
+        vitosJaKolmeSamaaKasi.lisaaKortti(jokeri);
         
-        System.out.println(suoraKasi.onkoSuora());
-        System.out.println(kolmosKasi.onkoKolmoset());
+        
+        System.out.println("-----test-----");
+        
+//        System.out.println(vitosJaKolmeSamaaKasi);
+        
+//        System.out.println(vitosJaKolmeSamaaKasi.onkoVitosetJaKolmeSamaa());
+        
+        
         
         GraafinenKL g = new GraafinenKL();
         
         g.run();
+        
+        Kasi kaksiViisiSamaaKasi = new Kasi();
+        
+        kaksiViisiSamaaKasi.lisaaKortti(hertta4);
+        kaksiViisiSamaaKasi.lisaaKortti(ruutu4);
+        kaksiViisiSamaaKasi.lisaaKortti(risti4);
+//        kaksiViisiSamaaKasi.lisaaKortti(pata4);
+        
+        kaksiViisiSamaaKasi.lisaaKortti(risti5);
+        kaksiViisiSamaaKasi.lisaaKortti(ruutu5);
+        kaksiViisiSamaaKasi.lisaaKortti(pata5);
+        
+        kaksiViisiSamaaKasi.lisaaKortti(pata3);
+        kaksiViisiSamaaKasi.lisaaKortti(hertta3);
+//        kaksiViisiSamaaKasi.lisaaKortti(jokeri);
+//        kaksiViisiSamaaKasi.lisaaKortti(jokeri);
+        
+        System.out.println("------");
+        
+        ArrayList<Integer> samat = new ArrayList();
+        
+        samat.add(3);
+        samat.add(3);
+        
+        samat.add(2);
+        
+//        System.out.println(kaksiViisiSamaaKasi.onkoKahdetKolmosetJaPari());
+        
+        
+        Piilopokeri poker = new Piilopokeri();
+        
+//        Kasi crazy = poker.getUudetKortit(13);
+        
+        Kortti pata2 = new Kortti(2, Kortti.PATA);
+        Kortti pataA = new Kortti(14, Kortti.PATA);
+        Kortti herttaA = new Kortti(14, Kortti.HERTTA);
+        
+        Kasi crazy = new Kasi();
+        
+        crazy.lisaaKortti(pata2);
+        crazy.lisaaKortti(pata3);
+        crazy.lisaaKortti(pata5);
+        crazy.lisaaKortti(hertta5);
+        
+        crazy.lisaaKortti(pata7);
+        crazy.lisaaKortti(pata8);
+        crazy.lisaaKortti(pata9);
+        crazy.lisaaKortti(pata10);
+        crazy.lisaaKortti(hertta10);
+        crazy.lisaaKortti(herttaK);
+        crazy.lisaaKortti(pataA);
+        crazy.lisaaKortti(herttaA);
+        
+        crazy.lisaaKortti(jokeri);
+        
+//        crazy.lisaaKortti(pata4);
+//        crazy.lisaaKortti(risti4);
+//        crazy.lisaaKortti(pata4);
+//        crazy.lisaaKortti(ruutu4);
+//        crazy.lisaaKortti(jokeri);
+//        crazy.lisaaKortti(jokeri);
+//        
+//        crazy.lisaaKortti(hertta5);
+//        crazy.lisaaKortti(pata5);
+//        
+//        crazy.lisaaKortti(hertta6);
+//        crazy.lisaaKortti(ruutu6);
+//        crazy.lisaaKortti(risti6);
+//        crazy.lisaaKortti(pata6);
+        
+        crazy.kaannaKaikkiKortit();
+        crazy.jarjestaKortit();
+        
+//        System.out.println(crazy);
+        
+//        System.out.println(crazy.kadenArvoSuurellaKadella());
+        
+        LopetusIkkuna l = new LopetusIkkuna(pokeri, new JFrame());
+        
+//        System.out.println(crazy.onkoKolmosetJaKaksiParia());
+        
+//        pokeri.lisaaIhmispelaaja(new Pelaaja());
+        
+//        pokeri.getPelaajat().get(0).lisaaKasi(crazy);
+
+//        System.out.print("arvo:");
+        
+//        JLabel label = l.kasienArvot().get(0);
+        
+//        System.out.println(label.getText());
+        
+        System.out.println("------");
+        
+        Kortti ruutu3 = new Kortti(3, Kortti.RUUTU, true);
+        Kortti ruutu2 = new Kortti(2, Kortti.RUUTU, true);
+        Kortti risti2 = new Kortti(2, Kortti.RISTI, true);
+        Kortti risti3 = new Kortti(3, Kortti.RISTI, true);
+        
+        
+//        Kasi x = new Kasi();
+//        
+//        
+//        x.lisaaKortti(hertta3);
+//        x.lisaaKortti(ruutu3);
+//        x.lisaaKortti(risti3);
+//        x.lisaaKortti(pata3);
+//        x.lisaaKortti(jokeri);
+////        x.lisaaKortti(jokeri);
+//        
+//        x.lisaaKortti(hertta2);
+//        x.lisaaKortti(ruutu2);
+//        x.lisaaKortti(risti2);
+//        x.lisaaKortti(pata2);
+//        
+//        x.lisaaKortti(hertta4);
+//        x.lisaaKortti(ruutu4);
+//        x.lisaaKortti(risti4);
+//        x.lisaaKortti(pata4);
+//        
+//        x.jarjestaKortit();
+//        
+//        pokeri.lisaaIhmispelaaja(new Pelaaja());
+//        
+//        pokeri.getPelaajat().get(0).lisaaKasi(x);
+//        
+//        JLabel labelX = l.kasienArvot().get(0);
+//        
+//        System.out.println(labelX.getText());
+//        
+//        System.out.println(x);
+//        
+//        Kasi huonoNelosKasi = new Kasi();
+//        Kasi huonoTayskasiKasi = new Kasi();
+//        
+//        huonoNelosKasi.lisaaKortti(hertta9);
+//        huonoNelosKasi.lisaaKortti(risti9);
+//        huonoNelosKasi.lisaaKortti(ruutu9);
+//        huonoNelosKasi.lisaaKortti(pata9);
+//        huonoNelosKasi.lisaaKortti(pata5);
+//        
+//        huonoTayskasiKasi.lisaaKortti(hertta9);
+//        huonoTayskasiKasi.lisaaKortti(pata9);
+//        huonoTayskasiKasi.lisaaKortti(ruutu9);
+//        huonoTayskasiKasi.lisaaKortti(ruutu8);
+//        huonoTayskasiKasi.lisaaKortti(pata8);
+//        
+//        System.out.println(huonoNelosKasi.kadenArvo());
+//        System.out.println(huonoTayskasiKasi.kadenArvo());
+//        System.out.println(KasienVertailija.parempiKasi(huonoNelosKasi, huonoTayskasiKasi));
         
         
         

@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import piilopokeri.domain.Piilopokeri;
-import piilopokeri.gui.ikkunat.IhmisPelaajienAsetusIkkuna;
 import piilopokeri.gui.ikkunat.JokerienAsetusIkkuna;
 
 public class AloitusKuuntelija extends Kuuntelija {

@@ -4,6 +4,7 @@ package piilopokeri.gui.kuuntelijat;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import piilopokeri.domain.Kone;
 import piilopokeri.domain.Piilopokeri;
 import piilopokeri.gui.ikkunat.KorttienAsetusIkkuna;
@@ -27,8 +28,7 @@ public class KonePelaajienAsetusKuuntelija extends Kuuntelija {
         
         frame.dispose();
         
-        KorttienAsetusIkkuna korttiIkkuna = new KorttienAsetusIkkuna(pokeri);
-        korttiIkkuna.run();
+        SwingUtilities.invokeLater(new KorttienAsetusIkkuna(pokeri));
     }
     
     public void asetaKonePelaajat(int maara) {

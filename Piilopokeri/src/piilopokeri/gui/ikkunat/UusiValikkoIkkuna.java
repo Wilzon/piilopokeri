@@ -8,6 +8,7 @@ import piilopokeri.gui.kuuntelijat.UusiAloitusKuuntelija;
 
 public class UusiValikkoIkkuna extends ValikkoIkkuna{
 
+    
     public UusiValikkoIkkuna(Piilopokeri pokeri) {
         super(pokeri);
     }
@@ -17,5 +18,4 @@ public class UusiValikkoIkkuna extends ValikkoIkkuna{
         lopeta.addActionListener(new LopetusKuuntelija());
         uusiPeli.addActionListener(new UusiAloitusKuuntelija(pokeri, frame));
     }
-    
 }

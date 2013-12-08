@@ -4,14 +4,15 @@ package piilopokeri.gui.kuuntelijat;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import piilopokeri.domain.Pelaaja;
 import piilopokeri.domain.Piilopokeri;
 import piilopokeri.gui.ikkunat.PeliIkkuna;
 
 public class KorttienAsetusKuuntelija extends Kuuntelija{
-    private Piilopokeri pokeri;
-    private JFrame frame;
-    private JComboBox korttiLaatikko;
+    private final Piilopokeri pokeri;
+    private final JFrame frame;
+    private final JComboBox korttiLaatikko;
 
     public KorttienAsetusKuuntelija(Piilopokeri pokeri, JFrame frame, JComboBox korttiLaatikko) {
         this.pokeri = pokeri;
@@ -27,13 +28,13 @@ public class KorttienAsetusKuuntelija extends Kuuntelija{
         
         frame.dispose();
         
-        PeliIkkuna pi = new PeliIkkuna(pokeri);
-        pi.run();
+        SwingUtilities.invokeLater(new PeliIkkuna(pokeri));
     }
     
     public void asetaKortit(int maara) {
         for(Pelaaja pelaaja : pokeri.getPelaajat()) {
             pelaaja.lisaaKasi(pokeri.getUudetKortit(maara));
+            
             pokeri.lisaaPelaajanKasi(pelaaja);
         }
     }

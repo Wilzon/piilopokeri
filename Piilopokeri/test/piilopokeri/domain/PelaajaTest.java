@@ -44,6 +44,6 @@ public class PelaajaTest {
     public void pelaajalleVoiAsettaaJarjestyksen() {
         pelaaja.setHaluttuJarjestys(1);
         
-        assertEquals(1, pelaaja.haluttuJarjestys());
+        assertEquals(1, pelaaja.getHaluttuJarjestys());
     }
 }

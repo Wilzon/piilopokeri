@@ -9,10 +9,11 @@ import piilopokeri.domain.Piilopokeri;
 import piilopokeri.gui.kuuntelijat.IhmisPelaajienAsetusKuuntelija;
 
 public class IhmisPelaajienAsetusIkkuna extends PikkuIkkuna{
-    private Piilopokeri pokeri;
+    private final Piilopokeri pokeri;
 
     public IhmisPelaajienAsetusIkkuna(Piilopokeri pokeri) {
         this.pokeri = pokeri;
+        
         frame.setTitle("Ihmispelaajien asetus");
     }
 

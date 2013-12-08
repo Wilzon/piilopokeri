@@ -31,10 +31,6 @@ public class Piilopokeri {
     private ArrayList<Kasi> kadet;
     
     /**
-     * Totuusarvo, onko peli loppunut
-     */
-    private boolean onkoLoppu;
-    /**
      * Metodi nostaa pakasta kortteja käteen
      * 
      * @param  maara Korttien lukumäärä
@@ -45,8 +41,6 @@ public class Piilopokeri {
         pakka = new Korttipakka();
         pelaajat = new ArrayList();
         kadet = new ArrayList();
-        
-        onkoLoppu = false;
         
         pakka.sekoitaKortit();
         
@@ -148,8 +142,6 @@ public class Piilopokeri {
      * Metodi tulostaa pelikentän, jossa on pakka ja kädet
      */
     public void tulostaPelikentta() {
-        //EI VALMIS
-        
         int mones = 0;
         int montaRivia = kadet.size() * 3 + 2;
         int pituus = 72;
@@ -302,7 +294,7 @@ public class Piilopokeri {
         return pakanPaallimmainen;
     }
     
-    public Kortti vaihdaKoneenKortti(Kasi kasi, Kortti kortti) {
+    public Kortti vaihdaKorttiAutomaattisesti(Kasi kasi, Kortti kortti) {
         ArrayList<Kortti> kortit = kasi.getKortit();
         
         for(int i = 0; i < kortit.size(); i++) {
@@ -323,12 +315,12 @@ public class Piilopokeri {
         return null;
     }
     
-    public Kortti koneVaihtaaAvopakanKanssa(Kasi kasi) {
-        return vaihdaKoneenKortti(kasi, avoPakanKortti);
+    public Kortti vaihdaAvopakanKanssaAutomaattisesti(Kasi kasi) {
+        return vaihdaKorttiAutomaattisesti(kasi, avoPakanKortti);
     }
     
-    public Kortti koneVaihtaaSuljetunPakanKanssa(Kasi kasi) {
-        Kortti vanhaKortti = vaihdaKoneenKortti(kasi, pakanPaallimmainen);
+    public Kortti vaihdaSuljetunPakanKanssaAutomaattisesti(Kasi kasi) {
+        Kortti vanhaKortti = vaihdaKorttiAutomaattisesti(kasi, pakanPaallimmainen);
         
         getPakanPaallimmainen();
         
@@ -339,7 +331,7 @@ public class Piilopokeri {
         int avoPakanArvo = avoPakanKortti.getArvo();
         
         if(avoPakanArvo > 9 || kasi.getArvot().contains(avoPakanArvo)) {
-            koneVaihtaaAvopakanKanssa(kasi);
+            vaihdaAvopakanKanssaAutomaattisesti(kasi);
             return true;
             
         }
@@ -350,7 +342,7 @@ public class Piilopokeri {
         int pakanPaallimmaisenArvo = pakanPaallimmainen.getArvo();
         
         if(pakanPaallimmaisenArvo > 9 || kasi.getArvot().contains(pakanPaallimmaisenArvo)) {
-            koneVaihtaaSuljetunPakanKanssa(kasi);
+            vaihdaSuljetunPakanKanssaAutomaattisesti(kasi);
             
         }else{
             kaannaKoneenKortti(kasi);
@@ -389,7 +381,7 @@ public class Piilopokeri {
     public void arvoUusiNimiKoneelle(Kone kone) {
         for(Pelaaja pelaaja : pelaajat) {
             if(pelaaja.getNimi().equals(kone.getNimi()) && pelaaja != kone) {
-                kone.setUusiNimi();
+                kone.arvoUusiNimi();
                 
                 arvoUusiNimiKoneelle(kone);
             }

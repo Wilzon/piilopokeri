@@ -9,8 +9,8 @@ import piilopokeri.domain.Piilopokeri;
 import piilopokeri.gui.kuuntelijat.KorttienAsetusKuuntelija;
 
 public class KorttienAsetusIkkuna extends PikkuIkkuna{
-    private Piilopokeri pokeri;
-    private int pelaajienMaara;
+    private final Piilopokeri pokeri;
+    private final int pelaajienMaara;
 
     public KorttienAsetusIkkuna(Piilopokeri pokeri) {
         this.pokeri = pokeri;

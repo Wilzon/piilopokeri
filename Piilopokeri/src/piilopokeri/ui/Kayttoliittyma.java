@@ -139,11 +139,11 @@ public class Kayttoliittyma {
         for(Pelaaja pelaaja : pelaajat) {
             Kasi pelaajanKasi = pelaaja.getKasi();
 
-            if(pelaaja.haluttuJarjestys() == 1) {
+            if(pelaaja.getHaluttuJarjestys() == 1) {
                 pelaajanKasi.kaannaJarjestys();
                 
             }
-            if(pelaaja.haluttuJarjestys() == 2) {
+            if(pelaaja.getHaluttuJarjestys() == 2) {
                 pelaajanKasi.jarjestaKortit();
                 
             }

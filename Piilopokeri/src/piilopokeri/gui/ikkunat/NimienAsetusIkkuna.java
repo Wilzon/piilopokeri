@@ -60,12 +60,16 @@ public class NimienAsetusIkkuna extends PikkuIkkuna{
             
         }
         
-        JButton ok = new JButton("OK");
+        okNappi.addActionListener(new NimiKuuntelija(pokeri, frame, nimet));
         
-        ok.addActionListener(new NimiKuuntelija(pokeri, frame, nimet));
         
+//        JButton ok = new JButton("OK");
+//        
+//        ok.addActionListener(new NimiKuuntelija(pokeri, frame, nimet));
+//        
+//        p.add(new JLabel());
         p.add(new JLabel());
-        p.add(ok);
+        p.add(okNappi);
 
         
         return p;

@@ -4,8 +4,6 @@ package piilopokeri.domain;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
-import piilopokeri.domain.Kasi;
-import piilopokeri.domain.Kortti;
 
 
 public class Kasi2Test {
@@ -23,6 +21,8 @@ public class Kasi2Test {
     Kortti ruutu5;
     
     Kortti pata4;
+    Kortti ruutu4;
+    Kortti risti4;
     
     Kortti jokeri;
     
@@ -41,6 +41,9 @@ public class Kasi2Test {
         ruutu5 = new Kortti(5, Kortti.RUUTU, true);
         
         pata4 = new Kortti(4, Kortti.PATA, true);
+        ruutu4 = new Kortti(4, Kortti.RUUTU, true);
+        risti4 = new Kortti(4, Kortti.RISTI, true);
+        
         
         jokeri = new Kortti(15, Kortti.JOKERI, true);
     }
@@ -163,6 +166,129 @@ public class Kasi2Test {
     }
     
     @Test
+    public void kadessaOnNelosetJaPari() {
+        Kasi nelosJaPariKasi = new Kasi();
+        
+        nelosJaPariKasi.lisaaKortti(hertta4);
+        nelosJaPariKasi.lisaaKortti(ruutu4);
+        nelosJaPariKasi.lisaaKortti(risti4);
+        nelosJaPariKasi.lisaaKortti(pata4);
+        nelosJaPariKasi.lisaaKortti(risti5);
+        nelosJaPariKasi.lisaaKortti(ruutu5);
+        
+        assertTrue(nelosJaPariKasi.onkoNelosetJaPari());
+    }
+    
+    @Test
+    public void kadessaOnVitosetJaPari() {
+        Kasi vitosJaPariKasi = new Kasi();
+        
+        vitosJaPariKasi.lisaaKortti(hertta4);
+        vitosJaPariKasi.lisaaKortti(ruutu4);
+        vitosJaPariKasi.lisaaKortti(risti4);
+        vitosJaPariKasi.lisaaKortti(pata4);
+        vitosJaPariKasi.lisaaKortti(risti5);
+        vitosJaPariKasi.lisaaKortti(ruutu5);
+        vitosJaPariKasi.lisaaKortti(jokeri);
+        
+        assertTrue(vitosJaPariKasi.onkoVitosetJaPari());
+    }
+    
+    @Test
+    public void kadessaOnKutosetJaPari() {
+        Kasi kutosJaPariKasi = new Kasi();
+        
+        kutosJaPariKasi.lisaaKortti(hertta4);
+        kutosJaPariKasi.lisaaKortti(ruutu4);
+        kutosJaPariKasi.lisaaKortti(risti4);
+        kutosJaPariKasi.lisaaKortti(pata4);
+        kutosJaPariKasi.lisaaKortti(risti5);
+        kutosJaPariKasi.lisaaKortti(ruutu5);
+        kutosJaPariKasi.lisaaKortti(jokeri);
+        kutosJaPariKasi.lisaaKortti(jokeri);
+        
+        assertTrue(kutosJaPariKasi.onkoKutosetJaPari());
+    }
+    
+    @Test
+    public void kadessaOnNelosetJaKolmeSamaa() {
+        Kasi nelosJaKolmeSamaaKasi = new Kasi();
+        
+        nelosJaKolmeSamaaKasi.lisaaKortti(hertta4);
+        nelosJaKolmeSamaaKasi.lisaaKortti(ruutu4);
+        nelosJaKolmeSamaaKasi.lisaaKortti(risti4);
+        nelosJaKolmeSamaaKasi.lisaaKortti(pata4);
+        nelosJaKolmeSamaaKasi.lisaaKortti(risti5);
+        nelosJaKolmeSamaaKasi.lisaaKortti(ruutu5);
+        nelosJaKolmeSamaaKasi.lisaaKortti(pata5);
+        
+        assertTrue(nelosJaKolmeSamaaKasi.onkoNelosetJaKolmoset());
+    }
+    
+    @Test
+    public void kadessaOnVitosetJaKolmeSamaa() {
+        Kasi vitosJaKolmeSamaaKasi = new Kasi();
+        
+        vitosJaKolmeSamaaKasi.lisaaKortti(hertta4);
+        vitosJaKolmeSamaaKasi.lisaaKortti(ruutu4);
+        vitosJaKolmeSamaaKasi.lisaaKortti(risti4);
+        vitosJaKolmeSamaaKasi.lisaaKortti(pata4);
+        vitosJaKolmeSamaaKasi.lisaaKortti(risti5);
+        vitosJaKolmeSamaaKasi.lisaaKortti(ruutu5);
+        vitosJaKolmeSamaaKasi.lisaaKortti(pata5);
+        vitosJaKolmeSamaaKasi.lisaaKortti(jokeri);
+        
+        assertTrue(vitosJaKolmeSamaaKasi.onkoVitosetJaKolmoset());
+    }
+    
+    @Test
+    public void kadessaOnKutosetJaKolmeSamaa() {
+        Kasi kutosJaKolmeSamaaKasi = new Kasi();
+        
+        kutosJaKolmeSamaaKasi.lisaaKortti(hertta4);
+        kutosJaKolmeSamaaKasi.lisaaKortti(ruutu4);
+        kutosJaKolmeSamaaKasi.lisaaKortti(risti4);
+        kutosJaKolmeSamaaKasi.lisaaKortti(pata4);
+        kutosJaKolmeSamaaKasi.lisaaKortti(risti5);
+        kutosJaKolmeSamaaKasi.lisaaKortti(ruutu5);
+        kutosJaKolmeSamaaKasi.lisaaKortti(hertta5);
+        kutosJaKolmeSamaaKasi.lisaaKortti(jokeri);
+        kutosJaKolmeSamaaKasi.lisaaKortti(jokeri);
+        
+        assertTrue(kutosJaKolmeSamaaKasi.onkoKutosetJaKolmoset());
+    }
+    
+    @Test
+    public void kadessaOnKaksiKolmeSamaa() {
+        Kasi kaksiKolmeSamaaKasi = new Kasi();
+        
+        kaksiKolmeSamaaKasi.lisaaKortti(hertta4);
+        kaksiKolmeSamaaKasi.lisaaKortti(ruutu4);
+        kaksiKolmeSamaaKasi.lisaaKortti(risti4);
+        kaksiKolmeSamaaKasi.lisaaKortti(hertta5);
+        kaksiKolmeSamaaKasi.lisaaKortti(risti5);
+        kaksiKolmeSamaaKasi.lisaaKortti(ruutu5);
+        
+        assertTrue(kaksiKolmeSamaaKasi.onkoKahdetKolmoset());
+    }
+    
+    @Test
+    public void kadessaOnKaksiNeljaSamaa() {
+        Kasi kaksiNeljaSamaaKasi = new Kasi();
+        
+        kaksiNeljaSamaaKasi.lisaaKortti(hertta4);
+        kaksiNeljaSamaaKasi.lisaaKortti(ruutu4);
+        kaksiNeljaSamaaKasi.lisaaKortti(risti4);
+        kaksiNeljaSamaaKasi.lisaaKortti(pata4);
+        kaksiNeljaSamaaKasi.lisaaKortti(risti5);
+        kaksiNeljaSamaaKasi.lisaaKortti(ruutu5);
+        kaksiNeljaSamaaKasi.lisaaKortti(hertta5);
+        kaksiNeljaSamaaKasi.lisaaKortti(pata5);
+        
+        assertTrue(kaksiNeljaSamaaKasi.onkoKahdetNeloset());
+    }
+    
+    @Test
     public void kadessaOnPariJokerilla() {
         Kasi jokeriPariKasi = new Kasi();
         
@@ -238,5 +364,47 @@ public class Kasi2Test {
         jokeriVarisuoraKasi.lisaaKortti(hertta5);
         
         assertTrue(jokeriVarisuoraKasi.onkoVarisuora());
+    }
+    
+    @Test
+    public void kadessaOnSuoraKahdellaJokerilla() {
+        Kasi kaksiJokeriaSuoraKasi = new Kasi();
+        
+        kaksiJokeriaSuoraKasi.lisaaKortti(hertta2);
+        kaksiJokeriaSuoraKasi.lisaaKortti(ruutu4);
+        kaksiJokeriaSuoraKasi.lisaaKortti(hertta3);
+        kaksiJokeriaSuoraKasi.lisaaKortti(jokeri);
+        kaksiJokeriaSuoraKasi.lisaaKortti(jokeri);
+        
+        assertTrue(kaksiJokeriaSuoraKasi.onkoSuora());
+        
+    }
+    
+    @Test
+    public void kadessaOnVariKahdellaJokerilla() {
+        Kasi kaksiJokeriaVariKasi = new Kasi();
+        
+        kaksiJokeriaVariKasi.lisaaKortti(hertta2);
+        kaksiJokeriaVariKasi.lisaaKortti(hertta10);
+        kaksiJokeriaVariKasi.lisaaKortti(hertta3);
+        kaksiJokeriaVariKasi.lisaaKortti(jokeri);
+        kaksiJokeriaVariKasi.lisaaKortti(jokeri);
+        
+        assertTrue(kaksiJokeriaVariKasi.onkoVari());
+        
+    }
+    
+    @Test
+    public void kadessaOnVarisuoraKahdellaJokerilla() {
+        Kasi kaksiJokeriaSuoraKasi = new Kasi();
+        
+        kaksiJokeriaSuoraKasi.lisaaKortti(hertta2);
+        kaksiJokeriaSuoraKasi.lisaaKortti(hertta4);
+        kaksiJokeriaSuoraKasi.lisaaKortti(hertta3);
+        kaksiJokeriaSuoraKasi.lisaaKortti(jokeri);
+        kaksiJokeriaSuoraKasi.lisaaKortti(jokeri);
+        
+        assertTrue(kaksiJokeriaSuoraKasi.onkoVarisuora());
+        
     }
 }

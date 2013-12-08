@@ -3,8 +3,6 @@ package piilopokeri.gui.ikkunat;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.util.ArrayList;
-import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,27 +11,27 @@ import piilopokeri.domain.Kortti;
 import piilopokeri.domain.Pelaaja;
 import piilopokeri.domain.Piilopokeri;
 import piilopokeri.domain.Vuoro;
+import piilopokeri.gui.AvoPakkaNappi;
+import piilopokeri.gui.KoneToiminta;
 import piilopokeri.gui.KorttienMaalaaja;
-import piilopokeri.gui.NappienPiilottaja;
-import piilopokeri.gui.kuuntelijat.AvoPakkaNapinKuuntelija;
-import piilopokeri.gui.kuuntelijat.KoneNapinKuuntelija;
+import piilopokeri.gui.NappiHallinto;
+import piilopokeri.gui.PakkaNappi;
 import piilopokeri.gui.kuuntelijat.KorttiNapinKuuntelija;
-import piilopokeri.gui.kuuntelijat.PakkaNapinKuuntelija;
 
 public class PeliIkkuna extends Ikkuna{
     private Piilopokeri pokeri;
-    private HashMap<String, ArrayList<JButton>> korttiNappiHajautustaulu;
     private Vuoro vuoro;
-    private JButton pakkaNappi;
-    private JButton avoPakkaNappi;
-    private JButton koneNappi;
+    private PakkaNappi pakkaNappi;
+    private AvoPakkaNappi avoPakkaNappi;
     private JPanel panel;
 
     public PeliIkkuna(Piilopokeri pokeri) {
         this.pokeri = pokeri;
         this.vuoro = new Vuoro(pokeri, 0);
         panel = new JPanel();
-        korttiNappiHajautustaulu = new HashMap();
+        
+        pakkaNappi = new PakkaNappi(pokeri);
+        avoPakkaNappi = new AvoPakkaNappi(pokeri);
 
         frame.setTitle("Piilopokeri");
     }
@@ -54,6 +52,7 @@ public class PeliIkkuna extends Ikkuna{
 
         frame.pack();
         
+        
         luoJaPainaKoneNappia();
     }
     
@@ -65,7 +64,7 @@ public class PeliIkkuna extends Ikkuna{
         
         panel = lisaaPelaajienNapit(panel);
         
-        NappienPiilottaja.piilotaMuidenPelaajienNapit(pokeri, vuoro, korttiNappiHajautustaulu);
+        NappiHallinto.piilotaMuidenPelaajienNapit(pokeri, vuoro);
         
         panel.add(new JLabel());
 
@@ -83,8 +82,6 @@ public class PeliIkkuna extends Ikkuna{
             String nimi = pelaaja.getNimi();
             JLabel pelaajanNimi = new JLabel(nimi);
             
-            korttiNappiHajautustaulu.put(nimi, new ArrayList<JButton>());
-         
             p.add(pelaajanNimi);
             
             p.add(lisaaKorttiPaneli(pelaaja));
@@ -101,16 +98,10 @@ public class PeliIkkuna extends Ikkuna{
         JLabel pakkaTeksti = new JLabel("Pakka:", JLabel.CENTER);
         JLabel avoPakkaTeksti = new JLabel("Avopakka:", JLabel.CENTER);
         
-        pakkaNappi = new JButton("[X]");
-        avoPakkaNappi = new JButton(pokeri.getAvopakanPaallimmainen().toString());
-        
-        pakkaNappi.setSize(100, 50);
-        avoPakkaNappi.setSize(100, 50);
-        
         KorttienMaalaaja.maalaaNappi(pokeri, pokeri.getAvopakanPaallimmainen(), avoPakkaNappi);
 
-        avoPakkaNappi.addActionListener(new AvoPakkaNapinKuuntelija(pokeri, frame, vuoro, avoPakkaNappi, korttiNappiHajautustaulu));
-        pakkaNappi.addActionListener(new PakkaNapinKuuntelija(pokeri, vuoro, avoPakkaNappi, korttiNappiHajautustaulu));
+        avoPakkaNappi.lisaaKuuntelija(frame, vuoro, pakkaNappi);
+        pakkaNappi.lisaaKuuntelija(vuoro, avoPakkaNappi);
         
         p.add(pakkaTeksti);
         p.add(pakkaNappi);
@@ -130,9 +121,10 @@ public class PeliIkkuna extends Ikkuna{
         for(Kortti kortti: pelaaja.getKasi().getKortit()) {
             JButton korttiNappi = new JButton(kortti.toString());
         
-            korttiNappiHajautustaulu.get(pelaaja.getNimi()).add(korttiNappi);
-
-            KorttiNapinKuuntelija nappiKuuntelija = new KorttiNapinKuuntelija(pokeri, frame, korttiNappi, avoPakkaNappi, kortti, vuoro, korttiNappiHajautustaulu);
+            pelaaja.setKorttiNappi(korttiNappi);
+            
+            KorttiNapinKuuntelija nappiKuuntelija = new KorttiNapinKuuntelija(pokeri, frame, vuoro, kortti,
+                    korttiNappi, avoPakkaNappi, pakkaNappi);
             
             korttiNappi.addActionListener(nappiKuuntelija);
             
@@ -144,9 +136,6 @@ public class PeliIkkuna extends Ikkuna{
     }
     
     public void luoJaPainaKoneNappia() {
-        koneNappi = new JButton();
-        koneNappi.addActionListener(new KoneNapinKuuntelija(pokeri, frame, vuoro, avoPakkaNappi, korttiNappiHajautustaulu));
-        koneNappi.doClick();
+        KoneToiminta.luoJaPainaKoneNappia(pokeri, frame, vuoro, okNappi, okNappi);
     }
-    
 }

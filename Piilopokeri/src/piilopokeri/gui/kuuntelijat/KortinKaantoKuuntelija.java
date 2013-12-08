@@ -2,15 +2,14 @@
 package piilopokeri.gui.kuuntelijat;
 
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import piilopokeri.domain.Kortti;
 import piilopokeri.domain.Piilopokeri;
 import piilopokeri.domain.Vuoro;
+import piilopokeri.gui.KoneToiminta;
 import piilopokeri.gui.KorttienMaalaaja;
-import piilopokeri.gui.NappienPiilottaja;
+import piilopokeri.gui.NappiHallinto;
 
 public class KortinKaantoKuuntelija extends Kuuntelija {
     private Piilopokeri pokeri;
@@ -18,26 +17,20 @@ public class KortinKaantoKuuntelija extends Kuuntelija {
     private Vuoro vuoro;
     private JButton avoPakkaNappi;
     private JButton pakkaNappi;
-    private HashMap<String, ArrayList<JButton>> korttiNapit;
 
-    public KortinKaantoKuuntelija(Piilopokeri pokeri, JFrame frame, Vuoro vuoro, JButton avoPakkaNappi,
-            HashMap<String, ArrayList<JButton>> korttiNapit) {
+    public KortinKaantoKuuntelija(Piilopokeri pokeri, JFrame frame, Vuoro vuoro, JButton avoPakkaNappi, JButton pakkaNappi) {
         this.pokeri = pokeri;
         this.frame = frame;
         this.vuoro = vuoro;
         this.avoPakkaNappi = avoPakkaNappi;
-        this.korttiNapit = korttiNapit;
+        this.pakkaNappi = pakkaNappi;
     }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-    ArrayList<JButton> pelaajanNapit = korttiNapit.get(vuoro.getPelaajanNimi());
-
-        for(JButton nappi : pelaajanNapit) {
+        for(JButton nappi : vuoro.getPelaaja().getKorttiNapit()) {
             if(nappi.getName() == null) {
                 avoPakkaNappi.setText(pokeri.pakanPaallimmainen.toString());
-                
-                pokeri.getPakanPaallimmainen();
                 
                 Kortti kortti = pokeri.kaannaKoneenKortti(vuoro.getKasi());
                 
@@ -53,20 +46,16 @@ public class KortinKaantoKuuntelija extends Kuuntelija {
         }
         vuoro.seuraava();
         
-        NappienPiilottaja.piilotaMuidenPelaajienNapit(pokeri, vuoro, korttiNapit);
+        NappiHallinto.piilotaMuidenPelaajienNapit(pokeri, vuoro);
         
-        lopetaPeliLopussa(pokeri, frame);
+        NappiHallinto.jarjestaKaikkiNapit(vuoro);
         
-        luoJaPainaaKoneNappia(pokeri, frame, vuoro, avoPakkaNappi, korttiNapit);
+        lopetaPeliLopussa(pokeri, frame, avoPakkaNappi, pakkaNappi);
+        
+        KoneToiminta.luoJaPainaaKoneNappia(pokeri, frame, vuoro, avoPakkaNappi, pakkaNappi);
         
         if(!frame.getTitle().equals("Piilopokeri")) {
             frame.dispose();
         }
-//        for(int i = 0; i < kortit.size(); i++) {
-//            Kortti kortti = kortit.get(i);
-//            if(kortti.toString().equals(korttiString)) {
-//            }
-//        }
-        
     }   
 }

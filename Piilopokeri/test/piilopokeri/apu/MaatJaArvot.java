@@ -13,7 +13,7 @@ public class MaatJaArvot {
             
             if (!merkkijono.contains("♠") && !merkkijono.contains("♣") && 
                     !merkkijono.contains("♦") && !merkkijono.contains("♥") &&
-                    !merkkijono.contains("Jokeri")) {
+                    !merkkijono.contains("JOKERI")) {
                 
                 return false;
             }
@@ -22,7 +22,7 @@ public class MaatJaArvot {
     }
     
     public static String vaaratMaatViesti(Korttijoukko testiJoukko) {
-        return "expected only values \"♥/♦/♣/♠/Jokeri\" but found <" + testiJoukko.getMaatMerkkijonona() + ">";
+        return "expected only values \"♥/♦/♣/♠/JOKERI\" but found <" + testiJoukko.getMaatMerkkijonona() + ">";
     }
     
     public static boolean onkoOikeatArvot(Korttijoukko testiJoukko) {

@@ -58,6 +58,19 @@ public class Korttijoukko {
     }
     
     /**
+     * Metodi poistaa jokerit korttijoukosta
+     */
+    public void poistaJokerit() {
+        Kortti jokeri = new Kortti(15, Kortti.JOKERI);
+        
+        if(kortit.size() > 1) {
+            kortit.remove(jokeri);
+            kortit.remove(jokeri);
+            
+        }
+    }
+    
+    /**
      * Metodi järjestää kortit joukossa
      */
     public void jarjestaKortit() {

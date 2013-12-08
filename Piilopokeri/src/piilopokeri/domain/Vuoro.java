@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Vuoro {
     private int vuoro;
-    private Piilopokeri pokeri;
+    private final Piilopokeri pokeri;
     private String pelaajanNimi;
     private Pelaaja pelaaja;
 

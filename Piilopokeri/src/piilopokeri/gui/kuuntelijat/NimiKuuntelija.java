@@ -10,9 +10,9 @@ import piilopokeri.domain.Piilopokeri;
 import piilopokeri.gui.ikkunat.KonePelaajienAsetusIkkuna;
 
 public class NimiKuuntelija extends Kuuntelija {
-    private Piilopokeri pokeri;
-    private ArrayList<JTextField> nimet;
-    private JFrame frame;
+    private final Piilopokeri pokeri;
+    private final ArrayList<JTextField> nimet;
+    private final JFrame frame;
 
     public NimiKuuntelija(Piilopokeri pokeri, JFrame frame, ArrayList<JTextField> nimet) {
         this.pokeri = pokeri;

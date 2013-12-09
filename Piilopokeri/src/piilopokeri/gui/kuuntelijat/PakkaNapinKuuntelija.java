@@ -9,10 +9,10 @@ import piilopokeri.domain.Vuoro;
 import piilopokeri.gui.ikkunat.VaihdaPakanKanssaIkkuna;
 
 public class PakkaNapinKuuntelija extends Kuuntelija {
-    private Piilopokeri pokeri;
-    private Vuoro vuoro;
-    private JButton avoPakkaNappi;
-    private JButton pakkaNappi;
+    private final Piilopokeri pokeri;
+    private final Vuoro vuoro;
+    private final JButton avoPakkaNappi;
+    private final JButton pakkaNappi;
 
     public PakkaNapinKuuntelija(Piilopokeri pokeri, Vuoro vuoro, 
             JButton avoPakkaNappi, JButton pakkaNappi) {

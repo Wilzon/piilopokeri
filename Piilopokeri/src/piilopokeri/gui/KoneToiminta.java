@@ -33,7 +33,6 @@ public class KoneToiminta {
         
         if(avoPakanArvo > 9 || kasi.getArvot().contains(avoPakanArvo)) {
             avoPakkaNappi.doClick();
-            System.out.println("AVOPAKKA");
             
             return true;
             
@@ -48,11 +47,9 @@ public class KoneToiminta {
         
         if(pakanPaallimmaisenArvo > 9 || kasi.getArvot().contains(pakanPaallimmaisenArvo)) {
             koneNappi.addActionListener(new KortinVaihtoKuuntelija(pokeri, frame, vuoro, avoPakkaNappi, pakkaNappi));
-            System.out.println("PAKKA");
             
         }else{
             koneNappi.addActionListener(new KortinKaantoKuuntelija(pokeri, frame, vuoro, avoPakkaNappi, pakkaNappi));
-            System.out.println("KÄÄNTÖ");
             
         }
         

@@ -8,9 +8,9 @@ import piilopokeri.domain.Piilopokeri;
 import piilopokeri.gui.ikkunat.UusiValikkoIkkuna;
 
 public class UudelleenAloitusKuuntelija extends Kuuntelija {
-    private Piilopokeri pokeri;
-    private JFrame frame;
-    private JFrame peliFrame;
+    private final Piilopokeri pokeri;
+    private final JFrame frame;
+    private final JFrame peliFrame;
 
     public UudelleenAloitusKuuntelija(Piilopokeri pokeri, JFrame frame, JFrame peliFrame) {
         this.pokeri = pokeri;
@@ -23,6 +23,7 @@ public class UudelleenAloitusKuuntelija extends Kuuntelija {
         frame.dispose();
         peliFrame.dispose();
         
+        pokeri.poistaKadet();
         pokeri.poistaKonePelaajat();
         pokeri.luoUusiPakka();
         

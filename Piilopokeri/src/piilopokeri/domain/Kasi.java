@@ -858,6 +858,10 @@ public class Kasi extends Korttijoukko{
     public int kadenArvo() {
         Kasi apuKasi = kadenKopio();
         
+        if(apuKasi.getKortit().size() == 1) {
+            return 99;
+        }
+        
         if(apuKasi.onkoKutosetJaNelosetJaKolmoset()) {
             return 53;
             

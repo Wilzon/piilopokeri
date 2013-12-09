@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JFrame;
 
 public class OhjeIkkunanOkKuuntelija extends Kuuntelija{
-    JFrame frame;
+    private final JFrame frame;
 
     public OhjeIkkunanOkKuuntelija(JFrame frame) {
         this.frame = frame;

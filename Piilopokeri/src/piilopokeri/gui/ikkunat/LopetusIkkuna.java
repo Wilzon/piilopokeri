@@ -92,41 +92,53 @@ public class LopetusIkkuna extends Ikkuna{
         ArrayList<Pelaaja> pelaajat = pokeri.getPelaajat();
         
         Kasi voittajaKasi = KasienVertailija.parasKasi(pokeri.getKadet());
-        Pelaaja voittajaPelaaja = new Pelaaja();
-        Pelaaja voittaja2Pelaaja = new Pelaaja();
+        ArrayList<Pelaaja> voittajatLista = new ArrayList();
         
-        boolean tasapeli = false;
-        
-        for(int i = 0; i < pelaajat.size(); i++) {
-            Pelaaja pelaaja = pelaajat.get(i);
-            if(voittajaKasi.equals(pelaaja.getKasi())) {
-                voittajaPelaaja = pelaaja;
+        for(Pelaaja pelaaja : pelaajat) {
+            if(KasienVertailija.parempiKasi(voittajaKasi, pelaaja.getKasi()) == 0) {
+                voittajatLista.add(pelaaja);
                 
-                for(int j = i + 1; j < pelaajat.size(); j++) {
-                    Pelaaja verrattavaPelaaja = pelaajat.get(j);
-                    if(KasienVertailija.parempiKasi(voittajaKasi, verrattavaPelaaja.getKasi()) == 0) {
-                        voittaja2Pelaaja = verrattavaPelaaja;
-                        tasapeli = true;
-                    }
-                }
             }
         }
         
-        if(tasapeli) {
+        if(voittajatLista.size() > 1) {
             JLabel tasapeliTeksti = new JLabel("Tasapeli!");
-            JLabel tasapeliVoittajat = new JLabel("Pelaajilla " + voittajaPelaaja.getNimi() + 
-                    " ja " + voittaja2Pelaaja.getNimi() + " on yhtä hyvät kädet!");
+            JLabel tasapeliVoittajat = new JLabel();
+            
+            setVoittajaLabelTeksti(tasapeliVoittajat, voittajatLista);
             
             voittajat.add(tasapeliTeksti);
             voittajat.add(tasapeliVoittajat);
             
         }else{
-            JLabel voittaja = new JLabel(voittajaPelaaja.getNimi() + " voitti!");
+            JLabel voittaja = new JLabel(voittajatLista.get(0).getNimi() + " voitti!");
             
             voittajat.add(voittaja);
         }
         
         return voittajat;
+    }
+    
+    public void setVoittajaLabelTeksti(JLabel voittajat, ArrayList<Pelaaja> voittajatLista) {
+        String voittajatString = "Pelaajilla ";
+        
+        for(int i = 0; i < voittajatLista.size(); i++) {
+            voittajatString += voittajatLista.get(i).getNimi();
+            
+            if(i < voittajatLista.size() - 2) {
+                voittajatString += ", ";
+                
+            }
+            else{
+                if(i == voittajatLista.size() - 2) {
+                    voittajatString += " ja ";
+                    
+                }
+            }
+        }
+        voittajatString += " on yhtä hyvät kädet!";
+        
+        voittajat.setText(voittajatString);
     }
     
     public JLabel tulostaKadenArvo(Pelaaja pelaaja) {
@@ -362,6 +374,7 @@ public class LopetusIkkuna extends Ikkuna{
 
         }else{
             pelaajaTeksti.setText("Pelaajan " + pelaaja.getNimi() + " suurin kortti on " + pelaaja.getKasi().getSuurinKortti() + "!");
+        
         }
         return pelaajaTeksti;
     }

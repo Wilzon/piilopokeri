@@ -2,10 +2,9 @@
 package piilopokeri.gui.ikkunat;
 
 import java.awt.Dimension;
-import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
-public class PikkuIkkuna extends Ikkuna{
+public abstract class PikkuIkkuna extends Ikkuna{
 
     @Override
     public void run() {
@@ -21,11 +20,4 @@ public class PikkuIkkuna extends Ikkuna{
 
         frame.pack();
     }
-    
-    
-    @Override
-    public JPanel lisaaPaneli() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

@@ -8,7 +8,7 @@ import piilopokeri.domain.Vuoro;
 import piilopokeri.gui.kuuntelijat.AvoPakkaNapinKuuntelija;
 
 public class AvoPakkaNappi extends JButton{
-    private Piilopokeri pokeri;
+    private final Piilopokeri pokeri;
     
     public AvoPakkaNappi(Piilopokeri pokeri) {
         this.pokeri = pokeri;

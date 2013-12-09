@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import piilopokeri.gui.kuuntelijat.NimiKuuntelija;
 import java.awt.GridLayout;
 import java.util.ArrayList;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -13,7 +12,7 @@ import javax.swing.WindowConstants;
 import piilopokeri.domain.Piilopokeri;
 
 public class NimienAsetusIkkuna extends PikkuIkkuna{
-    private Piilopokeri pokeri;
+    private final Piilopokeri pokeri;
 
     public NimienAsetusIkkuna(Piilopokeri pokeri) {
         this.pokeri = pokeri;
@@ -26,7 +25,12 @@ public class NimienAsetusIkkuna extends PikkuIkkuna{
         int korkeus = pokeri.getIhmisPelaajat().size() * 200;
         frame.setPreferredSize(new Dimension(400, korkeus));
         
-        frame.setLocation(400, 400);
+        int sijaintiY = 400;
+        if(pokeri.getIhmisPelaajat().size() > 4) {
+            sijaintiY = 0;
+        }
+        
+        frame.setLocation(400, sijaintiY);
         
         frame.getContentPane().add(lisaaPaneli());
         
@@ -59,15 +63,8 @@ public class NimienAsetusIkkuna extends PikkuIkkuna{
             nimet.add(nimi);
             
         }
-        
         okNappi.addActionListener(new NimiKuuntelija(pokeri, frame, nimet));
         
-        
-//        JButton ok = new JButton("OK");
-//        
-//        ok.addActionListener(new NimiKuuntelija(pokeri, frame, nimet));
-//        
-//        p.add(new JLabel());
         p.add(new JLabel());
         p.add(okNappi);
 

@@ -10,10 +10,10 @@ import piilopokeri.gui.ikkunat.KonePelaajienAsetusIkkuna;
 import piilopokeri.gui.ikkunat.NimienAsetusIkkuna;
 
 public class IhmisPelaajienAsetusKuuntelija extends Kuuntelija {
-    private Piilopokeri pokeri;
-    private JFrame frame;
-    private JComboBox ihmisLaatikko;
-    private NimienAsetusIkkuna nimiIkkuna;
+    private final Piilopokeri pokeri;
+    private final JFrame frame;
+    private final JComboBox ihmisLaatikko;
+    private final NimienAsetusIkkuna nimiIkkuna;
 
     public IhmisPelaajienAsetusKuuntelija(Piilopokeri pokeri, JFrame frame, JComboBox ihmisLaatikko) {
         this.pokeri = pokeri;

@@ -27,25 +27,19 @@ public class NappiHallinto {
         }
     }
     
-    public static void jarjestaKaikkiNapit(Vuoro vuoro) {
-        Pelaaja pelaaja = vuoro.getPelaaja();
-        pelaaja.jarjestaOmatKortit();
-            
-        for(int i = 0; i < pelaaja.getKorttiNapit().size(); i++) {
-            pelaaja.getKorttiNapit().get(i).setText(pelaaja.getKasi().getKortit().get(i).toString());
-            
+    public static void piilotaTurhatNapit(Vuoro vuoro) {
+        for(JButton nappi : vuoro.getPelaaja().getKorttiNapit()) {
+            nappi.setEnabled(false);
         }
-            
-//            for(Kortti kortti: pelaaja.getKasi().getKortit()) {
-//                JButton korttiNappi = new JButton(kortti.toString());
-//
-//                pelaaja.setKorttiNappi(korttiNappi);
-//
-//                KorttiNapinKuuntelija nappiKuuntelija = new KorttiNapinKuuntelija(pokeri, frame, vuoro, kortti,
-//                        korttiNappi, avoPakkaNappi, pakkaNappi);
-//
-//                korttiNappi.addActionListener(nappiKuuntelija);
-                
-//            }
+    }
+    
+    public static void jarjestaKaikkiNapit(Vuoro vuoro) {
+//        Pelaaja pelaaja = vuoro.getPelaaja();
+//        pelaaja.jarjestaOmatKortit();
+//            
+//        for(int i = 0; i < pelaaja.getKorttiNapit().size(); i++) {
+//            pelaaja.getKorttiNapit().get(i).setText(pelaaja.getKasi().getKortit().get(i).toString());
+//            
+//        }
     }
 }

@@ -20,12 +20,6 @@ public class KasienVertailija {
         int kadenArvo = kasi.kadenArvo();
         int kaden2Arvo = kasi2.kadenArvo();
         
-        
-        if(kasi.getKortit().size() == 1) {
-            kadenArvo = 99;
-            kaden2Arvo = 99;
-            
-        }
         if(kasi.getKortit().size() > 6 && kadenArvo != kaden2Arvo) {
             kadenArvo = kasi.kadenArvoSuurellaKadella();
             kaden2Arvo = kasi2.kadenArvoSuurellaKadella();
@@ -218,21 +212,26 @@ public class KasienVertailija {
      * @return paras käsi
      */
     public static Kasi parasKasi(ArrayList<Kasi> kadet) {
-        for (int i = 0; i < kadet.size() - 1; i += 2) {
-            Kasi kasi = kadet.get(i);
-            Kasi kasi2 = kadet.get(i + 1);
+        while(kadet.size() > 1) {
+            Kasi kasi = kadet.get(0);
+            Kasi kasi2 = kadet.get(1);
+
+            System.out.println(kasi);
+            System.out.println(kasi2);
+            System.out.println("----");
             
             int arvo = parempiKasi(kasi, kasi2);
+            System.out.println(arvo);
             
             if (arvo == 1) {
                 kadet.remove(kasi2);
+                System.out.println("eka");
                 
-            }
-            if (arvo == -1) {
+            }else{
                 kadet.remove(kasi);
+                System.out.println("toka");
                 
             }
-            parasKasi(kadet);
         }
         return kadet.get(0);
     }
@@ -251,14 +250,15 @@ public class KasienVertailija {
         kasi.kaannaJarjestys();
         kasi2.kaannaJarjestys();
         
-        ArrayList<Kortti> kortit = kasi.getKortit();
-        ArrayList<Kortti> kortit2 = kasi2.getKortit();
+        ArrayList<Integer> arvot = kasi.getArvot();
+        ArrayList<Integer> arvot2 = kasi2.getArvot();
         
-        for (int i = 0; i < kortit.size(); i++) {
-            if (kortit.get(i).getArvo() > kortit2.get(i).getArvo()) {
+        for (int i = 0; i < arvot.size(); i++) {
+            if (arvot.get(i) > arvot2.get(i)) {
                 return 1;
                 
-            } else if (kortit.get(i).getArvo() < kortit2.get(i).getArvo()) {
+            }
+            if (arvot.get(i) < arvot2.get(i)) {
                 return -1;
                 
             }
@@ -277,21 +277,7 @@ public class KasienVertailija {
      *         0, jos käsissä on yhtä hyvät suorat tai värit
      */
     public static int parempiSuoraTaiVari(Kasi kasi, Kasi kasi2) {
-        kasi.jarjestaKortit();
-        kasi2.jarjestaKortit();
-        
-        ArrayList<Kortti> kortit = kasi.getKortit();
-        ArrayList<Kortti> kortit2 = kasi2.getKortit();
-        
-        if (kortit.get(0).getArvo() > kortit2.get(0).getArvo()) {
-            return 1;
-            
-        } else if (kortit.get(0).getArvo() < kortit2.get(0).getArvo()) {
-            return -1;
-            
-        } else {
-            return parempiSuuriKortti(kasi, kasi2);
-        }
+        return parempiSuuriKortti(kasi, kasi2);
     }
 
     /**
@@ -309,13 +295,15 @@ public class KasienVertailija {
         ArrayList<Integer> ensimmaisenKadenArvot = kasi.monenSamanArvot(maara);
         ArrayList<Integer> toisenKadenArvot = kasi2.monenSamanArvot(maara);
         
-        if (ensimmaisenKadenArvot.get(0) > toisenKadenArvot.get(0)) {
-            return 1;
-            
-        }
-        if (toisenKadenArvot.get(0) > ensimmaisenKadenArvot.get(0)) {
-            return -1;
-            
+        for(int i = 0; i < ensimmaisenKadenArvot.size(); i++) {
+            if (ensimmaisenKadenArvot.get(0) > toisenKadenArvot.get(0)) {
+                return 1;
+
+            }
+            if (toisenKadenArvot.get(0) > ensimmaisenKadenArvot.get(0)) {
+                return -1;
+                
+            }
         }
         return 0;
     }

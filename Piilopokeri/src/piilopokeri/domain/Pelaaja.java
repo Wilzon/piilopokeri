@@ -37,6 +37,10 @@ public class Pelaaja {
     public Kasi getKasi() {
         return kasi;
     }
+    
+    public void poistaKasi() {
+        kasi = null;
+    }
 
     public void setHaluttuJarjestys(int jarjestys) {
         this.jarjestys = jarjestys;

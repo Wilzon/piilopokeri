@@ -12,11 +12,11 @@ import piilopokeri.gui.KorttienMaalaaja;
 import piilopokeri.gui.NappiHallinto;
 
 public class KortinKaantoKuuntelija extends Kuuntelija {
-    private Piilopokeri pokeri;
-    private JFrame frame;
-    private Vuoro vuoro;
-    private JButton avoPakkaNappi;
-    private JButton pakkaNappi;
+    private final Piilopokeri pokeri;
+    private final JFrame frame;
+    private final Vuoro vuoro;
+    private final JButton avoPakkaNappi;
+    private final JButton pakkaNappi;
 
     public KortinKaantoKuuntelija(Piilopokeri pokeri, JFrame frame, Vuoro vuoro, JButton avoPakkaNappi, JButton pakkaNappi) {
         this.pokeri = pokeri;
@@ -28,11 +28,14 @@ public class KortinKaantoKuuntelija extends Kuuntelija {
     
     @Override
     public void actionPerformed(ActionEvent ae) {
+        pakkaNappi.setEnabled(true);
+        avoPakkaNappi.setEnabled(true);
+        
         for(JButton nappi : vuoro.getPelaaja().getKorttiNapit()) {
             if(nappi.getName() == null) {
                 avoPakkaNappi.setText(pokeri.pakanPaallimmainen.toString());
                 
-                Kortti kortti = pokeri.kaannaKoneenKortti(vuoro.getKasi());
+                Kortti kortti = pokeri.koneKaantaaKortin(vuoro.getKasi());
                 
                 nappi.setText(kortti.toString());
                 

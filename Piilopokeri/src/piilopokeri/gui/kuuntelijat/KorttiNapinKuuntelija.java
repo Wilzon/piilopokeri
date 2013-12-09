@@ -12,13 +12,13 @@ import piilopokeri.gui.KorttienMaalaaja;
 import piilopokeri.gui.NappiHallinto;
 
 public class KorttiNapinKuuntelija extends Kuuntelija {
-    private Piilopokeri pokeri;
-    private JFrame frame;
-    private JButton korttiNappi;
-    private JButton avoPakkaNappi;
-    private JButton pakkaNappi;
-    private Kortti kortti;
-    private Vuoro vuoro;
+    private final Piilopokeri pokeri;
+    private final JFrame frame;
+    private final JButton korttiNappi;
+    private final JButton avoPakkaNappi;
+    private final JButton pakkaNappi;
+    private final Kortti kortti;
+    private final Vuoro vuoro;
 
     public KorttiNapinKuuntelija(Piilopokeri pokeri, JFrame frame, Vuoro vuoro, Kortti kortti,
             JButton korttiNappi, JButton avoPakkaNappi, JButton pakkaNappi) {

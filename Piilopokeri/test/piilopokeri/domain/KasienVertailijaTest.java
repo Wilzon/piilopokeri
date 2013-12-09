@@ -60,7 +60,6 @@ public class KasienVertailijaTest {
         huonoPariKasi = new Kasi();
         hyvaPariKasi = new Kasi();
         
-        
         huonoSuoraKasi = new Kasi();
         hyvaSuoraKasi = new Kasi();
         
@@ -78,22 +77,31 @@ public class KasienVertailijaTest {
         
         kadet.add(huonoViitosKasi);
         kadet.add(hyvaViitosKasi);
-        kadet.add(huonoNelosKasi);
-        kadet.add(hyvaNelosKasi);
-        kadet.add(huonoKolmosKasi);
-        kadet.add(hyvaKolmosKasi);
-        kadet.add(huonoKaksiPariaKasi);
-        kadet.add(hyvaKaksiPariaKasi);
-        kadet.add(huonoPariKasi);
-        kadet.add(hyvaPariKasi);
-        kadet.add(huonoSuoraKasi);
-        kadet.add(hyvaSuoraKasi);
-        kadet.add(huonoVariKasi);
-        kadet.add(hyvaVariKasi);
+        
         kadet.add(huonoVarisuoraKasi);
         kadet.add(hyvaVarisuoraKasi);
+        
+        kadet.add(huonoNelosKasi);
+        kadet.add(hyvaNelosKasi);
+        
         kadet.add(huonoTayskasiKasi);
         kadet.add(hyvaTayskasiKasi);
+        
+        kadet.add(huonoVariKasi);
+        kadet.add(hyvaVariKasi);
+        
+        kadet.add(huonoSuoraKasi);
+        kadet.add(hyvaSuoraKasi);
+        
+        kadet.add(huonoKolmosKasi);
+        kadet.add(hyvaKolmosKasi);
+        
+        kadet.add(huonoKaksiPariaKasi);
+        kadet.add(hyvaKaksiPariaKasi);
+        
+        kadet.add(huonoPariKasi);
+        kadet.add(hyvaPariKasi);
+        
         kadet.add(huonoEiMitaanKasi);
         kadet.add(hyvaEiMitaanKasi);
         
@@ -104,6 +112,7 @@ public class KasienVertailijaTest {
         Kortti pata9 = new Kortti(9, Kortti.PATA, true);
         
         Kortti pata3 = new Kortti(3, Kortti.PATA, true);
+        
         Kortti ruutu8 = new Kortti(8, Kortti.RUUTU, true);
         
         Kortti herttaK = new Kortti(13, Kortti.HERTTA, true);
@@ -112,8 +121,8 @@ public class KasienVertailijaTest {
         Kortti ristiK = new Kortti(13, Kortti.RISTI, true);
         
         Kortti pata10 = new Kortti(10, Kortti.PATA, true);
-        Kortti pataJ = new Kortti(10, Kortti.PATA, true);
-        Kortti pataQ = new Kortti(10, Kortti.PATA, true);
+        Kortti pataJ = new Kortti(11, Kortti.PATA, true);
+        Kortti pataQ = new Kortti(12, Kortti.PATA, true);
         
         Kortti risti9 = new Kortti(9, Kortti.RISTI, true);
         Kortti ruutu9 = new Kortti(9, Kortti.RUUTU, true);
@@ -341,5 +350,23 @@ public class KasienVertailijaTest {
     @Test
     public void parasKasiVoittaa() {
         assertEquals(hyvaViitosKasi, KasienVertailija.parasKasi(kadet));
+    }
+    
+    @Test
+    public void parasKasiVoittaa2() {
+        kadet.remove(hyvaViitosKasi);
+        kadet.remove(huonoViitosKasi);
+        
+        assertEquals(hyvaVarisuoraKasi, KasienVertailija.parasKasi(kadet));
+    }
+    
+    @Test
+    public void parasKasiVoittaa3() {
+        kadet.remove(hyvaViitosKasi);
+        kadet.remove(huonoViitosKasi);
+        kadet.remove(hyvaVarisuoraKasi);
+        kadet.remove(huonoVarisuoraKasi);
+        
+        assertEquals(hyvaNelosKasi, KasienVertailija.parasKasi(kadet));
     }
 }

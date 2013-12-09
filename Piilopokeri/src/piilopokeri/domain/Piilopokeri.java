@@ -23,12 +23,14 @@ public class Piilopokeri {
     /**
      * Lista pelaajista
      */
-    private ArrayList<Pelaaja> pelaajat;
+    private final ArrayList<Pelaaja> pelaajat;
     
     /**
      * Lista pelaajien käsistä
      */
-    private ArrayList<Kasi> kadet;
+    private final ArrayList<Kasi> kadet;
+    
+    private boolean poistettiinkoJokerit;
     
     /**
      * Metodi nostaa pakasta kortteja käteen
@@ -41,6 +43,8 @@ public class Piilopokeri {
         pakka = new Korttipakka();
         pelaajat = new ArrayList();
         kadet = new ArrayList();
+        
+        poistettiinkoJokerit = false;
         
         pakka.sekoitaKortit();
         
@@ -79,6 +83,8 @@ public class Piilopokeri {
      */
     public void poistaJokeritPakasta() {
         pakka.poistaJokerit();
+        
+        poistettiinkoJokerit = true;
     }
     
     /**
@@ -102,27 +108,23 @@ public class Piilopokeri {
     }
     
     public ArrayList<Pelaaja> getIhmisPelaajat() {
-        ArrayList<Pelaaja> ihmisPelaajat = new ArrayList();
+        return getTietytPelaajat(false);
+    }
+    
+    public ArrayList<Pelaaja> getTietytPelaajat(boolean onkoKone) {
+        ArrayList<Pelaaja> tietytPelaajat = new ArrayList();
         
         for(Pelaaja pelaaja : pelaajat) {
-            if(!pelaaja.onkoKone()) {
-                ihmisPelaajat.add(pelaaja);
+            if((!pelaaja.onkoKone() && !onkoKone) || (pelaaja.onkoKone() && onkoKone)) {
+                tietytPelaajat.add(pelaaja);
                 
             }
         }
-        return ihmisPelaajat;
+        return tietytPelaajat;
     }
     
     public ArrayList<Pelaaja> getKonePelaajat() {
-        ArrayList<Pelaaja> konePelaajat = new ArrayList();
-        
-        for(Pelaaja pelaaja : pelaajat) {
-            if(pelaaja.onkoKone()) {
-                konePelaajat.add(pelaaja);
-                
-            }
-        }
-        return konePelaajat;
+        return getTietytPelaajat(true);
     }
     
     /**
@@ -345,11 +347,11 @@ public class Piilopokeri {
             vaihdaSuljetunPakanKanssaAutomaattisesti(kasi);
             
         }else{
-            kaannaKoneenKortti(kasi);
+            koneKaantaaKortin(kasi);
         }
     }
     
-    public Kortti kaannaKoneenKortti(Kasi kasi) {
+    public Kortti koneKaantaaKortin(Kasi kasi) {
         for(Kortti kortti : kasi.getKortit()) {
             if(!kortti.onkoKaannetty()) {
                 kortti.kaannaKortti();
@@ -421,6 +423,10 @@ public class Piilopokeri {
     public void luoUusiPakka() {
         pakka = new Korttipakka();
         
+        if(poistettiinkoJokerit) {
+            pakka.poistaJokerit();
+        }
+        
         sekoitaPakka();
     }
     
@@ -430,6 +436,14 @@ public class Piilopokeri {
     
     public void poistaIhmisPelaajat() {
         pelaajat.removeAll(getIhmisPelaajat());
+    }
+    
+    public void poistaKadet() {
+        for(Pelaaja pelaaja : pelaajat) {
+            pelaaja.poistaKasi();
+
+        }
+        kadet.clear();
     }
     
     public void tallennaPeliTiedot() {

@@ -8,8 +8,8 @@ import piilopokeri.domain.Piilopokeri;
 import piilopokeri.gui.ikkunat.KonePelaajienAsetusIkkuna;
 
 public class UusiAloitusKuuntelija extends Kuuntelija{
-    private Piilopokeri pokeri;
-    private JFrame frame;
+    private final Piilopokeri pokeri;
+    private final JFrame frame;
 
     public UusiAloitusKuuntelija(Piilopokeri pokeri, JFrame frame) {
         this.pokeri = pokeri;

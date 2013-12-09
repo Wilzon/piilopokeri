@@ -10,6 +10,7 @@ import javax.swing.WindowConstants;
 import piilopokeri.domain.Piilopokeri;
 import piilopokeri.domain.Vuoro;
 import piilopokeri.gui.KorttienMaalaaja;
+import piilopokeri.gui.NappiHallinto;
 import piilopokeri.gui.kuuntelijat.KortinKaantoKuuntelija;
 import piilopokeri.gui.kuuntelijat.KortinVaihtoKuuntelija;
 
@@ -32,6 +33,8 @@ public class VaihdaPakanKanssaIkkuna extends Ikkuna{
 
     @Override
     public void run() {
+        piilotaTurhatNapit();
+        
         frame.setPreferredSize(new Dimension(200, 200));
         
         frame.setLocation(50, 100);
@@ -69,5 +72,12 @@ public class VaihdaPakanKanssaIkkuna extends Ikkuna{
         p.add(kaanna);
         
         return p;
+    }
+    
+    public void piilotaTurhatNapit() {
+        pakkaNappi.setEnabled(false);
+        avoPakkaNappi.setEnabled(false);
+        
+        NappiHallinto.piilotaTurhatNapit(vuoro);
     }
 }

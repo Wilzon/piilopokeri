@@ -2,7 +2,6 @@
 package piilopokeri.gui.ikkunat;
 
 import java.awt.GridLayout;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;

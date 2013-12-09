@@ -33,8 +33,8 @@ public class Main {
         Kortti ristiK = new Kortti(13, Kortti.RISTI, true);
         
         Kortti pata10 = new Kortti(10, Kortti.PATA, true);
-        Kortti pataJ = new Kortti(10, Kortti.PATA, true);
-        Kortti pataQ = new Kortti(10, Kortti.PATA, true);
+        Kortti pataJ = new Kortti(11, Kortti.PATA, true);
+        Kortti pataQ = new Kortti(12, Kortti.PATA, true);
         
         Kortti risti9 = new Kortti(9, Kortti.RISTI, true);
         Kortti ruutu9 = new Kortti(9, Kortti.RUUTU, true);
@@ -314,7 +314,7 @@ public class Main {
         hertta6 = new Kortti(6, Kortti.HERTTA, true);
         hertta10 = new Kortti(10, Kortti.HERTTA, true);
         
-        pata5 = new Kortti(5, Kortti.PATA, true);
+//        pata5 = new Kortti(5, Kortti.PATA, true);
         risti5 = new Kortti(5, Kortti.RISTI, true);
         ruutu5 = new Kortti(5, Kortti.RUUTU, true);
         
@@ -323,7 +323,7 @@ public class Main {
         risti4 = new Kortti(4, Kortti.RISTI, true);
         
         
-        jokeri = new Kortti(15, Kortti.JOKERI, true);
+//        jokeri = new Kortti(15, Kortti.JOKERI, true);
         
         pokeri = new Piilopokeri();
         
@@ -594,7 +594,59 @@ public class Main {
 //        System.out.println(huonoTayskasiKasi.kadenArvo());
 //        System.out.println(KasienVertailija.parempiKasi(huonoNelosKasi, huonoTayskasiKasi));
         
+//        Kasi varisuora = new Kasi();
+//        Kasi neloset = new Kasi();
+//        
+//        varisuora.lisaaKortti(pataK);
+//        varisuora.lisaaKortti(pataJ);
+//        varisuora.lisaaKortti(pata10);
+//        varisuora.lisaaKortti(pataQ);
+//        varisuora.lisaaKortti(pata9);
+//        
+//        neloset.lisaaKortti(pataK);
+//        neloset.lisaaKortti(ristiK);
+//        neloset.lisaaKortti(pataJ);
+//        neloset.lisaaKortti(herttaK);
+//        neloset.lisaaKortti(ruutuK);
+//        
+//        System.out.println(varisuora.kadenArvo());
+//        System.out.println(neloset.kadenArvo());
+//        System.out.println(varisuora);
+//        System.out.println(neloset);
+//        
+//        System.out.println(KasienVertailija.parempiKasi(varisuora, neloset));
+        ArrayList<String> uusi = new ArrayList();
+        
+        uusi.add("hello");
+        uusi.add("hello");
+        uusi.add("hello");
+        uusi.add("hello");
+        uusi.add("hello");
+        uusi.add("hello");
+        uusi.add("you");
+        
+        System.out.println(setVoittajaLabelTeksti(uusi));
         
         
+    }
+    public static String setVoittajaLabelTeksti(ArrayList<String> voittajatLista) {
+        String voittajatString = "Pelaajilla ";
+        
+        for(int i = 0; i < voittajatLista.size(); i++) {
+            voittajatString += voittajatLista.get(i);
+            
+            if(i < voittajatLista.size() - 2) {
+                voittajatString += ", ";
+            }
+            else{
+                if(i == voittajatLista.size() - 2) {
+                    voittajatString += " ja ";
+                }
+            }
+        }
+        voittajatString += " on yhtä hyvät kädet!";
+        
+            
+        return voittajatString;
     }
 }

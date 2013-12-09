@@ -81,6 +81,7 @@ public class OhjeIkkuna extends Ikkuna{
                 + "\n\nOnnea peliin!";
    
         tekstiKentta.setText(ohjeTeksti);
+        tekstiKentta.setEditable(false);
     }
     
 }

@@ -19,10 +19,10 @@ import piilopokeri.gui.PakkaNappi;
 import piilopokeri.gui.kuuntelijat.KorttiNapinKuuntelija;
 
 public class PeliIkkuna extends Ikkuna{
-    private Piilopokeri pokeri;
-    private Vuoro vuoro;
-    private PakkaNappi pakkaNappi;
-    private AvoPakkaNappi avoPakkaNappi;
+    private final Piilopokeri pokeri;
+    private final Vuoro vuoro;
+    private final PakkaNappi pakkaNappi;
+    private final AvoPakkaNappi avoPakkaNappi;
     private JPanel panel;
 
     public PeliIkkuna(Piilopokeri pokeri) {

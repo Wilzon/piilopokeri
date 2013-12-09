@@ -9,11 +9,11 @@ import piilopokeri.domain.Vuoro;
 import piilopokeri.gui.KoneToiminta;
 
 public class KoneNapinKuuntelija extends Kuuntelija{
-    private Piilopokeri pokeri;
-    private JFrame frame;
-    private Vuoro vuoro;
-    private JButton avoPakkaNappi;
-    private JButton pakkaNappi;
+    private final Piilopokeri pokeri;
+    private final JFrame frame;
+    private final Vuoro vuoro;
+    private final JButton avoPakkaNappi;
+    private final JButton pakkaNappi;
 
     public KoneNapinKuuntelija(Piilopokeri pokeri, JFrame frame, Vuoro vuoro, 
             JButton avoPakkaNappi, JButton pakkaNappi) {

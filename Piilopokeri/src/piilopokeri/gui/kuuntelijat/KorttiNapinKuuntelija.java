@@ -47,8 +47,6 @@ public class KorttiNapinKuuntelija extends Kuuntelija {
             
             NappiHallinto.piilotaMuidenPelaajienNapit(pokeri, vuoro);
             
-            NappiHallinto.jarjestaKaikkiNapit(vuoro);
-            
             lopetaPeliLopussa(pokeri, frame, avoPakkaNappi, pakkaNappi);
             
             KoneToiminta.luoJaPainaaKoneNappia(pokeri, frame, vuoro, avoPakkaNappi, pakkaNappi);

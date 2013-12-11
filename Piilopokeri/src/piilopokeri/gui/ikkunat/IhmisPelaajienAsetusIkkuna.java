@@ -23,7 +23,7 @@ public class IhmisPelaajienAsetusIkkuna extends PikkuIkkuna{
         
         p.setLayout(new GridLayout(0, 2));
         
-        JComboBox ihmisLaatikko = new JComboBox(numeroLista(1, 10));
+        JComboBox ihmisLaatikko = new JComboBox(numeroLista(1, 9));
         
         JLabel ihmisPelaajat = new JLabel("Pelaajien määrä:");
         

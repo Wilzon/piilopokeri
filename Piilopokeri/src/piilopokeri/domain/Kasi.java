@@ -239,7 +239,7 @@ public class Kasi extends Korttijoukko{
     public boolean onkoTayskasi() {
         Kasi apuKasi = kadenKopio();
 
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmoset(), 2, 1, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmoset(), 2, 1);
     }
     
     public boolean onkoKolmeParia() {
@@ -421,19 +421,19 @@ public class Kasi extends Korttijoukko{
     public boolean onkoKahdetNelosetJaKolmoset() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKahdetNeloset(), 3, 1, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKahdetNeloset(), 3, 1);
     }
     
     public boolean onkoKahdetNelosetJaKaksiParia() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKahdetNeloset(), 2, 2, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKahdetNeloset(), 2, 2);
     }
     
     public boolean onkoKahdetNelosetJaPari() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(onkoKahdetNeloset(), 2, 1, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(onkoKahdetNeloset(), 2, 1);
     }
     
     public boolean onkoKahdetNeloset() {
@@ -449,7 +449,7 @@ public class Kasi extends Korttijoukko{
     public boolean onkoNelosetJaKolmetKolmoset() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 3, 3, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 3, 3);
     }
     
     public boolean onkoNelosetJaKahdetKolmosetJaPari() {
@@ -461,7 +461,7 @@ public class Kasi extends Korttijoukko{
     public boolean onkoNelosetJaKahdetKolmoset() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 3, 2, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 3, 2);
     }
     
     public boolean onkoNelosetJaKolmosetJaKolmeParia() {
@@ -485,31 +485,31 @@ public class Kasi extends Korttijoukko{
     public boolean onkoNelosetJaKolmoset() {
         Kasi apuKasi = kadenKopio();
 
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 3, 1, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 3, 1);
     }
     
     public boolean onkoNelosetJaNeljaParia() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 2, 4, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 2, 4);
     }
     
     public boolean onkoNelosetJaKolmeParia() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 2, 3, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 2, 3);
     }
     
     public boolean onkoNelosetJaKaksiParia() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 2, 2, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 2, 2);
     }
     
     public boolean onkoNelosetJaPari() {
         Kasi apuKasi = kadenKopio();
 
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 2, 1, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoNeloset(), 2, 1);
     }
     
     public boolean onkoNeljatKolmoset() {
@@ -525,13 +525,13 @@ public class Kasi extends Korttijoukko{
     public boolean onkoKolmetKolmosetJaKaksiParia() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmetKolmoset(), 2, 2, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmetKolmoset(), 2, 2);
     }
     
     public boolean onkoKolmetKolmosetJaPari() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmetKolmoset(), 2, 1, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmetKolmoset(), 2, 1);
     }
     
     public boolean onkoKolmetKolmoset() {
@@ -547,19 +547,19 @@ public class Kasi extends Korttijoukko{
     public boolean onkoKahdetKolmosetJaKolmeParia() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKahdetKolmoset(), 2, 3, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKahdetKolmoset(), 2, 3);
     }
     
     public boolean onkoKahdetKolmosetJaKaksiParia() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKahdetKolmoset(), 2, 2, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKahdetKolmoset(), 2, 2);
     }
     
     public boolean onkoKahdetKolmosetJaPari() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKahdetKolmoset(), 2, 1, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKahdetKolmoset(), 2, 1);
     }
     
     public boolean onkoKahdetKolmoset() {
@@ -576,31 +576,31 @@ public class Kasi extends Korttijoukko{
     public boolean onkoKolmosetJaViisiParia() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmoset(), 2, 5, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmoset(), 2, 5);
     }
     
     public boolean onkoKolmosetJaNeljaParia() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmoset(), 2, 4, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmoset(), 2, 4);
     }
     
     public boolean onkoKolmosetJaKolmeParia() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmoset(), 2, 3, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmoset(), 2, 3);
     }
     
     public boolean onkoKolmosetJaKaksiParia() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmoset(), 2, 2, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmoset(), 2, 2);
     }
     
     public boolean onkoKolmosetJaPari() {
         Kasi apuKasi = kadenKopio();
         
-        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmoset(), 2, 1, 0, 0);
+        return apuKasi.onkoTarvittavatKortit(apuKasi.onkoKolmoset(), 2, 1);
     }
     
     public boolean onkoTarvittavatKortit(boolean onko, int montaSamaa, int maara, int montaSamaa2, int maara2) {
@@ -806,26 +806,6 @@ public class Kasi extends Korttijoukko{
         return montaSamaa.isEmpty();
     }
     
-//    public boolean onkoKaksiMontaSamaa(int montaSamaa, int montaSamaa2) {
-//        Kasi apuKasi = kadenKopio();
-//            
-//        if(apuKasi.suurinMontaSamaa() == montaSamaa) {
-//            if(apuKasi.kuinkaMontaJokeriaKadessa() > 0) {
-//                    apuKasi.poistaMolemmatJokerit();
-//                    
-//            }
-//            for(Integer avain : apuKasi.kuinkaMontaSamaaHajautustaulu().keySet()) {
-//                int arvo = apuKasi.kuinkaMontaSamaaHajautustaulu().get(avain);
-//                
-//                if(arvo == montaSamaa2 && avain != apuKasi.montaSamaaKortinArvo()) {
-//                    return true;
-//                    
-//                }
-//            }
-//        }
-//        return false;
-//    }
-    
     /**
      * Metodi poistaa yhden jokerin kädestä
      */
@@ -836,28 +816,6 @@ public class Kasi extends Korttijoukko{
             kortit.remove(jokeri);
         }
     }
-    
-    /**
-     * Metodi kertoo, onko kädessä parametrina annettu
-     * summa pareja
-     * 
-     * @param monta Kuinka monta paria
-     * 
-     * @return true, jos pareja on parametrin luvun kanssa yhtä monta, muuten false
-     */
-//    public boolean onkoMontaParia(int monta) {
-//        HashMap<Integer, Integer> samat = kuinkaMontaSamaaHajautustaulu();
-//        int pareja = 0;
-//        
-//        if(onkoPari()) {
-//            for(Integer arvo : samat.values()) {
-//                if(arvo == 2) {
-//                    pareja++;
-//                }
-//            }
-//        }
-//        return pareja == monta;
-//    }
     
     /**
      * Metodi kertoo arvot, joita on monta kädessä
@@ -946,323 +904,5 @@ public class Kasi extends Korttijoukko{
         apuKasi.kaannaJarjestys();
         
         return apuKasi.getKortit().get(0);
-    }
-    
-    /**
-     * Metodi kertoo käden arvon
-     * 
-     * @return Palauttaa sitä suuremman luvun, mitä parempi käsi on
-     *         ...
-     *         17, jos kädessä on viisi samaa /
-     *         12, jos kädessä on värisuora /
-     *         8, jos kädessä on neloset /
-     *         7, jos kädessä on täyskäsi /
-     *         6, jos kädessä on väri /
-     *         5, jos kädessä on suora /
-     *         3, jos kädessä on kolmoset /
-     *         2, jos kädessä on kaksi paria /
-     *         1, jos kädessä on pari /
-     *         0, jos kädessä ei ole mitään
-     */
-    public int kadenArvo() {
-        Kasi apuKasi = kadenKopio();
-        
-        if(apuKasi.getKortit().size() == 1) {
-            return 99;
-        }
-        
-        if(apuKasi.onkoKutosetJaNelosetJaKolmoset()) {
-            return 67;
-            
-        }
-        if(apuKasi.onkoKutosetJaKahdetKolmoset()) {
-            return 66;
-            
-        }
-        if(apuKasi.onkoVitosetJaKahdetNeloset()) {
-            return 65;
-            
-        }
-        if(apuKasi.onkoKutosetJaNelosetJaPari()) {
-            return 64;
-            
-        }
-        if(apuKasi.onkoKutosetJaKolmosetJaKaksiParia()) {
-            return 63;
-            
-        }
-        if(apuKasi.onkoKutosetJaKolmosetJaPari()) {
-            return 62;
-            
-        }
-        if(apuKasi.onkoVitosetJaNelosetJaKolmoset()) {
-            return 61;
-            
-        }
-        if(apuKasi.onkoVitosetJaNelosetJaKaksiParia()) {
-            return 60;
-            
-        }
-        if(apuKasi.onkoKutosetJaNeloset()) {
-            return 59;
-            
-        }
-        if(apuKasi.onkoKolmetNeloset()) {
-            return 58;
-            
-        }
-        if(apuKasi.onkoVitosetJaKahdetKolmosetJaPari()) {
-            return 57;
-            
-        }
-        if(apuKasi.onkoVitosetJaNelosetJaPari()) {
-            return 56;
-            
-        }
-        if(apuKasi.onkoVitosetJaKahdetKolmoset()) {
-            return 55;
-            
-        }
-        if(apuKasi.onkoKahdetNelosetJaKolmosetJaPari()) {
-            return 54;
-            
-        }
-        if(apuKasi.onkoVitosetJaKolmosetJaKaksiParia()) {
-            return 53;
-            
-        }
-        if(apuKasi.onkoVitosetJaNeloset()) {
-            return 52;
-            
-        }
-        if(apuKasi.onkoVitosetJaKolmosetJaPari()) {
-            return 51;
-            
-        }
-        if(apuKasi.onkoKahdetNelosetJaKolmoset()) {
-            return 50;
-            
-        }
-        if(apuKasi.onkoKahdetNelosetJaKaksiParia()) {
-            return 49;
-            
-        }
-        if(apuKasi.onkoKahdetNelosetJaPari()) { 
-            return 48;
-            
-        }
-        if(apuKasi.onkoVitosetJaKolmoset()) {
-            return 47;
-            
-        }
-        if(apuKasi.onkoKahdetNeloset()) {
-            return 46;
-            
-        }
-        if(apuKasi.onkoNelosetJaKolmetKolmoset()) {
-            return 45;
-            
-        }
-        if(apuKasi.onkoNelosetJaKahdetKolmosetJaPari()) {
-            return 44;
-            
-        }
-        if(apuKasi.onkoVitosetJaNeljaParia()) {
-            return 43;
-            
-        }
-        if(apuKasi.onkoNeljatKolmoset()) {
-            return 42;
-            
-        }
-        if(apuKasi.onkoNelosetJaKahdetKolmoset()) {
-            return 41;
-            
-        }
-        if(apuKasi.onkoKolmetKolmosetJaKaksiParia()) {
-            return 40;
-            
-        }
-        if(apuKasi.onkoKutosetJaKolmeParia()) {
-            return 39;
-            
-        }
-        if(apuKasi.onkoKutosetJaKolmoset()) {
-            return 38;
-            
-        }
-        if(apuKasi.onkoNelosetJaKolmosetJaKolmeParia()) {
-            return 37;
-            
-        }
-        if(apuKasi.onkoKutosetJaKaksiParia()) {
-            return 36;
-            
-        }
-        if(apuKasi.onkoVitosetJaKolmeParia()) {
-            return 35;
-            
-        }
-        if(apuKasi.onkoNelosetJaKolmosetJaKaksiParia()) {
-            return 34;
-            
-        }
-        if(apuKasi.onkoKolmetKolmoset()) {
-            return 33;
-           
-        }
-        if(apuKasi.onkoKutosetJaPari()) {
-            return 32;
-            
-        }
-        if(apuKasi.onkoVitosetJaKaksiParia()) {
-            return 31;
-            
-        }
-        if(apuKasi.onkoNelosetJaNeljaParia()) {
-            return 30;
-            
-        }
-        if(apuKasi.onkoKutoset()) {
-            return 29;
-            
-        }
-        if(apuKasi.onkoKahdetKolmosetJaKolmeParia()) {
-            return 28;
-            
-        }
-        if(apuKasi.onkoVitosetJaPari()) {
-            return 27;
-                    
-        }
-        if(apuKasi.onkoNelosetJaKolmosetJaPari()) {
-            return 26;
-            
-        }
-        if(apuKasi.onkoNelosetJaKolmeParia()) {
-            return 25;
-            
-        }
-        if(apuKasi.onkoKolmosetJaViisiParia()) {
-            return 24;
-            
-        }
-        if(apuKasi.onkoKolmosetJaNeljaParia()) {
-            return 23;
-            
-        }
-        if(apuKasi.onkoKuusiParia()) {
-            return 22;
-            
-        }
-        if(apuKasi.onkoKahdetKolmosetJaKaksiParia()) {
-            return 21;
-            
-        }
-        if(apuKasi.onkoNelosetJaKolmoset()) {
-            return 20;
-            
-        }
-        if(apuKasi.onkoNelosetJaKaksiParia()) {
-            return 19;
-            
-        }
-        if(apuKasi.onkoKolmosetJaKolmeParia()) {
-            return 18;
-            
-        }
-        if(apuKasi.onkoVitoset()) {
-            return 17;
-            
-        }
-        if(apuKasi.onkoKahdetKolmosetJaPari()) {
-            return 16;
-            
-        }
-        if(apuKasi.onkoViisiParia()) {
-            return 15;
-            
-        }
-        if(apuKasi.onkoNelosetJaPari()) {
-            return 14;
-            
-        }
-        if(apuKasi.onkoKahdetKolmoset()) {
-            return 13;
-            
-        }
-        if(apuKasi.onkoVarisuora()) {
-            return 12;
-            
-        }
-        if(apuKasi.onkoKolmosetJaKaksiParia()) {
-            return 11;
-            
-        }
-        if(apuKasi.onkoNeljaParia()) {
-            return 10;
-            
-        }
-        if(apuKasi.onkoNelosetJaPari()) {
-            return 9;
-            
-        }
-        if(apuKasi.onkoNeloset()) {
-            return 8;
-            
-        }
-        if(apuKasi.onkoTayskasi()) {
-            return 7;
-            
-        }
-        if(apuKasi.onkoVari()) {
-            return 6;
-            
-        }
-        if(apuKasi.onkoSuora()) {
-            return 5;
-            
-        }
-        if(apuKasi.onkoKolmeParia()) {
-            return 4;
-            
-        }
-        if(apuKasi.onkoKolmoset()) {
-            return 3;
-            
-        }
-        if(apuKasi.onkoKaksiParia()) {
-            return 2;
-            
-        }
-        if(apuKasi.onkoPari()) {
-            return 1;
-            
-        }
-        return 0;
-    }
-    
-    /**
-     * Metodi huomioi, kuinka suuri käsi vaikuttaa
-     * suoraan, väriin ja värisuoraan
-     * 
-     * @return Muokattu käden arvo
-     */
-    public int kadenArvoSuurellaKadella() {
-        int arvo = kadenArvo();
-        
-        if(arvo == 12) {
-            arvo = 70;
-            
-        }
-        if(arvo == 6) {
-            arvo = 69;
-            
-        }
-        if(arvo == 5) {
-            arvo = 68;
-            
-        }
-        return arvo;
     }
 }

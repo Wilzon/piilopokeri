@@ -1,6 +1,7 @@
 
 package piilopokeri.domain;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
@@ -467,5 +468,75 @@ public class Kasi3Test {
         
         assertTrue(kasi.onkoNelosetJaPari());
         
+    }
+    
+    @Test
+    public void kadessaEiOleKutosia() {
+        Kasi kasi = new Kasi();
+        
+        kasi.lisaaKortti(hertta2);
+        kasi.lisaaKortti(ruutu2);
+        kasi.lisaaKortti(risti2);
+        kasi.lisaaKortti(pata2);
+        kasi.lisaaKortti(jokeri);
+        
+        kasi.lisaaKortti(hertta3);
+        kasi.lisaaKortti(ruutu3);
+        
+        assertFalse(kasi.onkoKutoset());
+    }
+    
+    @Test
+    public void kadessaEiOleVitosia() {
+        Kasi kasi = new Kasi();
+        
+        kasi.lisaaKortti(hertta2);
+        kasi.lisaaKortti(ruutu2);
+        kasi.lisaaKortti(risti2);
+        kasi.lisaaKortti(pata2);
+        
+        kasi.lisaaKortti(hertta3);
+        kasi.lisaaKortti(ruutu3);
+        
+        assertFalse(kasi.onkoVitoset());
+    }
+    
+    @Test
+    public void kadessaEiOleNelosia() {
+        Kasi kasi = new Kasi();
+        
+        kasi.lisaaKortti(hertta2);
+        kasi.lisaaKortti(ruutu2);
+        kasi.lisaaKortti(risti2);
+        
+        kasi.lisaaKortti(hertta3);
+        kasi.lisaaKortti(ruutu3);
+        kasi.lisaaKortti(pata3);
+        
+        assertFalse(kasi.onkoNeloset());
+    }
+    
+    @Test
+    public void kadessaEiOleKolmosia() {
+        Kasi kasi = new Kasi();
+        
+        kasi.lisaaKortti(hertta2);
+        kasi.lisaaKortti(ruutu2);
+        
+        kasi.lisaaKortti(hertta3);
+        kasi.lisaaKortti(ruutu3);
+        
+        assertFalse(kasi.onkoKolmoset());
+    }
+    
+    @Test
+    public void kadessaEiOleParia() {
+        Kasi kasi = new Kasi();
+        
+        kasi.lisaaKortti(hertta2);
+        
+        kasi.lisaaKortti(ruutu3);
+        
+        assertFalse(kasi.onkoPari());
     }
 }

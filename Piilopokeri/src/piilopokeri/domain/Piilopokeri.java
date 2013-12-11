@@ -32,13 +32,6 @@ public class Piilopokeri {
     
     private boolean poistettiinkoJokerit;
     
-    /**
-     * Metodi nostaa pakasta kortteja käteen
-     * 
-     * @param  maara Korttien lukumäärä
-     * 
-     * @return uusi kasi
-     */
     public Piilopokeri() {
         pakka = new Korttipakka();
         pelaajat = new ArrayList();
@@ -107,10 +100,6 @@ public class Piilopokeri {
         return pelaajat;
     }
     
-    public ArrayList<Pelaaja> getIhmisPelaajat() {
-        return getTietytPelaajat(false);
-    }
-    
     public ArrayList<Pelaaja> getTietytPelaajat(boolean onkoKone) {
         ArrayList<Pelaaja> tietytPelaajat = new ArrayList();
         
@@ -121,6 +110,10 @@ public class Piilopokeri {
             }
         }
         return tietytPelaajat;
+    }
+    
+    public ArrayList<Pelaaja> getIhmisPelaajat() {
+        return getTietytPelaajat(false);
     }
     
     public ArrayList<Pelaaja> getKonePelaajat() {

@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
+import piilopokeri.domain.KadenArvostelija;
 import piilopokeri.domain.Kasi;
 import piilopokeri.domain.KasienVertailija;
 import piilopokeri.domain.Pelaaja;
@@ -146,7 +147,7 @@ public class LopetusIkkuna extends Ikkuna{
         String pelaajalla = "Pelaajalla " + pelaaja.getNimi() + " on ";
         JLabel pelaajaTeksti = new JLabel();
         
-        int kadenArvo = kasi.kadenArvo();
+        int kadenArvo = KadenArvostelija.kadenArvo(kasi);
         
         if(kadenArvo == 70) {
             kadenArvo = 12;

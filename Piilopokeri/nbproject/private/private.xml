@@ -8,8 +8,9 @@
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/AloitusKuuntelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/Vuoro.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/NappiUI.java</file>
-            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/OhjeNapinKuuntelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/Main.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/OhjeNapinKuuntelija.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/KadenArvostelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/JokerienAsetusKuuntelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/OhjeIkkunanOkKuuntelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/ikkunat/PikkuIkkuna.java</file>
@@ -19,15 +20,16 @@
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/KasienVertailija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/Kone.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/ikkunat/GraafinenKL.java</file>
-            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/Kuuntelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/Kasi.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/ui/Kayttoliittyma.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/Kuuntelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/KorttiNapinKuuntelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/PakkaNappi.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/Korttipakka.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/AvoPakkaNapinKuuntelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/KoneToiminta.java</file>
-            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/ikkunat/VaihdaPakanKanssaIkkuna.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/ikkunat/LopetusIkkuna.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/ikkunat/VaihdaPakanKanssaIkkuna.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/test/piilopokeri/domain/Kasi2Test.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/ikkunat/KorttienAsetusIkkuna.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/test/piilopokeri/domain/KasiTest.java</file>
@@ -39,6 +41,7 @@
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/Korttijoukko.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/UusiAloitusKuuntelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/KorttienMaalaaja.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/domain/KadenArvo.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/LopetusKuuntelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/KortinVaihtoKuuntelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/ikkunat/ValikkoIkkuna.java</file>
@@ -55,8 +58,8 @@
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/test/piilopokeri/domain/Kasi3Test.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/UudelleenAloitusKuuntelija.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/ikkunat/Ikkuna.java</file>
-            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/ikkunat/OhjeIkkuna.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/kuuntelijat/KonePelaajienAsetusKuuntelija.java</file>
+            <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/ikkunat/OhjeIkkuna.java</file>
             <file>file:/Users/Otto/NetBeansProjects/git/piilopokeri/Piilopokeri/src/piilopokeri/gui/ikkunat/IhmisPelaajienAsetusIkkuna.java</file>
         </group>
     </open-files>

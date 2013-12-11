@@ -2,6 +2,7 @@ package piilopokeri.ui;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import piilopokeri.domain.KadenArvostelija;
 import piilopokeri.domain.Piilopokeri;
 import piilopokeri.domain.Kasi;
 import piilopokeri.domain.KasienVertailija;
@@ -620,7 +621,7 @@ public class Kayttoliittyma {
     public void tulostaKadenArvo(Pelaaja pelaaja) {
         Kasi kasi = pelaaja.getKasi();
         String pelaajalla = "Pelaajalla " + pelaaja.getNimi() + " on ";
-        int kadenArvo = kasi.kadenArvo();
+        int kadenArvo = KadenArvostelija.kadenArvo(kasi);
         
         if(kadenArvo == 9) {
             System.out.println(pelaajalla + "vitoset!");

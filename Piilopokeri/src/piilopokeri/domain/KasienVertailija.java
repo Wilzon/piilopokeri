@@ -17,17 +17,17 @@ public class KasienVertailija {
      *         0, jos kadet ovat yhtä hyviä
      */
     public static int parempiKasi(Kasi kasi, Kasi kasi2) {
-        int kadenArvo = kasi.kadenArvo();
-        int kaden2Arvo = kasi2.kadenArvo();
+        Kasi apuKasi = kasi.kadenKopio();
+        Kasi apuKasi2 = kasi2.kadenKopio();
+        
+        int kadenArvo = KadenArvostelija.kadenArvo(apuKasi);
+        int kaden2Arvo = KadenArvostelija.kadenArvo(apuKasi2);
         
         if(kasi.getKortit().size() > 6 && kadenArvo != kaden2Arvo) {
-            kadenArvo = kasi.kadenArvoSuurellaKadella();
-            kaden2Arvo = kasi2.kadenArvoSuurellaKadella();
+            kadenArvo = KadenArvostelija.kadenArvoSuurellaKadella(apuKasi);
+            kaden2Arvo = KadenArvostelija.kadenArvoSuurellaKadella(apuKasi2);
             
         }
-        kasi.jarjestaKortit();
-        kasi2.jarjestaKortit();
-        
         if(kadenArvo > kaden2Arvo) {
             return 1;
             

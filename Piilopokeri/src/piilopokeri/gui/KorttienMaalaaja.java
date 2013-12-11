@@ -8,19 +8,26 @@ import piilopokeri.domain.Piilopokeri;
 
 public class KorttienMaalaaja {
     
-    public static void maalaaNappi(Piilopokeri pokeri, Kortti kortti, JComponent korttiNappi) {
+    /**
+     * Metodi tekee komponentin tekstistä kortin värisen
+     * 
+     * @param pokeri 
+     * @param kortti Kortti, jonka värinen komponentti halutaan
+     * @param komponentti JComponent, joka halutaan värittää
+     */
+    public static void maalaaNappi(Piilopokeri pokeri, Kortti kortti, JComponent komponentti) {
         int maa = kortti.getMaa();
         
         if(maa == Kortti.HERTTA || maa == Kortti.RUUTU) {
-            korttiNappi.setForeground(Color.red);
+            komponentti.setForeground(Color.red);
             
         }
         else if(maa == Kortti.JOKERI) {
-            korttiNappi.setForeground(Color.green);
-            korttiNappi.setBackground(Color.black);
+            komponentti.setForeground(Color.green);
+            komponentti.setBackground(Color.black);
             
         }else{
-            korttiNappi.setForeground(Color.black);
+            komponentti.setForeground(Color.black);
             
         }
         

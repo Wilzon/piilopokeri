@@ -148,152 +148,208 @@ public class LopetusIkkuna extends Ikkuna{
         
         int kadenArvo = kasi.kadenArvo();
         
-        if(kadenArvo == 56) {
+        if(kadenArvo == 70) {
             kadenArvo = 12;
             
         }
-        if(kadenArvo == 55) {
+        if(kadenArvo == 69) {
             kadenArvo = 6;
             
         } 
-        if(kadenArvo ==  54) {
+        if(kadenArvo ==  68) {
             kadenArvo = 5;
             
         }
         
         
-        if(kadenArvo == 53) {
+        if(kadenArvo == 67) {
             pelaajaTeksti.setText(pelaajalla + "kutoset, neloset ja kolmoset!");
         
         }
-        else if(kadenArvo == 52) {
+        else if(kadenArvo == 66) {
             pelaajaTeksti.setText(pelaajalla + "kutoset ja kahdet kolmoset!");
             
         }
-        else if(kadenArvo == 51) {
+        else if(kadenArvo == 65) {
             pelaajaTeksti.setText(pelaajalla + "vitoset ja kahdet neloset!");
             
         }
-        else if(kadenArvo == 50) {
+        else if(kadenArvo == 64) {
+            pelaajaTeksti.setText(pelaajalla + "kutoset, neloset ja pari!");
+            
+        } 
+        else if(kadenArvo == 63) {
             pelaajaTeksti.setText(pelaajalla + "kutoset, kolmoset ja kaksi paria!");
             
         }
-        else if(kadenArvo == 49) {
+        else if(kadenArvo == 62) {
+            pelaajaTeksti.setText(pelaajalla + "kutoset, kolmoset ja pari!");
+                
+        } 
+        else if(kadenArvo == 61) {
             pelaajaTeksti.setText(pelaajalla + "vitoset, neloset ja kolmoset!");
             
         }
-        else if(kadenArvo == 48) {
+        else if(kadenArvo == 60) {
             pelaajaTeksti.setText(pelaajalla + "vitoset, neloset ja kaksi paria!");
             
         }
-        else if(kadenArvo == 47) {
+        else if(kadenArvo == 59) {
+            pelaajaTeksti.setText(pelaajalla + "kutoset ja neloset!");
+            
+        } 
+        else if(kadenArvo == 58) {
             pelaajaTeksti.setText(pelaajalla + "kolmet neloset!");
             
         }
-        else if(kadenArvo == 46) {
+        else if(kadenArvo == 57) {
             pelaajaTeksti.setText(pelaajalla + "vitoset, kahdet kolmoset ja pari!");
             
         }
-        else if(kadenArvo == 45) {
+        else if(kadenArvo == 56) {
+            pelaajaTeksti.setText(pelaajalla + "vitoset ja neloset ja pari");
+            
+        } 
+        else if(kadenArvo == 55) {
+            pelaajaTeksti.setText(pelaajalla + "vitoset ja kahdet kolmoset!");
+            
+        } 
+        else if(kadenArvo == 54) {
             pelaajaTeksti.setText(pelaajalla + "kahdet neloset, kolmoset ja pari!");
             
         }
-        else if(kadenArvo == 44) {
+        else if(kadenArvo == 53) {
             pelaajaTeksti.setText(pelaajalla + "vitoset, kolmoset ja kaksi paria!");
             
         }
-        else if(kadenArvo == 43) {
+        else if(kadenArvo == 52) {
+            pelaajaTeksti.setText(pelaajalla + "vitoset ja neloset!");
+            
+        }
+        else if(kadenArvo == 51) {
+            pelaajaTeksti.setText(pelaajalla + "vitoset, kolmoset ja pari");
+            
+        } 
+        else if(kadenArvo == 50) {
+            pelaajaTeksti.setText(pelaajalla + "kahdet neloset ja kolmoset");
+            
+        } 
+        else if(kadenArvo == 49) {
+            pelaajaTeksti.setText(pelaajalla + "kahdet neloset ja kaksi paria");
+            
+        } 
+        else if(kadenArvo == 48) {
+            pelaajaTeksti.setText(pelaajalla + "kahdet neloset ja pari!");
+            
+        } 
+        else if(kadenArvo == 47) {
             pelaajaTeksti.setText(pelaajalla + "vitoset ja kolmoset!");
             
         }
-        else if(kadenArvo == 42) {
+        else if(kadenArvo == 46) {
             pelaajaTeksti.setText(pelaajalla + "kahdet neloset!");
             
         }
-        else if(kadenArvo == 41) {
+        else if(kadenArvo == 45) {
             pelaajaTeksti.setText(pelaajalla + "neloset ja kolmet kolmoset!");
             
         }
-        else if(kadenArvo == 40) {
+        else if(kadenArvo == 44) {
             pelaajaTeksti.setText(pelaajalla + "neloset, kahdet kolmoset ja pari!");
             
         }
-        else if(kadenArvo == 39) {
+        else if(kadenArvo == 43) {
             pelaajaTeksti.setText(pelaajalla + "vitoset ja neljä paria!");
             
         }
-        else if(kadenArvo == 38) {
+        else if(kadenArvo == 42) {
             pelaajaTeksti.setText(pelaajalla + "neljät kolmoset!");
             
         }
-        else if(kadenArvo == 37) {
+        else if(kadenArvo == 41) {
+            pelaajaTeksti.setText(pelaajalla + "neloset ja kahdet kolmoset!");
+            
+        } 
+        else if(kadenArvo == 40) {
             pelaajaTeksti.setText(pelaajalla + "kolmet kolmoset ja kaksi paria!");
             
         }
-        else if(kadenArvo == 36) {
+        else if(kadenArvo == 39) {
             pelaajaTeksti.setText(pelaajalla + "kutoset ja kolme paria!");
             
         }
-        else if(kadenArvo == 35) {
+        else if(kadenArvo == 38) {
             pelaajaTeksti.setText(pelaajalla + "kutoset ja kolmoset!");
             
         }
-        else if(kadenArvo == 34) {
+        else if(kadenArvo == 37) {
             pelaajaTeksti.setText(pelaajalla + "neloset, kolmoset ja kolme paria!");
             
         }
-        else if(kadenArvo == 33) {
+        else if(kadenArvo == 36) {
             pelaajaTeksti.setText(pelaajalla + "kutoset ja kaksi paria!");
             
         }
-        else if(kadenArvo == 32) {
+        else if(kadenArvo == 35) {
             pelaajaTeksti.setText(pelaajalla + "vitoset ja kolme paria!");
             
         }
-        else if(kadenArvo == 31) {
+        else if(kadenArvo == 34) {
+            pelaajaTeksti.setText(pelaajalla + "neloset, kolmoset ja kaksi paria!");
+            
+        } 
+        else if(kadenArvo == 33) {
             pelaajaTeksti.setText(pelaajalla + "kolmet kolmoset!");
             
         }
-        else if(kadenArvo == 30) {
+        else if(kadenArvo == 32) {
             pelaajaTeksti.setText(pelaajalla + "kutoset ja pari!");
             
         }
-        else if(kadenArvo == 29) {
+        else if(kadenArvo == 31) {
             pelaajaTeksti.setText(pelaajalla + "vitoset ja kaksi paria!");
             
         }
-        else if(kadenArvo == 28) {
+        else if(kadenArvo == 30) {
             pelaajaTeksti.setText(pelaajalla + "neloset ja neljä paria!");
             
         }
-        else if(kadenArvo == 27) {
+        else if(kadenArvo == 29) {
             pelaajaTeksti.setText(pelaajalla + "kutoset!");
             
         }
-        else if(kadenArvo == 26) {
+        else if(kadenArvo == 28) {
             pelaajaTeksti.setText(pelaajalla + "kahdet kolmoset ja kolme paria!");
             
         }
-        else if(kadenArvo == 25) {
+        else if(kadenArvo == 27) {
             pelaajaTeksti.setText(pelaajalla + "vitoset ja pari!");
             
         }
-        else if(kadenArvo == 24) {
+        else if(kadenArvo == 26) {
+            pelaajaTeksti.setText(pelaajalla + "neloset, kolmoset ja pari!");
+            
+        } 
+        else if(kadenArvo == 25) {
             pelaajaTeksti.setText(pelaajalla + "neloset ja kolme paria!");
             
         }
-        else if(kadenArvo == 23) {
+        else if(kadenArvo == 24) {
             pelaajaTeksti.setText(pelaajalla + "kolmoset ja viisi paria!");
             
         }
-        else if(kadenArvo == 22) {
+        else if(kadenArvo == 23) {
             pelaajaTeksti.setText(pelaajalla + "kolmoset ja neljä paria!");
             
         }
-        else if(kadenArvo == 21) {
+        else if(kadenArvo == 22) {
             pelaajaTeksti.setText(pelaajalla + "kuusi paria!");
             
         }
+        else if(kadenArvo == 21) {
+            pelaajaTeksti.setText(pelaajalla + "kahdet kolmoset ja kaksi paria!");
+            
+        } 
         else if(kadenArvo == 20) {
             pelaajaTeksti.setText(pelaajalla + "neloset ja kolmoset!");
             

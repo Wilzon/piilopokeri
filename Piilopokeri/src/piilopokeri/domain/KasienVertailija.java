@@ -25,6 +25,9 @@ public class KasienVertailija {
             kaden2Arvo = kasi2.kadenArvoSuurellaKadella();
             
         }
+        kasi.jarjestaKortit();
+        kasi2.jarjestaKortit();
+        
         if(kadenArvo > kaden2Arvo) {
             return 1;
             
@@ -216,20 +219,13 @@ public class KasienVertailija {
             Kasi kasi = kadet.get(0);
             Kasi kasi2 = kadet.get(1);
 
-            System.out.println(kasi);
-            System.out.println(kasi2);
-            System.out.println("----");
-            
             int arvo = parempiKasi(kasi, kasi2);
-            System.out.println(arvo);
             
             if (arvo == 1) {
                 kadet.remove(kasi2);
-                System.out.println("eka");
                 
             }else{
                 kadet.remove(kasi);
-                System.out.println("toka");
                 
             }
         }

@@ -16,7 +16,7 @@ public class KorttienMaalaaja {
             
         }
         else if(maa == Kortti.JOKERI) {
-            korttiNappi.setForeground(Color.cyan);
+            korttiNappi.setForeground(Color.green);
             korttiNappi.setBackground(Color.black);
             
         }else{
